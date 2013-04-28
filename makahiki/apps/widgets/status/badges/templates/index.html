@@ -1,0 +1,27 @@
+{% with badge_awards=view_objects.status__badges.badge_awards %}
+    <div class="content-box demi-widget">
+        <div class="content-box-title">
+            Awarded Badges
+        </div>
+        <div class="widget-content">
+        <table class="table-striped">
+            <thead>
+            <tr>
+                <th class="column-text">Badge</th>
+                <th class="column-number" width="25%">#Users Awarded</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for badge in badge_awards%}
+                <tr>
+                    <td class="column-text">
+                        <div class="badge-theme-{{badge.badge__theme}}"><p>{{badge.badge__label}}</p></div>
+                        <div class="badge-name">{{badge.badge__name}}</div></td>
+                    <td class="column-number">{{badge.count}}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        </div>
+    </div>
+{% endwith %}

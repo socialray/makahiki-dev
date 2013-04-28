@@ -1,0 +1,14 @@
+{% extends "logo_bar_base.html" %}
+
+{% load markup %}
+
+{% block page_title %}
+    Welcome to KukuiCup!
+{% endblock %}
+ 
+
+{% block content %}  
+        <div class="content-box about">
+          {{ CHALLENGE.about_page_text|markdown }}
+        </div> 
+{% endblock %}

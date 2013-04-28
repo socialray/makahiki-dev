@@ -1,0 +1,58 @@
+<div class="activity-task-form-content">
+    {% if form.is_multipart %}
+        <form id="myform" enctype="multipart/form-data"
+              action="{% url activity_add_task action.type action.slug %}" method="post">
+    {% else %}
+        <form id="myform" action="{% url activity_add_task action.type action.slug %}" method="post">
+    {% endif %}
+
+    {% csrf_token %}
+
+    {% if admin_message %}
+        Admin message: {{ admin_message }}
+    {% endif %}
+
+    <p/>
+    {% if action.type == "event" or action.type == "excursion" %}          {# event #}
+        {% include "event_form.html" %}
+    {% elif action.type == "commitment" %}     {# commitment #}
+        {% include "commitment_form.html" %}
+    {% elif action.type == "activity" %}       {# activity #}
+        {% include "activity_form.html" %}
+    {% endif %}
+
+    </form>
+{% if form.image_response %} 
+            <div id="ios-mobile-device"></div>
+<script>
+
+function complain() {
+    log_js_action("smartgrid", "{{action.slug}}", "iPhone unhappy");
+    $('#taskModal').modal('hide');
+    return false;   
+}
+
+$(document).ready(function() {
+    var submit_button = document.getElementById('submit_form_button5');
+    var cancel_button = document.getElementById('cancel_form_button5');
+    var ios_mobile_div = document.getElementById('ios-mobile-device');
+    var id_image_response = document.getElementById('id_image_response');
+    
+if((navigator.userAgent.match(/iPhone/i)) || 
+   (navigator.userAgent.match(/iPod/i)) ||
+   (navigator.userAgent.match(/iPad/i))) {
+	if (navigator.userAgent.match(/OS 6(_\d)+ like Mac OS X/i)) {
+		// do nothing.
+	} else {
+//      Picup.convertFileInput('id_image_response', currentParams);
+        id_image_response.style.visibility = 'hidden';
+        submit_button.style.visibility = 'hidden'; 
+        cancel_button.style.visibility = 'hidden';
+        ios_mobile_div.innerHTML = "<p>File upload on iPhone not available. Please upload your file from your laptop. Click <button class=\"btn btn-widget\" style=\"cursor:pointer;\" onclick='complain();'>here</button> if you are unhappy with this workaround.</p>";
+	}
+   };
+});
+</script>
+{% endif %}
+</div>
+

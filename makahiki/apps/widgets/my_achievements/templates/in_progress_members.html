@@ -1,0 +1,46 @@
+{% load markup %}
+
+<table>
+    <tr>
+        <th class="profile-history-current-date-header achievement-date-column column-text">Date</th>
+        <th class="profile-history-current-task-header achievement-content-column column-text">Task</th>
+        <th class="profile-history-current-status-header column-text" >Status</th>
+    </tr>
+    {% for member in view_objects.my_achievements.in_progress_members %}
+        {% if member.action.type != "commitment" %}
+            <tr>
+                <td class="column-text">{{ member.created_at|date:"n/j/y" }}</td>
+                <td class="column-text">
+                    <a href="{% url activity_task member.action.type member.action.slug %}">
+                        {{ member.action.type.capitalize }}: {{ member.action.name }}
+                    </a>
+                </td>
+                {% if member.approval_status == "pending" and member.action.type == "activity" %}
+                    <td class="column-text" title="Your request needs administrator approval.">
+                        {{ member.approval_status.capitalize }}
+                {% else %}
+                    {% if member.approval_status == "pending" %}
+                        <td class="column-text" title="You have signed up for the {{member.action.type}}">
+                            Signed up
+                    {% else %}
+                        {# Item is not pending and is not approved, so it should be rejected. #}
+                        <td  class="column-text" title="Your request has not been approved.">
+                        <a id="{{member.action.title|slugify}}-rejected"
+                           href="{% url activity_task member.action.type member.action.slug %}">{{ member.approval_status.capitalize }}</a>
+                    {% endif %}
+                    </td>
+                {% endif %}
+            </tr>
+        {% else %}
+            <tr>
+                <td class="column-text">{{ member.created_at|date:"n/j/y" }}</td>
+                <td class="column-text">
+                    <a href="{% url activity_task 'commitment' member.action.slug %}">
+                        Commitment: {{ member.action.name }}
+                    </a>
+                </td>
+                <td class="column-text" title="The commitment is still active.">In Progress</td>
+            </tr>
+        {% endif %}
+    {% endfor %}
+</table>

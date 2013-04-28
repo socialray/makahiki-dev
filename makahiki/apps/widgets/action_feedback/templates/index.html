@@ -1,0 +1,105 @@
+{% load humanize %}
+<div class="content-box widget">
+    <div class="content-box-title">
+    Feedback
+    (rating:{{view_objects.action_feedback.analysis.overall_average|floatformat:2}})
+    </div>
+    <div class="widget-content">
+<!--
+    <script type="text/javascript" src="{{STATIC_URL}}js/flot/jquery.flot.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Action');
+        data.addColumn('number', 'Disliked');
+        data.addColumn('number', 'Hated');
+        data.addColumn('number', 'Liked');
+        data.addColumn('number', 'Loved');
+        data.addRows({{view_objects.action_feedback.google.data|safe}});
+        
+        var options = {
+                title: 'Action Feedback',
+                isStacked: true,
+                backgroundColor: 'transparent',
+                vAxis: {title: 'Action',  titleTextStyle: {color: 'red'}}
+        };
+
+        var chart = new google.visualization.BarChart(document.getElementById('graph_placeholder'));
+        chart.draw(data, options);        
+      }
+    </script>
+    <div class="container-fluid">
+        <div id="feedback_graph" class="row-fluid">
+            <div id="graph_placeholder" class="span12" style="border: 1px solid; height:{{view_objects.action_feedback.google.height}}px"></div>
+        </div>
+    </div>
+-->
+    <table class="table">
+    <thead>
+        <th>Action</th>
+        <th>Avg Rating</th>
+        <th>#Feedback</th>
+    </thead>
+    <tbody>
+    {% for analysis in view_objects.action_feedback.analysis.data %}
+    <tr {% if analysis.average < view_objects.action_feedback.analysis.overall_average %} style="color: red" {%endif%}>
+        <td width="60%"><a href="
+        {% url view_feedback analysis.action__type analysis.action__slug %}"
+                >{{analysis.action__name}}</a> </td>
+        <td width="20%">{{analysis.average|floatformat:2}}</td>
+        <td width="20%">{{analysis.count}}</td>
+    </tr>
+
+<!--
+    <script type="text/javascript">
+    google.load("visualization", "1", {packages:["corechart"]});
+    google.setOnLoadCallback(drawIndividualChart{{forloop.counter}});
+    function drawIndividualChart{{forloop.counter}}() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Rating');
+      data.addColumn('number', 'Count');
+      data.addRows({{analysis.scale|safe}});
+      
+      var options = {
+              backgroundColor: 'transparent',
+//               hAxis: {gridlines: {color: 'transparent'},
+//             	      viewWindow: {min: 0, max: 6},
+//             	      viewWindowMode: 'pretty'
+//             	     },
+              legend: 'none',
+              vAxis: {baselineColor: 'transparent', 
+            	      format: "###",
+            	      gridlines: {color: 'transparent', count: 2}}
+            
+      };
+
+      var chart = new google.visualization.ColumnChart(document.getElementById('graph{{forloop.counter}}'));
+      chart.draw(data, options);        
+    }
+
+//     $(document).ready(function () {
+//     var data = {{analysis.scale}}
+//     var options = {
+//     	   bars: {show: true, barWidth: 0.6},
+//     	   grid: {show: false}
+//         };
+
+//     var plotarea = $("#graph{{forloop.counter}}");
+// //    $.plot(plotarea, data, options);
+//     $.plot($("#graph{{forloop.counter}}"), [data], {
+//     	bars: {show: true, barWidth: 0.6}, 
+//     	grid: {show: false}
+//     	});
+// //    $.plot($("#graph{{forloop.counter}}"), data, options); 
+
+// });
+</script>
+-->
+    {% endfor %}
+    </tbody>
+    </table>
+    </div>
+</div>

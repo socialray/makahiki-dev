@@ -1,0 +1,76 @@
+{% load avatar_tags %}
+{%  with view_objects.my_info.form as form %}
+<div class="content-box-contents">
+<form action="{% url profile_save %}" method="post">
+    {% csrf_token %}
+    {% if form.message %}
+        <div style="text-align: center">
+            <span class="profile-form-message" class="content-box">{{ form.message }}</span>
+        </div>
+    {% endif %}
+
+    <table>
+        <tr>
+            <td colspan="2" class="profile-section-header">General</td>
+        </tr>
+        {% if form.display_name.errors %}
+            <tr>
+                <td colspan="2">{{ form.display_name.errors }}</td>
+            </tr>
+        {% endif %}
+        <tr class="profile-section">
+            <td class="profile-form-label">{{ form.display_name.label_tag }}</td>
+            <td class="profile-form-body">{{ form.display_name }}</td>
+        </tr>
+        <tr class="profile-section">
+            <td class="profile-form-label"><label
+                    for="picture">Picture</label></td>
+            <td class="profile-form-body">
+                <img src="{% avatar_url user 60 %}"/>
+                <a href="{% url avatar_change %}" style="padding-left: 15px">change picture</a>
+            </td>
+        </tr>
+        {# Want to wrap the row with an if that checks if the player is able to change their theme #}
+        <tr class="profile-section">
+            <td class="profile-form-label">{{ form.theme.label_tag }}</td>
+            <td class="profile-form-body">{{ form.theme }}</td>
+        </tr>
+        <tr>
+            <td class="profile-section-header" colspan="2">Reminder
+                Settings
+            </td>
+        </tr>
+        {% if form.contact_email.errors %}
+            <tr>
+                <td colspan="2">{{ form.contact_email.errors }}</td>
+            </tr>
+        {% endif %}
+        <tr class="profile-section">
+            <td class="profile-form-label"><label
+                    for="id_event_email">Email</label></td>
+            <td class="profile-form-body">{{ form.contact_email }}</td>
+        </tr>
+        {% if form.contact_text.errors %}
+            <tr>
+                <td colspan="2">{{ form.contact_text.errors }}{{ form.contact_carrier.errors }}</td>
+            </tr>
+        {% endif %}
+        <tr class="profile-section">
+            <td class="profile-form-label">         <label for="id_event_text">Mobile # <br/>(for SMS Text)</label>
+            </td>
+            <td class="profile-form-body">
+                {{ form.contact_text }}
+                {{ form.contact_carrier }}
+            </td>
+        </tr>
+        </tr>
+    </table>
+    <div class="profile-save">
+        <button id="profile-form-submit-button" class="btn btn-widget"
+                onclick='$("#profile-form-submit-button").attr("disabled", "disabled");javascript:this.form.submit(); return false;'>
+            Save Changes
+        </button>
+    </div>
+</form>
+</div>
+{% endwith %}

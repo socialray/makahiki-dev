@@ -1,0 +1,416 @@
+{% load sgg_design_tags %}
+<script src="{{STATIC_URL}}js/jquery-ui-timepicker-addon.js"></script>
+
+<div class="content-box">
+	<div class="content-box-title">Smart Grid Game Designer
+       <a href="#" style="float: right">
+            <img src="{{ STATIC_URL}}images/icons/icon-help-sm.png" width="20" align="center"
+                 title="Click to get help about this window"
+                 onclick="toggleHelp(event, 'widget', 'smart-grid-game-designer'); return false;"
+                    /></a>
+ 	</div>
+	<div id="content" class="content-box-contents">
+		<div class="container-fluid">
+			<div class="designer-sidebar designer-left">
+				<a class="widget-help" href="#">
+		   			<img src="{{ STATIC_URL}}images/icons/icon-help-sm.png" width="20" align="center"
+        				 title="Click to get help about this window"
+                		 onclick="toggleHelp(event, 'widget', 'smart-grid-library-actions'); return false;"/>
+                </a>
+				<div class="tabbable">
+					<legend>Library Actions</legend>
+					<ul class="nav nav-tabs">
+						<li class="active"><a href="#activities" data-toggle="tab">Activities</a></li>
+						<li class=""><a href="#commitments" data-toggle="tab">Cmnts.</a></li>
+						<li class=""><a href="#events" data-toggle="tab">Events</a></li>
+					</ul>
+					<div class="tab-content">
+						<div id="activities" class="sgg-action-selections tab-pane active">
+							{% for action in view_objects.smartgrid_design.activities %}		
+							<div data-slug="{{action.slug}}" data-type="{{action.type}}" data-pk="{{action.pk}}"
+								data-unlock="{{action.unlock_condition}}"
+								class="sgg-action sgg-library-action sgg-activity library-draggable {% if action.slug in view_objects.smartgrid_design.smart_grid_actions %}hidden{% endif %}">
+								<a href="/challenge_setting_admin/smartgrid_library/library{{action.type}}/{{action.pk}}/"
+									class="sgg-action" ref="tooltip" title="{{action.title}}">{{action.name}}</a>
+							</div>
+							{% endfor %}
+						</div>
+						<div id="commitments" class="sgg-action-selections tab-pane">
+							{% for action in view_objects.smartgrid_design.commitments %}
+							<div data-slug="{{action.slug}}" data-type="{{action.type}}" data-pk="{{action.pk}}"
+								class="sgg-action sgg-library-action sgg-commitment library-draggable {% if action.slug in view_objects.smartgrid_design.smart_grid_actions %}hidden{% endif %}">
+								<a href="/challenge_setting_admin/smartgrid_library/library{{action.type}}/{{action.pk}}/"
+									class="sgg-action" ref="tooltip" title="{{action.title}}">{{action.name}}</a>
+							</div>
+							{% endfor %}
+						</div>
+						<div id="events" class="sgg-action-selections tab-pane">
+							{% for action in view_objects.smartgrid_design.events %}
+							<div data-slug="{{action.slug}}" data-type="{{action.type}}" data-pk="{{action.pk}}"
+								class="sgg-action sgg-library-action sgg-event library-draggable {% if action.slug in view_objects.smartgrid_design.smart_grid_actions %}hidden{% endif %}">
+								<a href="/challenge_setting_admin/smartgrid_library/library{{action.type}}/{{action.pk}}/"
+									class="sgg-action" ref="tooltip" title="{{action.title}}">{{action.name}}</a>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="designer-sidebar designer-right">
+				<a class="widget-help" href="#" >
+		        	<img src="{{ STATIC_URL}}images/icons/icon-help-sm.png" width="20" align="center"
+    			         title="Click to get help about this window"
+           	   			 onclick="toggleHelp(event, 'widget', 'smart-grid-action-palette'); return false;"/>
+               	</a>
+				<div class="tabbable">
+					<legend>Action Palette</legend>
+					<div class="sgg-right-palette palette-dropzone">
+							{% for action in view_objects.smartgrid_design.palette %}
+							<div data-slug="{{action.slug}}" class="sgg-action sgg-{{action.type}}-palette palette-draggable"
+           			   			 data-type="{{action.type}}" data-pk={{action.pk}} data-unlock="{{action.unlock_condition}}">
+           		   				<br/>
+           		   				<a href="/challenge_setting_admin/smartgrid_design/designer{{action.type}}/{{action.pk}}/"
+								   class="sgg-action" ref="tooltip" title="{{action.title}}">{{action.name}}</a><br/>
+							</div>								
+						{% endfor %}						
+					</div>			
+				</div>
+			</div>
+			<div class="designer-center">
+				<div class="sgg-column-title">
+					<a class="widget-help" href="#" >
+			        	<img src="{{ STATIC_URL}}images/icons/icon-help-sm.png" width="20" align="center"
+    				         title="Click to get help about this window"
+           		   			 onclick="toggleHelp(event, 'widget', 'smart-grid-library-columns'); return false;"/>
+               		</a>
+					<h5>Column Names:</h5>
+				</div>
+				<div class="content-box-contents">
+					<a href="/challenge_admin/smartgrid_library/librarycolumnname/"
+						rel="tooltip" title="Switch to column name editing page.">
+						<div class="btn btn-widget">Edit Column Names</div></a>
+				</div>
+				<div class="ssg-column-selections">
+					<div class="sgg-column-wrapper">
+					{% for column in view_objects.smartgrid_design.columns %}
+					<div class="sgg-library-column library-draggable {% if column.slug in view_objects.smartgrid_design.smart_grid_categories %}hidden{% endif %}"
+						 data-pk="{{column.pk}}" data-slug="{{column.slug}}">
+						<a class="sgg-column-link" href="/challenge_setting_admin/smartgrid_library/librarycolumnname/{{column.pk}}/">{{column}}</a>
+					</div>
+					{% endfor %}
+					</div>
+				</div>
+				<div class="left">
+					<form id="revert-form" action="{% url revert_to_grid %}" method="post">
+   		    	  		{% csrf_token %} {{ view_objects.smartgrid_design.reset_form.as_p }}
+       		  			<input class="btn btn-widget" rel="tooltip" 
+							title="Deletes all changes made in the designer and loads the current Smart Grid Game." 
+							type="submit" value="Revert to current Smart Grid Game" /> 
+		        	</form> 
+		        </div>
+				<div class="right">
+					<form id="publish-form" action="{% url publish_to_grid %}" method="post">
+   	    		  		{% csrf_token %} Use Fillers: {{ view_objects.smartgrid_design.publish_form.use_filler }}
+       	  				<input id="designer-publish" class="btn btn-widget" rel="tooltip" 
+							title="Publish changes made in the designer to the Smart Grid Game."
+							type="submit" value="Publish changes to Smart Grid Game" /> 
+			        </form> 			
+		        </div>	
+				<div id="designer_levels" class="tabbable tabs-left">
+					<!-- Tabs for the levels -->
+					<ul id="sgg-levels-tab" class="nav nav-tabs">
+					{% for level in view_objects.smartgrid_design.levels %}
+						<div id="level-tab-menu-{{forloop.counter}}" class="sgg-level-popup-menu">
+							<ul>
+								<li><a href="#" class="sgg-action" onclick="addLevelDialog();return false;">Add new level</a>
+								<li><a href="#" class="sgg-action" onclick="deleteLevelDialog(event, '{{level.name}}', '{{level.slug}}');return false;">Delete {{level}}</a>
+							</ul>
+						</div> 
+						{% if forloop.counter == 1 %}
+						<li id="level-tab-{{forloop.counter}}" class="active">
+						{% else %}
+						<li id="level-tab-{{forloop.counter}}" class="">					
+						{% endif %}
+							<a class="level-unlocked" data-toggle="tab" style="padding-right: 6px; padding-left: 6px;" 
+							   title="{{ level.name }} Actions"
+							   href="#sgg-level-{{forloop.counter}}" rel="tooltip" >
+							   {{ level.name }}
+							</a></li>
+					{% endfor %}
+					</ul>
+<script type="text/javascript">
+{% for level in view_objects.smartgrid_design.levels %}
+$("#level-tab-{{forloop.counter}}").bind("contextmenu", function(e) {
+    $('#level-tab-menu-{{forloop.counter}}').css({
+        top: e.pageY+'px',
+        left: e.pageX+'px'
+    }).show();
+    return false;
+});
+$("#level-tab-menu-{{forloop.counter}}").click(function() {
+    $(this).hide();
+});
+$(document).click(function() {
+    $("#level-tab-menu-{{forloop.counter}}").hide();
+});
+{% endfor %}
+</script>
+	    	    	<!-- Tab contents -->
+        			<div id="sgg-grid" class="tab-content">
+        			{% for level in view_objects.smartgrid_design.designer_grid %}
+    	    			{% with lvl=level|nth:0 %}
+    	    			{% with cat_list=level|nth:1 %}
+    	    			{% with act_list=level|nth:2 %}
+    	    			{% with columns=level|nth:3 %}
+            			<div id="sgg-level-{{forloop.counter}}" 
+	           			{% if forloop.counter == 1 %}
+							  class="tab-pane active"
+        	    		{% else %}
+            				  class="tab-pane"
+						{% endif %}            		
+							  data-level="{{lvl.name}}"
+							  data-levelslug="{{lvl.slug}}">
+						{% include "sgg_grid.html" %}
+						</div>
+        				{% endwith %}
+        				{% endwith %}
+        				{% endwith %}
+        				{% endwith %}
+					{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="span3">
+				<div class="content-box">
+					<div class="content-box-title">Differences between Designer and Grid:
+						<a class="widget-help" href="#">
+				   			<img src="{{ STATIC_URL}}images/icons/icon-help-sm.png" width="20" align="center"
+        						 title="Click to get help about this window"
+                				 onclick="toggleHelp(event, 'widget', 'smart-grid-designer-diff'); return false;"/>
+                		</a>
+					</div>
+					<div class="content-box-contents">
+						<p></p>
+						<a href="#" onclick="getDesignerDiff();return false;">
+							<div class="btn btn-widget" rel="tooltip" 
+								title="Loads the difference between the Designer Grid and the Smart Grid.">Run Designer Diff</div>
+						</a>
+						<div class="sgg-differences"></div>
+					</div>
+				</div>
+			</div>		
+			<div class="span6">
+				<div class="content-box">
+					<div class="content-box-title">Unlock Condition Checker:
+						<a class="widget-help" href="#">
+				   			<img src="{{ STATIC_URL}}images/icons/icon-help-sm.png" width="20" align="center"
+        						 title="Click to get help about this window"
+                				 onclick="toggleHelp(event, 'widget', 'smart-grid-unlock-check'); return false;"/>
+                		</a>					
+					</div>
+					<div class="content-box-contents">
+						<p></p>
+						<a href="#" onclick="runDesignerLint();return false;">
+							<div class="btn btn-widget" rel="tooltip" 
+								title="Runs unlock condition checker on the Designer Grid Actions.">Run Unlock Condition Checker</div>
+						</a>
+						<div id="designer-lint"></div>
+					</div>
+				</div>
+			</div>
+			<div class="span3">
+				<div class="content-box">
+					<div class="content-box-title">Load Example Grids:
+						<a class="widget-help" href="#">
+				   			<img src="{{ STATIC_URL}}images/icons/icon-help-sm.png" width="20" align="center"
+        						 title="Click to get help about this window"
+                				 onclick="toggleHelp(event, 'widget', 'smart-grid-load-example'); return false;"/>
+                		</a>					
+					</div>
+					<div class="content-box-contents">
+						Choose an example grid from the choices below.
+		        		<form id="example-grid-form" action="{% url load_example_grid %}" method="post">
+	    	    			{% csrf_token %} {{ view_objects.smartgrid_design.example_grid_form.as_p }}
+          					<input class="btn btn-widget" rel="tooltip" 
+								title="Load example grid into the designer."
+								type="submit" value="Load Example Grid" /> 		        	
+	    	    		</form>
+	        		</div>
+	        	</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal hide fade" id="levelAddModal">
+    <div class="modal-header">
+        <a class="close" data-dismiss="modal">x</a>
+        <h3>Add Level</h3>
+    </div>
+    <div class="modal-body" id="modal-body">
+        <p>
+        	<form id="addLevelForm" action="{% url add_designer_level %}" method="post">
+				{% csrf_token %} {{ view_objects.smartgrid_design.add_level_form.as_p }}
+				<input class="btn btn-widget" rel="tooltip" title="Create a new DesignerLevel with the given name."
+					type="submit" value="Add Level" />
+			</form>
+        </p>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn btn-widget" data-dismiss="modal">Close</a>
+    </div>
+</div>
+<div class="modal hide fade" id="levelDeleteModal">
+    <div class="modal-header">
+        <a class="close" data-dismiss="modal">x</a>
+        <h3>Delete Level</h3>
+    </div>
+    <div class="modal-body" id="modal-body">
+        <p><div id="levelName"></div>
+   			<form id='delete-level-form' action="{% url delete_designer_level %}" method="post">
+				{% csrf_token %} {{view_objects.smartgrid_design.delete_level_form.as_p }}
+				<input class="btn btn-widget" rel="tooltip" title="Delete this level moving all actions to the palette."
+					type="submit" value="Yes" />
+		        <a href="#" class="btn btn-widget" data-dismiss="modal">No</a>
+			</form>        
+        </p>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn btn-widget" data-dismiss="modal">Cancel</a>
+    </div>
+</div>
+
+<div class="modal hide fade" id="eventDateChooser">
+    <div class="modal-header">
+        <a class="close" data-dismiss="modal">x</a>
+        <h3>Choose Event Date</h3>
+    </div>
+    <div class="modal-body" id="modal-body">	
+    	<div id="eventName"></div>
+    	<form id='set-event-date-form' action="{% url set_designer_event_date %}" method="post">
+    		{% csrf_token %}{{view_objects.smartgrid_design.event_date_form.as_p}}
+			<input class="btn btn-widget" rel="tooltip" title="Set the event's date."
+					type="submit" value="Set Date" />
+		        <a href="#" class="btn btn-widget" data-dismiss="modal">Cancel</a>
+    	</form>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn btn-widget" data-dismiss="modal">Cancel</a>
+    </div>
+</div>
+
+<script type="text/javascript">
+	$(init);
+
+	var numFiller = {{view_objects.smartgrid_design.fillers|length}};
+		
+	// See sggDesigner.js for most of the functionality.
+	function init() {
+		$('.draggable').draggable({
+			cursor : 'move',
+			helper : 'clone'
+		})
+		$('.column-draggable').draggable({
+			cursor: 'move',
+			start: handleColumnStartDrag,
+			helper: 'clone',
+			revert: function(dropObj) {
+				if (dropObj == false) {
+					$(this).removeClass('hidden');
+					return true;
+				} else {
+					return false;
+				}
+			},
+		});
+		$('.grid-draggable').draggable({
+			cursor : 'move',
+			start: handleGridStartDrag,
+			helper : 'clone',
+			revert : function(dropObj) {
+				// console.log("revert for grid draggable");
+				// if false then no drop object
+				if (dropObj == false) {
+					// revert the grid-draggable
+					$(this).removeClass('hidden');
+					return true;
+				} else {
+					var type = $(dropObj).attr('class');
+					var first = type.split(" ")[0];
+					if (first == 'sgg-palette') {
+						handlePaletteDrop($(this));
+					} else if (first == 'sgg-right-palette') {
+						handlePaletteDrop($(this));
+					}
+					return false;
+				}
+			},
+		});
+		$('.library-draggable').draggable({
+			cursor : 'move',
+			start : handleLibraryStartDrag,
+			helper : 'clone',
+			revert : function(dropObj) {
+				if (dropObj == false) {
+					// unhide the library action
+					$(this).removeClass('hidden');					
+					return true;
+				} else {
+					return false;
+				}				
+			},
+		})
+		$('.palette-draggable').draggable({
+			cursor : 'move',
+			start: handlePaletteStartDrag,
+			helper : 'clone', // should be clone, but then the drop in the grid isn't working
+		})
+		$('.sgg-column-slot').droppable({
+			accept : '.sgg-library-column',
+			drop : handleColumnDrop
+		});
+		$('.sgg-action-slot').droppable({
+			accept : '.sgg-action',
+			drop : handleActionDrop
+		});
+		$('.palette-dropzone').droppable({
+			accept : '.sgg-action',
+		})
+		$('.trash-dropzone').droppable({
+		})
+	}
+	
+	function addLevelDialog(event) {
+        var modalElement = $('#levelAddModal');
+        
+        modalElement.modal({
+            backdrop: true,
+            keyboard: true,
+            show: false
+        }); 
+        modalElement.css('margin-top', (modalElement.outerHeight() / 2) * -1);
+        modalElement.modal('show');		
+	}
+
+	function deleteLevelDialog(event, levelName, levelSlug) {
+		var modalElement = $('#levelDeleteModal');
+		var text = "Are you sure you want to delete " + levelName + "?";
+		modalElement.find('#levelName').html(text);
+		modalElement.find('input#id_level_slug').val(levelSlug);
+
+		modalElement.modal({
+            backdrop: true,
+            keyboard: true,
+            show: false
+        }); 
+        modalElement.css('margin-top', (modalElement.outerHeight() / 2) * -1);
+        modalElement.modal('show');		
+	}
+	
+	  $(function() {
+		  $('#id_event_date').datetimepicker({ dateFormat: 'yy-mm-dd', timeFormat: 'hh:mm:ss' });
+	  });
+
+</script>

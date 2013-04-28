@@ -1,0 +1,40 @@
+
+
+<div id="avatar-fb-form" style="display: none">
+  <h4 style="margin-top: 0px">Use your picture from Facebook:</h4>
+  <form action="{% url avatar_upload_fb %}" method="POST">
+      {% csrf_token %}
+      <img src=""/>
+      {{ fb_form.facebook_photo }}
+      <button class="btn" type="submit">Use Facebook Photo</button>
+  </form>
+</div>
+<div id="avatar-fb-login">
+  <p id="avatar-fb-error" style='margin-top: 0'>
+      Or, to use your Facebook picture,<br/>
+      click here to log in:
+  </p>
+  <fb:login-button style="display: block"
+                   id="fb_login" length="long">
+  </fb:login-button>
+</div>
+
+<script>
+    // listen for and handle auth.statusChange events
+    FB.Event.subscribe('auth.statusChange', function(response) {
+        if (response.authResponse) {
+            // user has auth'd your app and is logged into Facebook
+            FB.api('/me', function(me){
+                if (me.id) {
+                    var pictureUrl = "http://graph.facebook.com/" + me.id + "/picture";
+                    $("#avatar-fb-form img").attr("src", pictureUrl);
+                    $("#id_facebook_photo").attr("value", pictureUrl);
+                }
+            });
+
+            $("#avatar-fb-form").fadeIn();
+            $("#avatar-fb-login").fadeOut();
+        }
+    });
+
+</script>

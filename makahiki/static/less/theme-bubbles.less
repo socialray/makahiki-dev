@@ -1,0 +1,153 @@
+/*
+ * One of the Makahiki2 styles. Based upon the Eldon theme.
+ * 
+ * Copyright 2012 CSDL.
+ * 
+ * Uses Twitter Bootstrap v2.
+ */
+ 
+// makahiki base style
+@import "makahiki.less";
+
+// Bootstrap color palette
+@black:                 #000;
+@grayDarker:            #222;
+@grayDark:              #333;
+@gray:                  #555;
+@grayLight:             #999;
+@grayLighter:           #eee;
+@white:                 #fff;
+@blue:                  #049cdb;
+@blueDark:              #0064cd;
+@green:                 #46a546;
+@red:                   #9d261d;
+@yellow:                #ffc40d;
+@orange:                #f89406;
+@pink:                  #c3325f;
+@purple:                #7a43b6;
+
+// Bubbles theme palette
+@bubbles-steelBlue:      #2B93AD;
+@bubbles-lightSteelBlue: #C1D8EB;
+@bubbles-darkerSteelBlue:#A2C0D2;
+@bubbles-lightPaleBlue:  #E0FFFF;
+@bubbles-skyBlue:        #4F95CD;
+@bubbles-brightBlue:     #0066FF;
+@bubbles-lighterBrightBlue: #2D76FE;
+@bubbles-veryDarkBlueBlack: #24333B;
+@bubbles-lightGrayBlue:  #b6d7ee;
+@bubbles-darkGreen:      #468250;
+@bubbles-lightCyan:      #E3F9F8;
+@bubbles-blueCyan:       #00CCFF;
+
+// Theme stylable elements
+// every page
+@use-bkg-image: true;
+@page-bkg-color-start: @bubbles-steelBlue; 
+@page-bkg-color-end: @bubbles-steelBlue; 
+@page-bkg-image: "../images/bubbles.jpg";
+@page-font-color: @black;
+@page-link-color: @blueDark;
+
+// Questbar
+@questbar-bkg-color-start: @bubbles-darkGreen;
+@questbar-bkg-color-end: @bubbles-darkGreen;
+@questbar-font-color: @black;
+@questbar-transparency: 55%;
+
+// Navbar
+@navbar-bkg-color-start: @bubbles-brightBlue;
+@navbar-bkg-color-end: @white;
+@navbar-font-color: @white;
+@navbar-curr-page-bkg-color: @navbar-bkg-color-end;
+@navbar-curr-path-font-color: @black;
+@navbar-transparency: 20%;
+
+// Infobar
+@infobar-bkg-color-start: @bubbles-lightPaleBlue;
+@infobar-bkg-color-end: @bubbles-skyBlue;
+@infobar-font-color: @black;
+@infobar-feedback-button-bkg-color-start: darken(@bubbles-darkerSteelBlue, 20%); 
+@infobar-feedback-button-bkg-color-end: lighten(@bubbles-darkerSteelBlue, 10%); 
+@infobar-feedback-button-font-color: @black;
+@infobar-transparency: 55%;
+
+// Notifications
+@notification-bkg-color-start: @bubbles-lightGrayBlue;
+@notification-bkg-color-end: @bubbles-lightGrayBlue;
+@notification-font-color: @black;
+@notification-transparency: 45%;
+
+// Modal dialog box
+@modal-title-bkg-color-start: @yellow;
+@modal-title-bkg-color-end: @orange;
+@modal-title-font-color: @blue;
+@modal-body-bkg-color: @green;
+@modal-body-font-color: @white;
+
+// Page infobox
+@pageinfobox-bkg-color-start: @white;
+@pageinfobox-bkg-color-end: @white;
+@pageinfobox-font-color: @black;
+@pageinfobox-header-font-color: @black;
+@pageinfobox-transparency: 20%;
+
+// Widgets
+@widget-title-bkg-color-start: @bubbles-skyBlue;
+@widget-title-bkg-color-end: darken(@bubbles-skyBlue, 25%);
+@widget-title-font-color: @black;
+@widget-title-transparency: 0%;
+@widget-body-bkg-color: @bubbles-lightSteelBlue; 
+@widget-body-font-color: @black;
+@widget-body-transparency: 0%;
+@widget-button-bkg-color-start: darken(@widget-body-bkg-color, 50%);
+@widget-button-bkg-color-end: darken(@widget-body-bkg-color, 20%);
+@widget-button-font-color: @widget-body-bkg-color; 
+@widget-table-row-color-1: @widget-body-bkg-color;
+@widget-table-row-color-2: lighten(@widget-body-bkg-color, 40%);
+@widget-subtitle-bkg-color: @bubbles-darkerSteelBlue;
+@widget-subtitle-font-color: @black;
+@widget-text-area-bkg-color: @white;
+@widget-text-area-font-color: @grayDarker;
+
+// Smart grid game
+@sgg-header-bkg-color: @bubbles-skyBlue;
+@sgg-header-font-color: @black; 
+@sgg-entry-font-color: @black;
+@sgg-activity-cell-bkg-color: @bubbles-brightBlue;
+@sgg-commitment-cell-bkg-color: @bubbles-lighterBrightBlue;  
+@sgg-event-cell-bkg-color: @bubbles-blueCyan;   
+@sgg-excursion-cell-bkg-color: @white;
+@sgg-filler-cell-bkg-color: @blueDark;
+
+// Prizes
+@prizes-raffle-table-entry-color: @bubbles-steelBlue;
+@prizes-raffle-ticket-font-color: @white;
+
+// My Info
+@myinfo-textarea-highlight-color: darken(@widget-body-bkg-color, 20%);
+
+// Badges
+@badge-theme-1-bkg-color-start: @bubbles-skyBlue;
+@badge-theme-1-bkg-color-end: @bubbles-skyBlue;
+@badge-theme-1-text-color: @white;
+
+@badge-theme-2-bkg-color-start: @bubbles-lightGrayBlue;
+@badge-theme-2-bkg-color-end: @bubbles-steelBlue;
+@badge-theme-2-text-color: @white;
+
+@badge-theme-3-bkg-color-start: @bubbles-lightPaleBlue;
+@badge-theme-3-bkg-color-end: @bubbles-lighterBrightBlue;
+@badge-theme-3-text-color: @white;
+
+@badge-theme-4-bkg-color-start: @bubbles-lightCyan;
+@badge-theme-4-bkg-color-end: @bubbles-blueCyan;
+@badge-theme-4-text-color: @bubbles-darkGreen;
+
+@badge-theme-5-bkg-color-start: @bubbles-lightSteelBlue;
+@badge-theme-5-bkg-color-end: @bubbles-darkGreen;
+@badge-theme-5-text-color: @white;
+
+@badge-theme-summary-bkg-color-start: @bubbles-blueCyan;
+@badge-theme-summary-bkg-color-end: @bubbles-skyBlue;
+@badge-theme-summary-text-color: @bubbles-veryDarkBlueBlack;

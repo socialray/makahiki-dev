@@ -1,0 +1,754 @@
+[
+    {
+        "pk": 1,
+        "model": "challenge_mgr.pageinfo",
+        "fields": {
+            "name": "home",
+            "title": "Home",
+            "introduction": "Home page",
+            "label": "Home",
+            "priority": 1,
+            "url": "/home",
+            "unlock_condition": "True"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "challenge_mgr.pageinfo",
+        "fields": {
+            "name": "learn",
+            "title": "Get Nutz",
+            "introduction": "* Play the Game\r\n* Earn Kukuicup points\r\n* See where you stand",
+            "label": "Get Nutz",
+            "priority": 2,
+            "url": "/learn",
+            "unlock_condition": "True"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "challenge_mgr.pageinfo",
+        "fields": {
+            "name": "energy",
+            "title": "Go Low",
+            "introduction": "* Observe Energy use\r\n* Track Energy goals\r\n* Compare usage to others",
+            "label": "Go Low",
+            "priority": 3,
+            "url": "/energy",
+            "unlock_condition": "game_enabled('Energy Game')"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "challenge_mgr.pageinfo",
+        "fields": {
+            "name": "water",
+            "title": "Drop Down",
+            "introduction": "* Observe Water use\r\n* Track Water goals\r\n* Compare usage to others",
+            "label": "Drop Down",
+            "priority": 4,
+            "url": "/water",
+            "unlock_condition": "game_enabled('Water Game')"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "challenge_mgr.pageinfo",
+        "fields": {
+            "name": "news",
+            "title": "News",
+            "introduction": "* What are people doing?\r\n* Your public comments\r\n* Top activities & events",
+            "label": "News",
+            "priority": 6,
+            "url": "/news",
+            "unlock_condition": "True"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "challenge_mgr.pageinfo",
+        "fields": {
+            "name": "win",
+            "title": "Prizes",
+            "introduction": "* See the prizes\r\n* Allocate your points\r\n* Monitor your chances",
+            "label": "Prizes",
+            "priority": 7,
+            "url": "/win",
+            "unlock_condition": "True"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "challenge_mgr.pageinfo",
+        "fields": {
+            "name": "profile",
+            "title": "Profile",
+            "introduction": "* Manage your Settings\r\n* Connect to facebook\r\n* Change your picture",
+            "label": "Profile",
+            "priority": 8,
+            "url": "/profile",
+            "unlock_condition": "True"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "challenge_mgr.pageinfo",
+        "fields": {
+            "name": "help",
+            "title": "Help",
+            "introduction": "* Watch intro video\r\n* Learn the rules\r\n* Ask an admin",
+            "label": "Help",
+            "priority": 9,
+            "url": "/help",
+            "unlock_condition": "True"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "challenge_mgr.pageinfo",
+        "fields": {
+            "name": "status",
+            "title": "Status",
+            "introduction": "* Mission Control\r\n* Status\r\n* Analytics",
+            "label": "Status",
+            "priority": 10,
+            "url": "/status",
+            "unlock_condition": "is_admin()"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "challenge_mgr.pageinfo",
+        "fields": {
+            "name": "admin",
+            "title": "Settings",
+            "introduction": "* Admin\r\n* Settings\r\n* Logs",
+            "label": "Settings",
+            "priority": 11,
+            "url": "/admin",
+            "unlock_condition": "is_admin()"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "challenge_mgr.pageinfo",
+        "fields": {
+            "name": "sgg_designer",
+            "title": "Smart Grid Game Designer",
+            "introduction": "",
+            "label": "sgg conf",
+            "priority": 100,
+            "url": "/sgg_designer",
+            "unlock_condition": "is_admin()"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "widget": "home",
+            "enabled": true,
+            "page": 1
+        }
+    },
+    {
+        "pk": 20,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "widget": "smartgrid",
+            "location": "Left",
+            "priority": 1,
+            "enabled": true,
+            "page": 2
+        }
+    },
+    {
+        "pk": 21,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "widget": "upcoming_events",
+            "location": "Left",
+            "priority": 2,
+            "enabled": true,
+            "page": 2
+        }
+    },
+    {
+        "pk": 22,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "widget": "participation",
+            "location": "Right",
+            "priority": 2,
+            "enabled": true,
+            "page": 2
+        }
+    },
+    {
+        "pk": 23,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "widget": "scoreboard",
+            "location": "Right",
+            "priority": 1,
+            "enabled": true,
+            "page": 2
+        }
+    },
+    {
+        "pk": 30,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "widget": "resource_goal.energy",
+            "location": "Left",
+            "priority": 1,
+            "enabled": true,
+            "page": 3
+        }
+    },
+    {
+        "pk": 31,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "widget": "energy_power_meter",
+            "location": "Right",
+            "priority": 1,
+            "enabled": true,
+            "page": 3
+        }
+    },
+    {
+        "pk": 32,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "widget": "resource_scoreboard.energy",
+            "location": "Right",
+            "priority": 2,
+            "enabled": true,
+            "page": 3
+        }
+    },
+    {
+        "pk": 33,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "widget": "wallpost.user_wallpost",
+            "location": "Left",
+            "priority": 2,
+            "enabled": true,
+            "page": 3
+        }
+    },
+    {
+        "pk": 40,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "widget": "wallpost.user_wallpost",
+            "location": "Left",
+            "priority": 2,
+            "enabled": true,
+            "page": 4
+        }
+    },
+    {
+        "pk": 41,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "widget": "resource_scoreboard.water",
+            "location": "Right",
+            "priority": 1,
+            "enabled": true,
+            "page": 4
+        }
+    },
+    {
+        "pk": 42,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "widget": "resource_goal.water",
+            "location": "Left",
+            "priority": 1,
+            "enabled": true,
+            "page": 4
+        }
+    },
+    {
+        "pk": 60,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "widget": "wallpost.system_wallpost",
+            "location": "Left",
+            "priority": 2,
+            "enabled": true,
+            "page": 6
+        }
+    },
+    {
+        "pk": 61,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "widget": "upcoming_events",
+            "location": "Right",
+            "priority": 1,
+            "enabled": true,
+            "page": 6
+        }
+    },
+    {
+        "pk": 62,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "widget": "my_commitments",
+            "location": "Right",
+            "priority": 3,
+            "enabled": true,
+            "page": 6
+        }
+    },
+    {
+        "pk": 63,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "widget": "popular_tasks",
+            "location": "Right",
+            "priority": 2,
+            "enabled": true,
+            "page": 6
+        }
+    },
+    {
+        "pk": 64,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "widget": "team_members",
+            "location": "Left",
+            "priority": 1,
+            "enabled": true,
+            "page": 6
+        }
+    },
+    {
+        "pk": 70,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "widget": "prizes",
+            "location": "Left",
+            "priority": 1,
+            "enabled": true,
+            "page": 7
+        }
+    },
+    {
+        "pk": 71,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "widget": "raffle",
+            "location": "Right",
+            "priority": 1,
+            "enabled": true,
+            "page": 7
+        }
+    },
+    {
+        "pk": 80,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "widget": "badges",
+            "location": "Right",
+            "priority": 1,
+            "enabled": true,
+            "page": 8
+        }
+    },
+    {
+        "pk": 81,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "widget": "my_achievements",
+            "location": "Right",
+            "priority": 3,
+            "enabled": true,
+            "page": 8
+        }
+    },
+    {
+        "pk": 82,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "widget": "my_commitments",
+            "location": "Right",
+            "priority": 2,
+            "enabled": true,
+            "page": 8
+        }
+    },
+    {
+        "pk": 83,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "widget": "my_info",
+            "location": "Left",
+            "priority": 1,
+            "enabled": true,
+            "page": 8
+        }
+    },
+    {
+        "pk": 90,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "widget": "ask_admin",
+            "location": "Right",
+            "priority": 2,
+            "enabled": true,
+            "page": 9
+        }
+    },
+    {
+        "pk": 91,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "widget": "help.faq",
+            "location": "Left",
+            "priority": 2,
+            "enabled": true,
+            "page": 9
+        }
+    },
+    {
+        "pk": 92,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "widget": "help.intro",
+            "location": "Left",
+            "priority": 1,
+            "enabled": true,
+            "page": 9
+        }
+    },
+    {
+        "pk": 93,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "widget": "help.rule",
+            "location": "Right",
+            "priority": 1,
+            "enabled": true,
+            "page": 9
+        }
+    },
+    {
+        "pk": 100,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "widget": "action_feedback",
+            "enabled": true,
+            "page": 10
+        }
+    },
+    {
+        "pk": 101,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "widget": "logging",
+            "enabled": true,
+            "page": 10
+        }
+    },
+    {
+        "pk": 102,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "widget": "resource_scoreboard.energy",
+            "enabled": true,
+            "page": 10
+        }
+    },
+    {
+        "pk": 103,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "widget": "resource_scoreboard.water",
+            "enabled": true,
+            "page": 10
+        }
+    },
+    {
+        "pk": 104,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "widget": "scoreboard",
+            "enabled": true,
+            "page": 10
+        }
+    },
+    {
+        "pk": 105,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "widget": "status.actions",
+            "enabled": true,
+            "page": 10
+        }
+    },
+    {
+        "pk": 106,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "widget": "status.referrals",
+            "enabled": true,
+            "page": 10
+        }
+    },
+    {
+        "pk": 107,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "widget": "status.prizes",
+            "enabled": true,
+            "page": 10
+        }
+    },
+    {
+        "pk": 108,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "widget": "status.rsvps",
+            "enabled": true,
+            "page": 10
+        }
+    },
+    {
+        "pk": 109,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "widget": "status.users",
+            "enabled": true,
+            "page": 10
+        }
+    },
+    {
+        "pk": 110,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "widget": "status.wattdepot",
+            "enabled": true,
+            "page": 10
+        }
+    },    
+    {
+        "pk": 111,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "widget": "status.badges",
+            "enabled": true,
+            "page": 10
+        }
+    },
+    {
+        "pk": 112,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "widget": "status.DEGG",
+            "enabled": true,
+            "page": 10
+        }
+    },
+    {
+        "pk": 113,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "widget": "status.DWGG",
+            "enabled": true,
+            "page": 10
+        }
+    },
+    {
+        "pk": 114,
+        "model": "challenge_mgr.pagesetting",
+        "fields": {
+            "priority": 1,
+            "widget": "smartgrid_design",
+            "enabled": true,
+            "page": 12,
+            "location": "Left"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "challenge_mgr.gameinfo",
+        "fields": {
+            "priority": 1,
+            "enabled": true,
+            "name": "Energy Game"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "challenge_mgr.gameinfo",
+        "fields": {
+            "priority": 2,
+            "enabled": true,
+            "name": "Water Game"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "challenge_mgr.gameinfo",
+        "fields": {
+            "priority": 3,
+            "enabled": true,
+            "name": "Smart Grid Game"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "challenge_mgr.gameinfo",
+        "fields": {
+            "priority": 4,
+            "enabled": true,
+            "name": "Top Score Game"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "challenge_mgr.gameinfo",
+        "fields": {
+            "priority": 5,
+            "enabled": true,
+            "name": "Raffle Game"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "challenge_mgr.gameinfo",
+        "fields": {
+            "priority": 6,
+            "enabled": true,
+            "name": "Participation Game"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "challenge_mgr.gameinfo",
+        "fields": {
+            "priority": 7,
+            "enabled": true,
+            "name": "Quest Game Mechanics"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "challenge_mgr.gameinfo",
+        "fields": {
+            "priority": 8,
+            "enabled": true,
+            "name": "Badge Game Mechanics"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "challenge_mgr.gameinfo",
+        "fields": {
+            "priority": 9,
+            "enabled": true,
+            "name": "Referral Game Mechanics"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "challenge_mgr.gamesetting",
+        "fields": {
+            "game": 1,
+            "widget": "energy_power_meter"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "challenge_mgr.gamesetting",
+        "fields": {
+            "game": 1,
+            "widget": "resource_goal.energy"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "challenge_mgr.gamesetting",
+        "fields": {
+            "game": 1,
+            "widget": "resource_scoreboard.energy"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "challenge_mgr.gamesetting",
+        "fields": {
+            "game": 2,
+            "widget": "resource_goal.water"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "challenge_mgr.gamesetting",
+        "fields": {
+            "game": 2,
+            "widget": "resource_scoreboard.water"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "challenge_mgr.gamesetting",
+        "fields": {
+            "game": 3,
+            "widget": "smartgrid"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "challenge_mgr.gamesetting",
+        "fields": {
+            "game": 3,
+            "widget": "upcoming_events"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "challenge_mgr.gamesetting",
+        "fields": {
+            "game": 4,
+            "widget": "prizes"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "challenge_mgr.gamesetting",
+        "fields": {
+            "game": 5,
+            "widget": "raffle"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "challenge_mgr.gamesetting",
+        "fields": {
+            "game": 7,
+            "widget": "quests"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "challenge_mgr.gamesetting",
+        "fields": {
+            "game": 8,
+            "widget": "badges"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "challenge_mgr.gamesetting",
+        "fields": {
+            "game": 6,
+            "widget": "participation"
+        }
+    }
+]

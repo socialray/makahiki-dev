@@ -1,0 +1,30 @@
+{% load markup %}
+<div id="task-feedback">
+<br/>
+<form action="{% url add_activity_feedback action.type action.slug %}" method="post">
+<div style="text-align:left; margin-left:10px;">
+{% if not feedback_p %}
+You can also provide feedback and get more points:
+{% else %}
+Your current feedback. Please update if desired
+{% endif %}
+    {% csrf_token %}
+    <table class="">
+        <tr>
+            <td>Loved it</td>
+            <td><input id="radScoreStart" type="radio" name="Score" value="5" {% if feedback_p and feedback_p.rating == 5 %} checked {% endif %}/> 5</label></td>
+            <td><input type="radio" name="Score" value="4" {% if feedback_p and feedback_p.rating == 4 %} checked {% endif %}/> 4</td>
+            <td><input type="radio" name="Score" value="3" {% if feedback_p and feedback_p.rating == 3 %} checked {% endif %}/> 3</td>
+            <td><input type="radio" name="Score" value="2" {% if feedback_p and feedback_p.rating == 2 %} checked {% endif %}/> 2</td>
+            <td><input id="radScoreEnd" type="radio" name="Score" value="1" {% if feedback_p and feedback_p.rating == 1 %} checked {% endif %}/> 1</td>
+            <td>Hated it</td>
+        </tr>
+    </table>
+    Any comments?<br/>
+    <div class="controls">
+        <textarea rows="1" name="comments">{% if feedback_p %} {{ feedback_p.comment }} {% endif %}</textarea>
+        <input id="feedback-submit-button" type="submit" value="Submit" class="btn btn-widget"/>
+    </div>
+</div>
+</form>
+</div>

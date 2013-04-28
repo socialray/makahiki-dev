@@ -1,0 +1,42 @@
+{% load avatar_tags %}
+
+<!--Badge Image-->
+
+    {% if badge in awarded_badges %}
+    <td>
+        <div class="badge-theme-{{badge.theme}}">
+            <p>
+                {{ badge.label }}
+           </p>    
+        </div>
+    </td>
+    <td  class="badge-name">
+       {{ badge.name }}
+    </td>
+    {% else %}
+    <td>
+        <div class="badge-image">
+                <center><img class="locked-img" src="{{ STATIC_URL}}images/lock24.png"/></center>
+        </div>    
+    </td>
+    <td  class="badge-name">
+        {{ badge.name }}
+    </td>
+    {% endif %}
+
+     
+</td>
+
+<!--Badge Description-->
+<td>
+    {% if badge in awarded_badges %}
+        {{ badge.description }}
+    {% else %}
+        Hint: {{ badge.hint }}
+    {% endif %}
+</td>
+
+<td> 
+        {{ badge.points }}  
+</td>
+

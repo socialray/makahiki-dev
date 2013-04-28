@@ -1,0 +1,45 @@
+{% load cache %}
+{% cache 1800 my_achievements request.user %}
+<div class="content-box">
+<div class="content-box-title">
+  My Achievements
+  <a href="#" style="float: right">
+      <img src="{{ STATIC_URL}}images/icons/icon-help-sm.png" width="20"
+           align="center"
+           title="Click to get help about this window"
+           onclick="toggleHelp(event, 'widget', 'my-achievements'); return false;"/>
+  </a>
+</div> 
+  <!--Current & Pending-->
+  <h4 class="content-box-subtitle">Current and Pending</h4>
+      <div class="content-box-contents">
+          {% if view_objects.my_achievements.in_progress_members %}
+              {% include "in_progress_members.html" %}
+          {% else %}
+              <p class="Empty-List">You have nothing in
+                  progress or pending.</p>
+          {% endif %}
+      </div>
+  <!--Previously Awarded-->
+  <h4 class="content-box-subtitle">Previously Awarded</h4>
+  <div class="content-box-contents">
+      {% if view_objects.my_achievements.points_logs %}
+          <table>
+              <tr >
+                  <th class="profile-history-previous-date-header achievement-date-column column-text">Date
+                  </th>
+                  <th class="profile-history-previous-task-header achievement-content-column column-text">Task
+                  </th>
+                  <th class="profile-history-previous-points-header column-text">
+                      Points
+                  </th>
+              </tr>
+              {% include "completed_members.html" %}
+          </table>
+      {% else %}
+          <p class="Empty-List">You have not been awarded
+              anything yet!</p>
+      {% endif %}  
+  </div>
+</div>
+{% endcache %}

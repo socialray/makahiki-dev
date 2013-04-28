@@ -1,0 +1,47 @@
+{% extends "task_base.html" %}
+
+{% block action_completed_info %}
+        {% if action.member.approval_status != "rejected" %}
+                    <b>Action Completion Status</b><br/>
+                    Thank you for submitting your response.
+                    An administrator is reviewing your response.
+                    Come back soon to see your new total points.
+        {% else %}
+                    <b>Action Completion Status</b><br/>
+                    Administrator feels that there is a problem with your
+                    submission.
+                    Please try again by pressing the '<b>I will try again</b>' button below.
+                    {% if action.member.admin_comment %}
+                        Here is the comment:
+                        <div class="ui-state-error">{{ action.member.admin_comment }}</div>
+                    {% endif %}
+        {% endif %}
+{% endblock %}
+
+
+{% block action_not_completed %}
+    <div id="go-button">
+        <b>
+            Once you are done, click the button below to get your points!
+        </b>
+        <p/>
+        <a onclick="task_form_overlay(event)">
+            <button style="cursor:pointer;" class="btn btn-widget">
+                I Did This!
+                <img src="{{ STATIC_URL}}images/right.png"
+                     width="25" align="center"></button>
+        </a>
+    </div>
+{% endblock %}
+
+{% block action_completed_button %}
+    {% if action.member.approval_status == "rejected" %}
+    <div id="go-button">
+        <a id="go-button" onclick="task_form_overlay(event)">
+            <button style="cursor:pointer;" class="btn btn-widget">I will try again
+                <img src="{{ STATIC_URL}}images/right.png" width="25" align="center">
+            </button>
+        </a>
+    </div>
+    {% endif %}
+{% endblock %}

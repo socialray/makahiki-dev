@@ -1,0 +1,1 @@
+"""Implements the raffle widget."""

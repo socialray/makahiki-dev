@@ -1,0 +1,1 @@
+"""Implements the prize widget."""

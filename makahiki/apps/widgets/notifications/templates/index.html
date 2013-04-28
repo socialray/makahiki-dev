@@ -1,0 +1,61 @@
+{% with DEFAULT_VIEW_OBJECTS.notifications as notifications %}
+
+{% if notifications %}
+    <script type="text/javascript">
+        FB.init({
+            appId      : '{{ MAKAHIKI_FACEBOOK_APP_ID }}',
+            status     : true, // check login status
+            cookie     : true, // enable cookies to allow the server to access the session
+            xfbml      : true  // parse XFBML
+        });
+
+            function fb_share(notification_id, text) {
+                log_js_action("notification", notification_id, "share");
+
+                var publish = {
+                    method: 'feed',
+                    name: 'Kukui Cup',
+                    link:'http://{{request.META.HTTP_HOST}}',
+                    picture: 'http://www.kukuicup.org/home/logo.png',
+                    description: text,
+                    display: 'popup'
+                };
+
+                FB.ui(publish, function(response) {
+                    if (response && response.post_id) {
+                        log_js_action("notification", notification_id, "shared");
+                    } else {
+                        log_js_action("notification", notification_id, "share-canceled");
+                    }
+                });
+            };
+    </script>
+
+    {% if notifications.unread %}
+    <div id="notification-unread" style="text-align: left;">
+        <span style="float: right;">
+           <i class="notification-read icon-remove"></i>
+        </span>
+        <ul class="notification-list">
+            {% for notification in notifications.unread %}
+                {% include "widgets/notifications/templates/notifications/list-item.html" %}
+            {% endfor %}
+        </ul>
+    </div>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $("#notification-unread .notification-read").click(function () {
+                $.post("{% url notifications_read 0 %}", function (data) {
+                    $("#notification-unread").hide();
+                });
+            });
+        });
+    </script>
+    {% endif %}
+
+    {% if notifications.alerts %}
+        {% include "widgets/notifications/templates/notifications/dialog.html" %}
+    {% endif %}
+
+{% endif %}
+{% endwith %}

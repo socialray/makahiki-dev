@@ -1,0 +1,1 @@
+"""Provides badges for players."""

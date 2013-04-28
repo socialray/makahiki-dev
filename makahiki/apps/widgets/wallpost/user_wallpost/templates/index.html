@@ -1,0 +1,86 @@
+{% with wallpost=view_objects.wallpost__user_wallpost %}
+<div class="content-box">
+    <div>
+        <div class="content-box-title">
+            {{ wallpost.user_title }}
+            <a href="#" style="float: right">
+                <img src="{{ STATIC_URL}}images/icons/icon-help-sm.png" width="20"
+                     align="center"
+                     title="Click to get help about this window"
+                     onclick="toggleHelp(event, 'widget', 'news-feed'); return false;"
+                        /></a>
+        </div>
+        <div class="content-box-content wallpost-content">
+            {{ wallpost.description }}
+            <div>
+              <form id="news-post-form" action="{% url news_post %}" method="POST">
+                  {% csrf_token %}
+                  <div id="wall-post-errors"></div>
+                  <div id="wall-post" class="control-group">
+                    <div class="controls">
+                      <textarea rows="2" id="id_post" name="post" placeholder="What's on your mind?"/></textarea>
+                    </div>
+                  </div>
+                  {{ wallpost.wall_form.page_name }}
+
+                  <div>
+                    <button id="user-wall-post-submit" class="btn btn-widget padded">
+                        Post
+                    </button>
+                  </div>
+                </form>
+            </div>
+            </br>
+            <ul class="user-wall-posts">
+                {% include "widgets/wallpost/user_wallpost/templates/user_news_posts.html" %}
+            </ul>
+            {% if not wallpost.posts %}
+                <p id="wall-no-posts" style="padding: 7px;">There are no posts yet!</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<script>
+$(document).ready(function() {
+	  var textarea = $("#id_post");
+	  var post_button = $("#user-wall-post-submit");
+
+
+	  if (textarea) {
+	      textarea.keyup(function() {
+	          if (this.value.length === 0 && !post_button.hasClass("disabled")) {
+	              post_button.addClass("disabled");
+	          }
+	          else if (this.value.length > 0 && post_button.hasClass("disabled")){
+	              post_button.removeClass("disabled");
+	          }
+	      });   
+	  }
+	  if (post_button) {
+	      post_button.addClass("disabled");
+
+	      post_button.click(function() {
+	          if (!post_button.hasClass("disabled")) {
+	              $.post(this.form.action, $("#news-post-form").serialize(), 
+                function(data) {
+	                  if (data.message) {
+	                      $("#wall-post-errors").html(data.message);
+	                  }
+	                  else {
+	                      $("#wall-post-errors").html("");
+	                      if ($("#wall-no-posts").is(":visible")) {
+	                          $("#wall-no-posts").hide();
+	                      }
+	                      $(data.contents).prependTo(".user-wall-posts");
+	                      textarea.val("");
+	                      post_button.addClass("disabled");
+	                  }
+	              });
+	          }
+	          return false;
+	      });
+	  }
+     
+	});
+</script>
+{% endwith %}

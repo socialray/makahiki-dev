@@ -1,0 +1,20 @@
+
+<div class="content-box demi-widget" >
+    <div class="content-box-title">
+        Popular Quests
+    </div> 
+    <div class="widget-content">
+        <table class="table-striped">
+            <tr>
+                <th class="column-text" width="80%">Name</th>
+                <th class="column-number" width="20%">Completions</th>
+            </tr>
+            {% for quest in view_objects.status__actions.quests %}
+                <tr>
+                    <td class="column-text" width="80%">{{ quest.name }}</td>
+                    <td class="column-number" width="20%">{{ quest.completions }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div> 

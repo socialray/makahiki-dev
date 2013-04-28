@@ -1,0 +1,83 @@
+{% extends "logged_in_base.html" %}
+
+{% load markup %}
+
+{% block page_title %}
+    Raffle Prize List
+{% endblock %}
+
+{% block selected_icon %}selected-win{% endblock %}
+
+{% block extra_head %}
+{% endblock %}
+
+{% block body %}
+<div class="content-box">
+        <div class="content-box-title">
+            List of Raffle Prizes
+        </div> 
+        {% regroup raffle_list by round_name as round_name_list %}  
+
+        <ul id="prize-tab" class="nav nav-tabs">
+        {% for round_name in round_name_list %} 
+            <li class="">
+                <a data-toggle="tab" href="#prize-{{round_name.grouper|capfirst|cut:" "}}">{{ round_name.grouper|capfirst }} </a>
+            </li>
+        {% endfor %}  
+        </ul>  
+<div class="tab-content">
+    {% for round_name in round_name_list %}
+      <div id="prize-{{round_name.grouper|capfirst|cut:" "}}" class="tab-pane fade active in">   
+              <div class="content-body"> 
+                      <table class="table-striped">
+                                  <thead>
+                                      <tr><td class="column-text"><b>Raffle Prize</b></td>
+                                          <td class="column-text"><b>Value</b>
+                                          <td class="column-text"><b>Description</b></td>
+                                      </tr>
+                                  </thead>
+
+                                  {% for item in round_name.list|dictsort:"value" reversed %}  
+                                      <tr>
+                                        <td class="column-text">
+                                          <div><b>{{ item.title }}</b></div>
+                                            <image class="raffle-icon"
+                                                   {% if item.image %}
+                                                      src="{{item.image.url}}"
+                                                   {% else %}
+                                                      src="{{ MEDIA_URL }}media/prizes/mystery-box.jpg"
+                                                   {% endif %}
+                                                   width="100"></image>
+
+
+                                        </td>
+                                        <td class="column-text">
+                                            <b>${{item.value}}</b>
+                                        </td>
+                                        <td class="column-text"> &nbsp; {{item.description|markdown}}
+                                        </td>
+                                      </tr>
+                                  {% endfor %} 
+                          
+                      </table>
+              </div>
+          </div> 
+      {% endfor %}
+  </div> 
+
+<script type="text/javascript">
+$('#prize-tab.nav-tabs a:first').tab('show');
+</script>  
+
+    <center>
+        <a href="{% url win_index %}"">
+            <button class="btn btn-widget" style="cursor:pointer;">
+                <img src="{{ STATIC_URL}}images/left.png" width="25"
+                     align="top">
+                 Back to Prizes
+            </button>
+        </a>
+    </center>
+</div>
+{% endblock %}
+

@@ -1,0 +1,78 @@
+{% load markup %}
+
+<div class="modal-header">
+    <h2>Terms and Conditions</h2>
+</div>
+<div id="setup-content" class="modal-body">
+    <div id="setup-terms-content">
+        {{terms|markdown}}
+    </div>
+</div>
+<div class="modal-footer">
+    <div style="float:left">
+        <a class="btn btn-primary" id="back">
+            <img src="{{ STATIC_URL}}images/left.png" width="24" align="top">
+            Back
+        </a>
+    </div>
+
+    <div style="float:right">
+        <a class="btn btn-success" id="agree" style="margin-bottom: 10px">I Agree 
+            <img src="{{ STATIC_URL}}images/right.png" width="24" align="top">
+        </a>
+    </div>
+    <div style="clear: right; float:right;">
+        <a href="{% url about %}">
+            <button class="btn btn-danger" id="decline" style="text-align: right">I don't agree <img
+                    src="{{ STATIC_URL}}images/stop.png" width="24" align="top"><br/>Take
+                me to non-participant page
+            </button>
+        </a>
+    </div>
+
+    <div style="clear:both"></div>
+
+    <div id="progressbar-header">
+        <p>Introduction progress, points: {{ user.get_profile.points }}</p>
+    </div>
+          <div id="progressbar" class="progress">
+            <div class="bar"
+              style="width: 0%;">
+            </div>
+          </div>
+    </div>
+</div>
+
+
+<script type='text/javascript'>
+    $(document).ready(function () {
+        fixForms();
+        var s = 2.0/7.0*100 + "%";
+        $(".bar").width(s);
+
+        $("#decline").button();
+
+        $("#back").button().click(function () {
+            $(this).button("option", "disabled", true);
+            $.get("{% url setup_welcome %}?from=terms", function (data) {
+                $("#ui-dialog-title-setup-dialog").html(data.title);
+                $("#setup-dialog").html(data.contents);
+            });
+        });
+
+        $("#agree").button().click(function () {
+            $(this).button("option", "disabled", true);
+            {% if referral_enabled %}
+                $.get("{% url setup_referral %}", function (data) {
+                    $("#ui-dialog-title-setup-dialog").html(data.title);
+                    $("#setup-dialog").html(data.contents);
+                });
+            {% else %}
+                $.get("{% url setup_profile %}", function (data) {
+                    $("#ui-dialog-title-setup-dialog").html(data.title);
+                    $("#setup-dialog").html(data.contents);
+                });
+            {% endif %}
+        });
+    });
+</script>

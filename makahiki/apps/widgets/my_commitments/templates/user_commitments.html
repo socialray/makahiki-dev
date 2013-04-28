@@ -1,0 +1,25 @@
+{% load cache %}
+{% cache 1800 my_commitments request.user %}
+
+    <div class="content-box-contents">
+    {% if view_objects.my_commitments.commitment_members %}
+        <table>
+            <tr>
+                <th class="content-column column-text">Commitment</th>
+                <th class="column-text">Expires</th>
+            </tr>
+            {% for member in view_objects.my_commitments.commitment_members %}
+                <tr>
+                    <td class="column-text">
+                        <a href="{% url activity_task 'commitment' member.action.slug %}">
+                            {{ member.action.title }}</a>
+                    </td>
+                    <td class="column-text">{{ member.completion_date }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>You are not participating in any commitments</p>
+    {% endif %}
+    </div>
+{% endcache %}

@@ -1,0 +1,133 @@
+[
+    {
+        "pk": 1,
+        "model": "djcelery.intervalschedule",
+        "fields": {
+            "every": 1,
+            "period": "hours"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "djcelery.crontabschedule",
+        "fields": {
+            "day_of_week": "*",
+            "hour": "23",
+            "minute": "55"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "djcelery.crontabschedule",
+        "fields": {
+            "day_of_week": "*",
+            "hour": "0",
+            "minute": "5"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "djcelery.crontabschedule",
+        "fields": {
+            "day_of_week": "*",
+            "hour": "15",
+            "minute": "0"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "djcelery.periodictask",
+        "fields": {
+            "task": "apps.widgets.resource_goal.tasks.check_energy_goal",
+            "name": "check_energy_goal",
+            "args": "[]",
+            "enabled": true,
+            "crontab": 1,
+            "interval": null,
+            "expires": null,
+            "kwargs": "{}",
+            "date_changed": "2012-06-30T14:18:46.151",
+            "description": ""
+        }
+    },
+    {
+        "pk": 2,
+        "model": "djcelery.periodictask",
+        "fields": {
+            "task": "apps.widgets.resource_goal.tasks.check_water_goal",
+            "name": "check_water_goal",
+            "args": "[]",
+            "enabled": true,
+            "crontab": 1,
+            "interval": null,
+            "expires": null,
+            "kwargs": "{}",
+            "date_changed": "2012-06-30T14:18:46.151",
+            "description": ""
+        }
+    },
+    {
+        "pk": 3,
+        "model": "djcelery.periodictask",
+        "fields": {
+            "task": "apps.managers.resource_mgr.tasks.update_energy_usage",
+            "name": "update_energy_usage",
+            "args": "[]",
+            "enabled": true,
+            "crontab": null,
+            "interval": 1,
+            "expires": null,
+            "kwargs": "{}",
+            "date_changed": "2012-06-30T14:18:46.151",
+            "description": ""
+        }
+    },
+    {
+        "pk": 4,
+        "model": "djcelery.periodictask",
+        "fields": {
+            "task": "apps.managers.resource_mgr.tasks.update_fake_water_usage",
+            "name": "update_fake_water_usage",
+            "args": "[]",
+            "enabled": true,
+            "crontab": 3,
+            "interval": null,
+            "expires": null,
+            "kwargs": "{}",
+            "date_changed": "2012-06-30T14:18:46.151",
+            "description": ""
+        }
+    },
+    {
+        "pk": 5,
+        "model": "djcelery.periodictask",
+        "fields": {
+            "task": "apps.widgets.smartgrid.tasks.process_notices",
+            "name": "process_notices",
+            "args": "[]",
+            "enabled": true,
+            "crontab": 2,
+            "interval": null,
+            "expires": null,
+            "kwargs": "{}",
+            "date_changed": "2012-06-30T14:18:46.151",
+            "description": ""
+        }
+    },
+    {
+        "pk": 6,
+        "model": "djcelery.periodictask",
+        "fields": {
+            "task": "apps.widgets.smartgrid.tasks.send_reminders",
+            "name": "send_reminders",
+            "args": "[]",
+            "enabled": true,
+            "crontab": null,
+            "interval": 1,
+            "expires": null,
+            "kwargs": "{}",
+            "date_changed": "2012-06-30T14:18:46.151",
+            "description": ""
+        }
+    }
+]

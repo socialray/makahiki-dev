@@ -1,0 +1,29 @@
+{% extends "logged_in_base.html" %}
+
+{% load markup %}
+
+{% load avatar_tags %}
+
+{% block page_title %}
+    Action Details
+{% endblock %}
+
+{% block selected_icon %}{% endblock %}
+
+{% block extra_head %}
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+    <div class="row-fluid">
+    <div class="span5">
+        {% include "action_info.html" %}
+    </div>
+
+    <div class="span7">
+    	{% include "action_details.html" %}
+    </div>
+    </div>
+</div>    
+{% endblock %}
+

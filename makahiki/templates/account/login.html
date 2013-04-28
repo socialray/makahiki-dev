@@ -1,0 +1,29 @@
+{% extends "logo_bar_base.html" %}
+
+{% load markup %}
+
+{% block page_title %}
+  Welcome to KukuiCup!
+{% endblock %}
+
+
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="content-box">
+            <div class="content-box-contents  landing-body">
+                <form class="login" method="POST" action="{% url account_login %}">
+                    <fieldset class="inlineLabels">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <div class="form_block">
+                            <input type="submit" value="Log in &raquo;" class="btn btn-widget"/>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

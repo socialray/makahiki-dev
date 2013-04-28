@@ -1,0 +1,31 @@
+{% load notice_tags %}
+
+<li id="notification-item-{{notification.id}}"
+    class="{{notification.style_class}} notification-item">
+    <div class="notification-contents">
+        <div class='notice-icon'>
+            <i class="{{notification.icon_class}}"></i>
+        </div>
+        <div class='notice-list-content'>
+            {{ notification.contents|safe }}
+        </div>
+    </div>
+
+    <div class="notification-options">
+        {% if notifications.use_facebook and notification.is_success %}
+            <a class="notification-share" href="javascript:void(0);">Click here to share on Facebook</a>
+        {% endif %}
+
+
+        <!--         <br style="clear: both"/> -->
+    </div>
+    <div style="clear:both"></div>
+</li>
+
+<script type="text/javascript">
+    jQuery(document).ready(function ($) {
+        $("#notification-item-{{notification.id}} .notification-options .notification-share").click(function () {
+            fb_share('{{notification.id}}', '{{ notification.fb_contents }}');
+        });
+    });
+</script>

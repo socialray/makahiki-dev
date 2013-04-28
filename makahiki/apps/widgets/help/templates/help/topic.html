@@ -1,0 +1,42 @@
+{% extends "logged_in_base.html" %}
+
+{% load markup %}
+
+{% block page_title %}
+    Help
+{% endblock %}
+
+{% block selected_icon %}selected-help{% endblock %}
+
+{% block extra_head %}
+  {% if not MAKAHIKI_USE_LESS %}
+    <link rel="stylesheet" href="{{STATIC_URL}}css/help.css">
+  {% else %}
+    <link rel="stylesheet/less" type="text/css" href="{{STATIC_URL}}less/help.less">
+  {% endif %}
+{% endblock %}
+
+{% block body %}
+    <div class="content-box help-content">
+        <div>
+            <div class="content-box-title">
+                {{ topic.title }}
+            </div>
+            <div class="content-box-contents help-content">
+                <p>
+                    {{ topic.contents|markdown }}
+                </p>
+                <center>
+                    <a href="{% url help_index %}">
+                        <button class="btn btn-widget" style="cursor:pointer;">
+                            <img src="{{ STATIC_URL}}images/left.png" width="25"
+                                 align="top">
+                            Back to Help Page
+                        </button>
+                    </a>
+                </center>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

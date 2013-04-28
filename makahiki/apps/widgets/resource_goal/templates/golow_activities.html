@@ -1,0 +1,27 @@
+<table class="energy-status-how-activities-table">
+    <thead>
+    <th>Activity</th>
+    <th class="energy-point-margin">Points</th>
+    </thead>
+    <tbody>
+    {% for a in golow_activities %}
+        <tr>
+            <td><a href="/smartgrid/{{a.type}}/{{a.slug}}/">{{ a.title }}</a></td>
+            <td>
+                {% if a.point_value %}
+                    {{ a.point_value }}
+                {% else %}
+                    {{ a.point_range_end }}
+                {% endif %}
+            </td>
+        </tr>
+    {% empty %}
+        <tr><td>
+            To unlock actions, play the Smart Grid Game.
+        </td>
+        <td></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+    

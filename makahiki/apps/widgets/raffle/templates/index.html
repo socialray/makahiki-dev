@@ -1,0 +1,33 @@
+{% with view_objects.raffle as raffle %}
+<div class="row-fluid">
+  <div class="content-box span12 prizes-raffle">
+    <div class="content-box-title">
+        <h3>{{ raffle.round_name }} Raffle Game</h3>
+        <a href="#" style="float: right">
+            <img src="{{ STATIC_URL}}images/icons/icon-help-sm.png" width="20"
+                 align="center"
+                 title="Click to get help about this window"
+                 onclick="toggleHelp(event, 'widget', 'raffle-game'); return false;"
+                    /></a>
+    </div>
+    <div>
+        <div class="prizes-raffle-info">
+            Your Total Raffle Tickets: <em class="raffle-ticket-num">{{ raffle.tickets.total }}</em>,  Allocated:  <em class="raffle-ticket-num">{{ raffle.tickets.allocated }}</em>,  Available: <em class="raffle-ticket-num">{{ raffle.tickets.available }}</em>
+        </div>
+
+        {% if raffle.today < raffle.deadline %}
+            {% include "raffle_table.html" %}
+        {% else %}
+            <h4 style="text-align: center">
+                The raffle is now over.
+                Please check back in the next round for more prizes!
+            </h4>
+        {% endif %}
+        <div style='text-align: center; margin-top: 5px'>
+            <a href='{% url raffle_prize_list %}'>List of upcoming
+                raffle prizes</a>
+        </div>
+    </div>
+  </div>
+</div>
+{% endwith %}

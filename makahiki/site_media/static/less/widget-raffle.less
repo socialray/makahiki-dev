@@ -1,0 +1,132 @@
+@charset "UTF-8";
+
+.circle {
+    height: 14px;
+    width: 14px;
+    border-radius: 14px;
+    -webkit-border-radius: 14px;
+    -moz-border-radius: 14px;
+    padding: 7px;
+    text-align: center;
+    color: @widget-body-font-color;
+}
+
+.disabled {
+    background: fade(@prizes-raffle-table-entry-color, 20%);
+}
+
+.enabled {
+    background: @prizes-raffle-table-entry-color;    
+}
+
+.enabled , .disabled {
+    display: block;
+    margin: .2em .5em .2em 0;
+    color: @prizes-raffle-ticket-font-color;
+    font-weight: bold;
+    line-height: 14px;
+    text-decoration: none;
+    text-align: center;
+    float: left;
+}
+
+.number {
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.prize-dialog {
+    text-align: left;
+}
+
+.ticket-add-remove {
+    margin: 0 auto;
+    width: 29%;
+}
+
+.ticket-add-remove form {
+    display: inline;
+}
+
+.ticket-remove {
+    margin-right: 0;
+}
+
+.prizes-raffle th {
+    text-align: center;
+}
+
+.prizes-raffle td:last-child, .prizes-raffle th:last-child {
+    text-align: left;
+}
+
+.prizes-raffle .table td {
+    vertical-align: middle;
+}
+
+.prizes-raffle-footer {
+    margin: .5em .5em 0 .5em;
+    text-align: center;
+}
+
+.prizes-raffle-footer-deadline {
+    font-weight: bold;
+    display: block;
+}
+
+.prizes-raffle-info {
+    font-weight: bold;
+    background: @widget-subtitle-bkg-color;
+    color: @widget-subtitle-font-color;
+    text-align: center;
+    padding: 8px 0;
+}
+
+.prizes-raffle-table .number {
+    color: @prizes-raffle-table-entry-color;
+}
+
+.prizes-raffle-table td {
+    text-align: center;
+}
+
+.prizes-raffle-table td:last-child {
+    text-align: left;
+}
+
+/*Prize tab in the list of raffle prizes page.  Id given for bootstrap tab interface.*/
+#prize-tab {
+    margin-bottom: 0px;
+}
+
+.raffle-icon {
+    width: 100px;
+    height: 75px;
+}
+
+.raffle-prize a {
+    color: @prizes-raffle-table-entry-color;
+}
+
+.raffle-ticket-num {
+    color: @prizes-raffle-table-entry-color;
+    font-size: 150%;
+}
+
+@media (min-width: 481px) {
+    .condensed-tickets {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .condensed-tickets {
+        display: table-cell;
+    }
+
+    .total-tickets , .user-tickets {
+        display: none;
+    }
+}
+

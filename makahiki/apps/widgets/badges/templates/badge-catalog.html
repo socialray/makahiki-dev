@@ -1,0 +1,51 @@
+{% extends "logged_in_base.html" %}
+
+{% block page_title %}
+    Badge Catalog
+{% endblock %}
+
+{% block selected_icon %}selected-profile{% endblock %}
+
+{% block extra_head %}
+{% endblock %}
+
+{% block body %}
+    <div class="content-box">
+        <div class="content-box-title">
+            Badge Catalog
+        </div>
+            <table>
+                <tr>
+                    <th class="date-col" style="width:10px;">Name</th>
+                    <th class=""></th>
+                    <th class="content-col">Achievement</th>
+                    <th class="points-col">Points</th> 
+                </tr>
+
+                {% with awarded_badges=view_objects.badges.awarded_badges locked_badges=view_objects.badges.locked_badges %}
+                {% for badge in awarded_badges %}
+                    <tr class="{% cycle '' 'alt-row' as cycle_class %}">
+                        {%  with badge=badge awarded_badges=awarded_badges class="awarded" %}
+                            {% include "catalog-item.html" %}
+                        {% endwith %}
+                    </tr>
+                {% endfor %}
+
+                {% for badge in locked_badges %}
+                    <tr class="{% cycle cycle_class %}">
+                        {% include "catalog-item.html" with badge=badge awarded_badges=awarded_badges awarded=False %}
+                    </tr>
+                {% endfor %}
+                {% endwith %}
+            </table>
+            <center>
+                <a href="{% url profile_index %}">
+                    <button class="btn btn-widget" style="cursor:pointer;">
+                        <img src="{{ STATIC_URL}}images/left.png" width="25"
+                             align="top">
+                        Back to Profile
+                    </button>
+                </a>
+            </center>
+    </div>
+{% endblock %}

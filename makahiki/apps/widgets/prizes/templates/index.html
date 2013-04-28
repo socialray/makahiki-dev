@@ -1,0 +1,54 @@
+<div id="prizes-list" class="content-box">
+    <div class="content-box-title">
+        <h3>Top Score Game</h3>
+        <a href="#" style="float: right">
+            <img src="{{ STATIC_URL}}images/icons/icon-help-sm.png" width="20"
+                 title="Click to get help about this window"
+                 onclick="toggleHelp(event, 'widget', 'prizes'); return false;"/></a>
+    </div>
+    <div id="outer-box">
+    <div class="row-fluid">
+        {% include "view_prizes/prize_list.html" %}
+    </div>
+
+    </div>
+</div>
+<div id="prizeModal" class="modal hide fade">
+    <div class="modal-header">
+        <h3></h3>
+    </div>
+    <div class="modal-body"></div>
+    <div class="modal-footer">
+        <a href="#" class="btn btn-widget" data-dismiss="modal">Close</a>
+    </div>
+</div>
+<script type="text/javascript">
+    $(window).load(function() {
+
+        
+//       $("#prizes-carousel").carousel();
+        $("#prizes-carousel").cycle({
+          fx: "fade",
+          timeout: 3500,
+          delay:  -1000,
+          sync: true,
+          pager: '#nav',
+          pause: 2
+        });
+   	});
+
+
+
+var togglePrize = function(event, name, title) {
+    var modalElement = $('#' + name + '-' + title);
+    // set up event logging
+    modalElement.on('shown', function() {
+        log_js_action(name, title, 'prize-open');
+    });
+    modalElement.on('hidden', function() {
+        log_js_action(name, title, 'prize-close');
+    });
+    modalElement.css('margin-top', ($('#prizeModal').outerHeight() / 2) * -1);
+    modalElement.modal('show');
+}   
+</script>

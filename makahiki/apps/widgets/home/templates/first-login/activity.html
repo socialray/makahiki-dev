@@ -1,0 +1,62 @@
+<div class="modal-header">
+  <h2>Introduction Video</h2>
+</div>
+<div class="modal-body">
+    <div id="setup-content">
+        <p>Please watch this short video that explains the Kukui Cup competition and how to use this
+            website. Pay close attention, because on the next screen you will be asked a question about
+            the video to earn some more points!</p>
+
+        {% include "components/action_video.html" with action=activity %}
+
+    </div>
+</div>
+<div class="modal-footer">
+  <div style="float: left">
+      <button id="back" class="btn btn-primary" >
+          <img src="{{ STATIC_URL}}images/left.png" width="24" align="top">
+          Back<br/>Profile Setup
+      </button>
+  </div>
+
+  <div style="float:right">
+      <button id="next" class="btn btn-primary" style="margin-bottom: 10px; text-align: right">Next
+          <img src="{{ STATIC_URL}}images/right.png" width="24" align="top">
+          <br/>get your points!
+      </button>
+  </div>
+
+  <div style="clear:both"></div>
+
+    <div id="progressbar-header">
+        <p>Introduction progress, points: {{ user.get_profile.points }}</p>
+    </div>
+    <div id="progressbar" class="progress">
+        <div class="bar" style="width: 0%;">
+        </div>
+    </div>
+  <script type="text/javascript">
+      
+      $(document).ready(function () {
+        fixForms();
+        var s = 5.0/7.0*100 + "%";
+        $(".bar").width(s);
+
+          $("#back").button().click(function () {
+              $(this).button("option", "disabled", true);
+              $.get("{% url setup_profile %}?from=video", function (data) {
+                  $("#ui-dialog-title-setup-dialog").html(data.title);
+                  $("#setup-dialog").html(data.contents);
+              });
+          });
+
+          $("#next").button().click(function () {
+              $.get("{% url setup_question %}", function (data) {
+                  $("#ui-dialog-title-setup-dialog").html(data.title);
+                  $("#setup-dialog").html(data.contents); 
+                  $('#points').html(data.points);
+              });
+          });
+      });
+  </script>
+</div>

@@ -1,0 +1,46 @@
+{% load markup %}
+
+{% if user.get_profile.setup_complete %}
+{% load cache %}
+{% cache 1800 home request.user.username %}
+
+<!-- Top Row-->
+<ul>
+    {% for page in ALL_PAGE_INFO %}
+      {% if page.is_unlock %}
+      <li>
+        <div class="home-item">
+            <center>
+            <a href="{{ page.url }}/?ref=home-page">
+                <div class="home-{{ page.name }}-icon"></div>
+            </a>
+            </center>
+            <div class='tile'>
+                <h6>{{ page.label }}</h6>
+                  {{ page.introduction|markdown }}
+            </div>
+        </div>
+      </li>
+      {% endif %}
+    {% endfor %}
+</ul>
+
+{% endcache %}
+
+{% else %}
+<div class="first-login-content">
+<script type="text/javascript">
+$(".navbar").hide();
+$("#quests").hide();
+$("#info-bar-single").hide();
+$("#info-bar-wide").hide();  
+$("#notifications").hide();
+</script>
+
+<center>
+    <div id="setup-dialog">
+        {% include "first-login/welcome.html" %}
+    </div>
+</center>
+</div>
+{% endif %}

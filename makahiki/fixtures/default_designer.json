@@ -1,0 +1,2270 @@
+[
+    {
+        "pk": 1,
+        "model": "smartgrid_design.designertextpromptquestion",
+        "fields": {
+            "action": 1,
+            "answer": "90%",
+            "question": "How much of Hawaii's energy comes from oil?"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "smartgrid_design.designertextpromptquestion",
+        "fields": {
+            "action": 1,
+            "answer": "Hale Aloha dorms, or Lehua, Ilima, Mokihana, and Lokelani",
+            "question": "Where is the Kukui Cup taking place?"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "smartgrid_design.designertextpromptquestion",
+        "fields": {
+            "action": 1,
+            "answer": "freshmen, first-year students, residents of Hale Aloha",
+            "question": "What students can participate?"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "smartgrid_design.designertextpromptquestion",
+        "fields": {
+            "action": 2,
+            "answer": "Points and Lounge energy consumption",
+            "question": "What are the two ways to \"keep score\" in the Kukui Cup?"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "smartgrid_design.designertextpromptquestion",
+        "fields": {
+            "action": 2,
+            "answer": "Accumulate kukui cup points",
+            "question": "How do you earn raffle tickets?"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "smartgrid_design.designertextpromptquestion",
+        "fields": {
+            "action": 2,
+            "answer": "5",
+            "question": "How many commitments can you have at one time?"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "smartgrid_design.designertextpromptquestion",
+        "fields": {
+            "action": 3,
+            "answer": "kilowatt-hour",
+            "question": "What is the unit of measurement for household energy?"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "smartgrid_design.designertextpromptquestion",
+        "fields": {
+            "action": 3,
+            "answer": "watt",
+            "question": "What is the unit of measurement for power?"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "smartgrid_design.designertextpromptquestion",
+        "fields": {
+            "action": 3,
+            "answer": "power",
+            "question": "What concept in electricity is like a car's speedometer?"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "smartgrid_design.designertextpromptquestion",
+        "fields": {
+            "action": 3,
+            "answer": "energy",
+            "question": "What concept in electricity is like a car's odometer?"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "smartgrid_design.designertextpromptquestion",
+        "fields": {
+            "action": 13,
+            "answer": "200 W",
+            "question": "How much power does a game console use?"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "smartgrid_design.designertextpromptquestion",
+        "fields": {
+            "action": 13,
+            "answer": "1000+ W",
+            "question": "How much does power a microwave use?"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "smartgrid_design.designertextpromptquestion",
+        "fields": {
+            "action": 13,
+            "answer": "175-200 W",
+            "question": "How much power does a solar panel generate?"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "smartgrid_design.designertextpromptquestion",
+        "fields": {
+            "action": 13,
+            "answer": "3 Wh",
+            "question": "How much energy is in a AA battery?"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "smartgrid_design.designertextpromptquestion",
+        "fields": {
+            "action": 13,
+            "answer": "1 kWh",
+            "question": "How much energy does a solar panel generate per day?"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "smartgrid_design.designertextpromptquestion",
+        "fields": {
+            "action": 13,
+            "answer": "1500 kWh",
+            "question": "How much energy does a Hale Aloha tower use per day?"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "smartgrid_design.designertextpromptquestion",
+        "fields": {
+            "action": 13,
+            "answer": "$0.20-$0.30",
+            "question": "How much does a kilowatt-hour cost in Hawaii?"
+        }
+    },
+    {
+        "pk": 18,
+        "model": "smartgrid_design.designertextpromptquestion",
+        "fields": {
+            "action": 14,
+            "answer": "turning off lights, using sunlight",
+            "question": "What is one way to reduce energy use from lighting?"
+        }
+    },
+    {
+        "pk": 19,
+        "model": "smartgrid_design.designertextpromptquestion",
+        "fields": {
+            "action": 14,
+            "answer": "CFL",
+            "question": "Which light source uses more power, compact fluorescent (CFL) or LED?"
+        }
+    },
+    {
+        "pk": 20,
+        "model": "smartgrid_design.designertextpromptquestion",
+        "fields": {
+            "action": 14,
+            "answer": "incandescent",
+            "question": "Which light source uses more power, incandescent or compact fluorescent (CFL)?"
+        }
+    },
+    {
+        "pk": 21,
+        "model": "smartgrid_design.designertextpromptquestion",
+        "fields": {
+            "action": 15,
+            "answer": "hair dryer",
+            "question": "Which device uses the most power: mobile phone, laptop, or hair dryer?"
+        }
+    },
+    {
+        "pk": 22,
+        "model": "smartgrid_design.designertextpromptquestion",
+        "fields": {
+            "action": 15,
+            "answer": "vampire power, devices can use energy when powered off",
+            "question": "Why would we measure the power drawn by a device that is off?"
+        }
+    },
+    {
+        "pk": 23,
+        "model": "smartgrid_design.designertextpromptquestion",
+        "fields": {
+            "action": 21,
+            "answer": "higher prices, climate change, lost beaches",
+            "question": "What might be some consequences of failing to make changes in Hawaii's current energy generation?"
+        }
+    },
+    {
+        "pk": 24,
+        "model": "smartgrid_design.designertextpromptquestion",
+        "fields": {
+            "action": 21,
+            "answer": "anything reasonable",
+            "question": "What did you learn from the video?"
+        }
+    },
+    {
+        "pk": 25,
+        "model": "smartgrid_design.designertextpromptquestion",
+        "fields": {
+            "action": 22,
+            "answer": "so many types available, easier for renewables to be price competitive here",
+            "question": "What is one reason renewable power has great potential in Hawaii?"
+        }
+    },
+    {
+        "pk": 26,
+        "model": "smartgrid_design.designertextpromptquestion",
+        "fields": {
+            "action": 22,
+            "answer": "oil",
+            "question": "What is the main source of energy in Hawaii?"
+        }
+    },
+    {
+        "pk": 27,
+        "model": "smartgrid_design.designertextpromptquestion",
+        "fields": {
+            "action": 22,
+            "answer": "no interconnection, small grids, expensive raw materials",
+            "question": "What is one reason why energy costs more in Hawaii?"
+        }
+    },
+    {
+        "pk": 28,
+        "model": "smartgrid_design.designertextpromptquestion",
+        "fields": {
+            "action": 23,
+            "answer": "70%",
+            "question": "According to the HCEI, what percentage of our energy should come from clean sources by 2030?"
+        }
+    },
+    {
+        "pk": 29,
+        "model": "smartgrid_design.designertextpromptquestion",
+        "fields": {
+            "action": 23,
+            "answer": "They will decrease.",
+            "question": "If we achieve the goals of HCEI, what will happen to our baseline power requirements over the next 20 years?"
+        }
+    },
+    {
+        "pk": 30,
+        "model": "smartgrid_design.designertextpromptquestion",
+        "fields": {
+            "action": 23,
+            "answer": "6 billion dollars.",
+            "question": "How much money do we currently send out of state on oil per year?"
+        }
+    },
+    {
+        "pk": 31,
+        "model": "smartgrid_design.designertextpromptquestion",
+        "fields": {
+            "action": 25,
+            "answer": "reuse containers, bring your own container, use reusable bags, etc",
+            "question": "Name one way you can reduce the amount of trash you produce"
+        }
+    },
+    {
+        "pk": 32,
+        "model": "smartgrid_design.designertextpromptquestion",
+        "fields": {
+            "action": 25,
+            "answer": "a power plant that turns some of Hawaii's waste into energy",
+            "question": "What is H-POWER?"
+        }
+    },
+    {
+        "pk": 33,
+        "model": "smartgrid_design.designertextpromptquestion",
+        "fields": {
+            "action": 25,
+            "answer": "60%",
+            "question": "What percentage of our trash does H-POWER convert into energy?"
+        }
+    },
+    {
+        "pk": 34,
+        "model": "smartgrid_design.designertextpromptquestion",
+        "fields": {
+            "action": 25,
+            "answer": "prevent/reduce, reuse, recycle",
+            "question": "What are the three components of the trash pyramid?"
+        }
+    },
+    {
+        "pk": 35,
+        "model": "smartgrid_design.designertextpromptquestion",
+        "fields": {
+            "action": 26,
+            "answer": "less fresh water, less beach, more drought, more floods, more coral bleaching",
+            "question": "What is one expected impact of climate change in Hawaii?"
+        }
+    },
+    {
+        "pk": 36,
+        "model": "smartgrid_design.designertextpromptquestion",
+        "fields": {
+            "action": 26,
+            "answer": "reduce it, get it under 350 ppm",
+            "question": "What should we do about carbon dioxide?"
+        }
+    },
+    {
+        "pk": 37,
+        "model": "smartgrid_design.designertextpromptquestion",
+        "fields": {
+            "action": 26,
+            "answer": "Reduce our energy use, reduce energy footprint",
+            "question": "How can we in Hawaii reduce our carbon footprint?"
+        }
+    },
+    {
+        "pk": 38,
+        "model": "smartgrid_design.designertextpromptquestion",
+        "fields": {
+            "action": 27,
+            "answer": "Heat, light",
+            "question": "What are the two things the sun provides?"
+        }
+    },
+    {
+        "pk": 39,
+        "model": "smartgrid_design.designertextpromptquestion",
+        "fields": {
+            "action": 27,
+            "answer": "Ability to run power meter forwards or backwards",
+            "question": "What is net metering?"
+        }
+    },
+    {
+        "pk": 40,
+        "model": "smartgrid_design.designertextpromptquestion",
+        "fields": {
+            "action": 27,
+            "answer": "doesn't work at night, or when very cloudy",
+            "question": "What is one limitation of solar power?"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "smartgrid_design.designerlevel",
+        "fields": {
+            "priority": 1,
+            "unlock_condition_text": null,
+            "name": "Level 1",
+            "unlock_condition": "True",
+            "slug": "level-1"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "smartgrid_design.designerlevel",
+        "fields": {
+            "priority": 2,
+            "unlock_condition_text": "Complete at least two Level 1 actions including the Power & Energy activity.",
+            "name": "Level 2",
+            "unlock_condition": "submitted_some_of_level(2, \"Level 1\") and submitted_action(\"power-energy\")",
+            "slug": "level-2"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "smartgrid_design.designerlevel",
+        "fields": {
+            "priority": 3,
+            "unlock_condition_text": "Complete at least two Level 2 actions",
+            "name": "Level 3",
+            "unlock_condition": "submitted_some_of_level(2, \"Level 2\")",
+            "slug": "level-3"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "smartgrid_design.designercolumnname",
+        "fields": {
+            "name": "Electrimental",
+            "slug": "electrimental"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "smartgrid_design.designercolumnname",
+        "fields": {
+            "name": "Generation Next",
+            "slug": "generation-next"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "smartgrid_design.designercolumnname",
+        "fields": {
+            "name": "Get Started",
+            "slug": "get-started"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "smartgrid_design.designercolumnname",
+        "fields": {
+            "name": "Get Creative",
+            "slug": "get-creative"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "smartgrid_design.designercolumnname",
+        "fields": {
+            "name": "Let's Get Physical",
+            "slug": "lets-get-physical"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "smartgrid_design.designercolumnname",
+        "fields": {
+            "name": "Just Do It",
+            "slug": "just-do-it"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "smartgrid_design.designercolumnname",
+        "fields": {
+            "name": "Think Smart",
+            "slug": "think-smart"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "smartgrid_design.designercolumnname",
+        "fields": {
+            "name": "Power to Burn?",
+            "slug": "power-burn"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "smartgrid_design.designercolumnname",
+        "fields": {
+            "name": "Go Dark",
+            "slug": "go-dark"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "smartgrid_design.designercolumnname",
+        "fields": {
+            "name": "Make it So",
+            "slug": "make-it-so"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "smartgrid_design.designercolumnname",
+        "fields": {
+            "name": "Potpourri",
+            "slug": "potpourri"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "smartgrid_design.designercolumnname",
+        "fields": {
+            "name": "Last Dance",
+            "slug": "last-dance"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "smartgrid_design.designercolumnname",
+        "fields": {
+            "name": "Energy Wizardry",
+            "slug": "energy-wizardry"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "smartgrid_design.designercolumnname",
+        "fields": {
+            "name": "Moving on",
+            "slug": "moving-on"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "smartgrid_design.designercolumnname",
+        "fields": {
+            "name": "Energize Yourself",
+            "slug": "energize-yourself"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "smartgrid_design.designercolumnname",
+        "fields": {
+            "name": "Express Yourself",
+            "slug": "express-yourself"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "smartgrid_design.designercolumnname",
+        "fields": {
+            "name": "Be Committed",
+            "slug": "be-committed"
+        }
+    },
+    {
+        "pk": 18,
+        "model": "smartgrid_design.designercolumnname",
+        "fields": {
+            "name": "Do It To It",
+            "slug": "do-it-it"
+        }
+    },
+    {
+        "pk": 19,
+        "model": "smartgrid_design.designercolumnname",
+        "fields": {
+            "name": "Basic Energy",
+            "slug": "basic-energy"
+        }
+    },
+    {
+        "pk": 20,
+        "model": "smartgrid_design.designercolumnname",
+        "fields": {
+            "name": "Lights Out!",
+            "slug": "lights-out"
+        }
+    },
+    {
+        "pk": 21,
+        "model": "smartgrid_design.designercolumnname",
+        "fields": {
+            "name": "Water Cycle",
+            "slug": "water-cycle"
+        }
+    },
+    {
+        "pk": 22,
+        "model": "smartgrid_design.designercolumnname",
+        "fields": {
+            "name": "Play!",
+            "slug": "play"
+        }
+    },
+    {
+        "pk": 23,
+        "model": "smartgrid_design.designercolumnname",
+        "fields": {
+            "name": "Make Watts",
+            "slug": "make-watts"
+        }
+    },
+    {
+        "pk": 24,
+        "model": "smartgrid_design.designercolumnname",
+        "fields": {
+            "name": "Watts Up?",
+            "slug": "watts"
+        }
+    },
+    {
+        "pk": 25,
+        "model": "smartgrid_design.designercolumnname",
+        "fields": {
+            "name": "Moving on",
+            "slug": "moving"
+        }
+    },
+    {
+        "pk": 26,
+        "model": "smartgrid_design.designercolumnname",
+        "fields": {
+            "name": "Trail Mix",
+            "slug": "trail-mix"
+        }
+    },
+    {
+        "pk": 27,
+        "model": "smartgrid_design.designercolumnname",
+        "fields": {
+            "name": "Opala",
+            "slug": "opala"
+        }
+    },
+    {
+        "pk": 28,
+        "model": "smartgrid_design.designercolumnname",
+        "fields": {
+            "name": "Mixed Bag",
+            "slug": "mixed-bag"
+        }
+    },
+    {
+        "pk": 29,
+        "model": "smartgrid_design.designercolumnname",
+        "fields": {
+            "name": "Wet and Wild",
+            "slug": "wet-and-wild"
+        }
+    },
+    {
+        "pk": 30,
+        "model": "smartgrid_design.designercolumnname",
+        "fields": {
+            "name": "Creative",
+            "slug": "creative"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "smartgrid_design.designeraction",
+        "fields": {
+            "social_bonus": 0,
+            "video_id": "T37kNTkZCrA",
+            "name": "Intro video",
+            "video_source": "youtube",
+            "pub_date": "2010-10-12",
+            "image": "",
+            "title": "Watch introduction video",
+            "unlock_condition_text": "True",
+            "related_resource": null,
+            "embedded_widget": null,
+            "point_value": 20,
+            "expire_date": null,
+            "type": "activity",
+            "slug": "intro-video",
+            "unlock_condition": "True",
+            "description": "If you missed it during your the first login process, watch this video explaining the competition and this website."
+        }
+    },
+    {
+        "pk": 2,
+        "model": "smartgrid_design.designeraction",
+        "fields": {
+            "social_bonus": 0,
+            "video_id": "qN-OxaX9enI",
+            "name": "Cup Secrets",
+            "video_source": "youtube",
+            "pub_date": "2011-06-16",
+            "image": "",
+            "title": "Watch video \"Secrets of the Kukui Cup Masters\"",
+            "unlock_condition_text": "Complete Intro video activity",
+            "related_resource": null,
+            "embedded_widget": null,
+            "point_value": 10,
+            "expire_date": null,
+            "type": "activity",
+            "slug": "cup-secrets",
+            "unlock_condition": "submitted_action(\"intro-video\")",
+            "description": "Watch this video that provides some hints on how to get the most out of the Kukui Cup."
+        }
+    },
+    {
+        "pk": 3,
+        "model": "smartgrid_design.designeraction",
+        "fields": {
+            "social_bonus": 0,
+            "video_id": "hBUg7bsR0d0",
+            "name": "Power & Energy",
+            "video_source": "youtube",
+            "pub_date": "2010-05-12",
+            "image": "",
+            "title": "Watch video about Power & Energy",
+            "unlock_condition_text": "Complete Intro video activity",
+            "related_resource": "energy",
+            "embedded_widget": "",
+            "point_value": 10,
+            "expire_date": null,
+            "type": "activity",
+            "slug": "power-energy",
+            "unlock_condition": "submitted_action(\"intro-video\")",
+            "description": "Watch this video explaining the difference between power and energy.\r\n"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "smartgrid_design.designeraction",
+        "fields": {
+            "social_bonus": 0,
+            "video_id": null,
+            "name": "Like Cup",
+            "video_source": null,
+            "pub_date": "2010-07-16",
+            "image": "media/smartgrid/actions/facebook-logo-small.png",
+            "title": "Like Kukui Cup on Facebook",
+            "unlock_condition_text": "Complete Secrets of the Kukui Cup video activity",
+            "related_resource": null,
+            "embedded_widget": null,
+            "point_value": 5,
+            "expire_date": null,
+            "type": "activity",
+            "slug": "like-cup",
+            "unlock_condition": "submitted_action(\"cup-secrets\")",
+            "description": "Show support for the Kukui Cup by Liking the <a href=\"https://www.facebook.com/kukuicup\" target=\"_blank\">Kukui Cup page on Facebook</a> (it will open in a new window). Follow the link, click on the \"Like\" button, and then back on this page click the **I Did This!** button. You will be prompted for your name on Facebook so we can verify your Like.\r\n\r\nFor you eager beavers that have already liked the Kukui Cup before the competition started, you can get points too. Just click **I Did This!** and tell us your Facebook name."
+        }
+    },
+    {
+        "pk": 5,
+        "model": "smartgrid_design.designeraction",
+        "fields": {
+            "social_bonus": 0,
+            "video_id": null,
+            "name": "Tweet link",
+            "video_source": null,
+            "pub_date": "2010-07-16",
+            "image": "media/smartgrid/actions/twitter-logo-small.png",
+            "title": "Tweet about Kukui Cup",
+            "unlock_condition_text": "Complete Secrets of the Kukui Cup video activity",
+            "related_resource": null,
+            "embedded_widget": null,
+            "point_value": 5,
+            "expire_date": null,
+            "type": "activity",
+            "slug": "tweet-link",
+            "unlock_condition": "submitted_action(\"cup-secrets\")",
+            "description": "If you use Twitter, tweet a link to the Kukui Cup website by pressing this button (will open in a new window) so other folks will learn about the competition:\r\n\r\n<center><a href=\"https://twitter.com/share\" class=\"twitter-share-button\" data-url=\"http://kukuicup.manoa.hawaii.edu/\" data-text=\"I'm on the quest for the Kukui Cup! #kukuicup\" data-count=\"none\" data-via=\"kukuicup\">Tweet Kukui Cup</a><script type=\"text/javascript\" src=\"//platform.twitter.com/widgets.js\"></script></center>\r\n\r\nOnce you have tweeted, come back to this page and click the \"I Did This!\" button. You will be prompted for your Twitter username so we can confirm your tweet."
+        }
+    },
+    {
+        "pk": 6,
+        "model": "smartgrid_design.designeraction",
+        "fields": {
+            "social_bonus": 10,
+            "video_id": "",
+            "name": "Door Art",
+            "video_source": null,
+            "pub_date": "2011-09-14",
+            "image": "media/smartgrid/actions/door-art-small.jpg",
+            "title": "Door Art Challenge",
+            "unlock_condition_text": "Complete Secrets of the Kukui Cup video activity",
+            "related_resource": null,
+            "embedded_widget": "",
+            "point_value": 0,
+            "expire_date": null,
+            "type": "activity",
+            "slug": "door-art",
+            "unlock_condition": "submitted_action(\"cup-secrets\")",
+            "description": "Show your support for the Kukui Cup by decorating your door in an \"energy conscious\" fashion. You can do any of the following: include Kukui Cup logos or screen shots, invent new tag lines, show pictures related to energy, or anything else that communicates energy consciousness. When completed, take a photo of your door and click the **I Did This** button to submit the picture. Based on the awesomeness of your design, you will get between 5-15 points!\r\n\r\n<!---\r\nIf you want to show off your mad skillz, in addition to uploading your photo to us, you can publicly post your door art picture to the <a href=\"http://www.flickr.com/groups/kukuicup-2011-door-art/\" target=\"_blank\">Kukui Cup 2011 Door Art Flickr group</a> (will open in a new window). If you don't already have a Flickr account, you can sign up for one for free.\r\n--->"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "smartgrid_design.designeraction",
+        "fields": {
+            "social_bonus": 5,
+            "video_id": null,
+            "name": "Turn off lights",
+            "video_source": null,
+            "pub_date": "2012-04-21",
+            "image": "media/smartgrid/actions/lightswitch-sticker.jpg",
+            "title": "I will turn off the lights when leaving any room",
+            "unlock_condition_text": "Complete Power & Energy or Cup Secrets video activity",
+            "related_resource": "energy",
+            "embedded_widget": null,
+            "point_value": 5,
+            "expire_date": null,
+            "type": "commitment",
+            "slug": "turn-off-lights",
+            "unlock_condition": "submitted_action(\"cup-secrets\") or submitted_action(\"power-energy\")",
+            "description": "Leaving lights on wastes energy for no purpose. Commit to turning off the lights when leaving any room."
+        }
+    },
+    {
+        "pk": 8,
+        "model": "smartgrid_design.designeraction",
+        "fields": {
+            "social_bonus": 5,
+            "video_id": null,
+            "name": "Task lighting",
+            "video_source": null,
+            "pub_date": "2012-04-21",
+            "image": "media/smartgrid/actions/desk-lamp.jpg",
+            "title": "I will use task lighting instead of overhead lights",
+            "unlock_condition_text": "Complete Power & Energy or Cup Secrets video activity",
+            "related_resource": "energy",
+            "embedded_widget": null,
+            "point_value": 5,
+            "expire_date": null,
+            "type": "commitment",
+            "slug": "task-lighting",
+            "unlock_condition": "submitted_action(\"cup-secrets\") or submitted_action(\"power-energy\")",
+            "description": "Commit to using task lighting (like a desk lamp) instead of overhead room lights when possible. Often overhead lights provide more light than you need, or might not provide the light where you need it. Using a desk lamp will reduce your electricity use while giving you the light you need, where you need it."
+        }
+    },
+    {
+        "pk": 9,
+        "model": "smartgrid_design.designeraction",
+        "fields": {
+            "social_bonus": 5,
+            "video_id": null,
+            "name": "Use sunlight",
+            "video_source": null,
+            "pub_date": "2012-04-21",
+            "image": "media/smartgrid/actions/sun-window.jpg",
+            "title": "I will use sunlight instead of electric lighting",
+            "unlock_condition_text": "Complete Power & Energy or Cup Secrets video activity",
+            "related_resource": null,
+            "embedded_widget": null,
+            "point_value": 5,
+            "expire_date": null,
+            "type": "commitment",
+            "slug": "use-sunlight",
+            "unlock_condition": "submitted_action(\"cup-secrets\") or submitted_action(\"power-energy\")",
+            "description": "Commit to using sunlight from windows or outdoors instead of turning on electric lighting. This can mean opening shades instead of turning on the lights, and/or planning your day so that tasks that require light (like reading books) are done during the day."
+        }
+    },
+    {
+        "pk": 10,
+        "model": "smartgrid_design.designeraction",
+        "fields": {
+            "social_bonus": 5,
+            "video_id": null,
+            "name": "Full load laundry",
+            "video_source": null,
+            "pub_date": "2012-04-21",
+            "image": "media/smartgrid/actions/washing-machines.jpg",
+            "title": "I will wash only full loads of laundry",
+            "unlock_condition_text": "Complete Intro Video",
+            "related_resource": "water",
+            "embedded_widget": null,
+            "point_value": 5,
+            "expire_date": null,
+            "type": "commitment",
+            "slug": "full-load-laundry",
+            "unlock_condition": "submitted_action(\"intro-video\")",
+            "description": "Commit to always washing full loads of laundry. Washing less than a full load is less efficient, leading to more electricity and water being used per piece of laundry washed."
+        }
+    },
+    {
+        "pk": 11,
+        "model": "smartgrid_design.designeraction",
+        "fields": {
+            "social_bonus": 5,
+            "video_id": null,
+            "name": "Reusable bag",
+            "video_source": null,
+            "pub_date": "2012-04-21",
+            "image": "media/smartgrid/actions/KukuiCup-eco-tote-small.jpg",
+            "title": "I will bring reusable bags when shopping",
+            "unlock_condition_text": "Complete Power & Energy or Cup Secrets video activity",
+            "related_resource": null,
+            "embedded_widget": null,
+            "point_value": 5,
+            "expire_date": null,
+            "type": "commitment",
+            "slug": "reusable-bag",
+            "unlock_condition": "submitted_action(\"cup-secrets\") or submitted_action(\"power-energy\")",
+            "description": "Commit to bringing and using reusable bags when shopping instead of the paper or plastic ones offered by stores. Making disposable bags requires energy, and often the bags end up in our landfills or worse yet they blow away into the ocean. Using a reusable bag saves energy and keeps trash out of our landfills."
+        }
+    },
+    {
+        "pk": 12,
+        "model": "smartgrid_design.designeraction",
+        "fields": {
+            "social_bonus": 0,
+            "video_id": null,
+            "name": "Virtual Event",
+            "video_source": null,
+            "pub_date": "2013-12-10",
+            "image": "",
+            "title": "Attend a virtual event!",
+            "unlock_condition_text": "",
+            "related_resource": null,
+            "embedded_widget": null,
+            "point_value": 30,
+            "expire_date": null,
+            "type": "event",
+            "slug": "virtual-event",
+            "unlock_condition": "True",
+            "description": "In a real Kukui Cup challenge, players are able to attend a variety of events (workshops and excursions) in which they can learn more about energy and sustainability issues.  \r\n\r\nFor demonstration purposes, this \"virtual event\" simply shows you how events work.  You can click the button to sign up for the event and you'll immediately receive points.  Later, we'll send you an attendance code for the event via email.  (Normally, these are distributed on slips of paper at the actual event, which verifies that players actually attended.) You can enter that attendance code into the system to receive full credit for the event. "
+        }
+    },
+    {
+        "pk": 13,
+        "model": "smartgrid_design.designeraction",
+        "fields": {
+            "social_bonus": 0,
+            "video_id": "E4MLXlUiRv0",
+            "name": "Energy Intuition",
+            "video_source": "youtube",
+            "pub_date": "2010-10-15",
+            "image": "",
+            "title": "Watch video on Energy Intuition",
+            "unlock_condition_text": "Complete Power & Energy video activity",
+            "related_resource": "energy",
+            "embedded_widget": "",
+            "point_value": 10,
+            "expire_date": null,
+            "type": "activity",
+            "slug": "energy-intuition",
+            "unlock_condition": "submitted_action(\"power-energy\")",
+            "description": "Watch this video about improving your energy intuition.\r\n"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "smartgrid_design.designeraction",
+        "fields": {
+            "social_bonus": 0,
+            "video_id": "ZsgmnCxzHao",
+            "name": "Lighting video",
+            "video_source": "youtube",
+            "pub_date": "2011-07-26",
+            "image": "",
+            "title": "Watch video about Lighting",
+            "unlock_condition_text": "Complete Energy Intuition video activity",
+            "related_resource": "energy",
+            "embedded_widget": "",
+            "point_value": 10,
+            "expire_date": null,
+            "type": "activity",
+            "slug": "lighting-video",
+            "unlock_condition": "submitted_action(\"energy-intuition\")",
+            "description": "Watch this video about the ways we use energy to generate light.\r\n"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "smartgrid_design.designeraction",
+        "fields": {
+            "social_bonus": 0,
+            "video_id": "wc_Cfq9sEoY",
+            "name": "Audit Video",
+            "video_source": "youtube",
+            "pub_date": "2010-10-15",
+            "image": "",
+            "title": "Watch video on how to audit your energy use",
+            "unlock_condition_text": "Complete Energy Intuition video activity",
+            "related_resource": "energy",
+            "embedded_widget": null,
+            "point_value": 15,
+            "expire_date": null,
+            "type": "activity",
+            "slug": "audit-video",
+            "unlock_condition": "submitted_action(\"energy-intuition\")",
+            "description": "Watch this video that explains how to figure out how much energy your stuff uses.\r\n"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "smartgrid_design.designeraction",
+        "fields": {
+            "social_bonus": 0,
+            "video_id": "",
+            "name": "Check energy",
+            "video_source": null,
+            "pub_date": "2011-04-18",
+            "image": "",
+            "title": "Examine your lounge's energy use",
+            "unlock_condition_text": "Complete Energy Intuition video activity",
+            "related_resource": "energy",
+            "embedded_widget": "",
+            "point_value": 10,
+            "expire_date": null,
+            "type": "activity",
+            "slug": "check-energy",
+            "unlock_condition": "submitted_action(\"energy-intuition\")",
+            "description": "<!---\r\n<center>![Go Low icon](/site_media/staticimages/icons/icon-go-low-lg.png)</center>\r\n--->\r\n\r\nOne important aspect of the Kukui Cup is the Daily Energy Goal Game, which can be found on the [Go Low](/energy) page. Every lounge is assigned a daily energy goal that represents a 5% reduction in electricity use from what the lounge was using before the competition. The Energy Goal Game shows how much energy your lounge has used so far today, and how that compares to the energy goal. The game also shows some activities that might be helpful in getting your lounge to reduce its energy use.\r\n\r\nFor this activity, you will check out the [Go Low](/energy) page. Read the page over, and come back to here and report three things: is your lounge above or below the energy goal, by how much, and name one activity that might help your lounge conserve energy."
+        }
+    },
+    {
+        "pk": 18,
+        "model": "smartgrid_design.designeraction",
+        "fields": {
+            "social_bonus": 0,
+            "video_id": "",
+            "name": "Computer Sleep",
+            "video_source": null,
+            "pub_date": "2011-10-24",
+            "image": "media/smartgrid/actions/SleepyMacBookPro-small.png",
+            "title": "Configure your computer to sleep after inactivity",
+            "unlock_condition_text": "Complete Energy Intuition video activity",
+            "related_resource": "energy",
+            "embedded_widget": "",
+            "point_value": 20,
+            "expire_date": null,
+            "type": "activity",
+            "slug": "computer-sleep",
+            "unlock_condition": "submitted_action(\"energy-intuition\")",
+            "description": "Configure your computer and any external monitor to sleep after 20 minutes of inactivity (or less). You can find instructions on enabling sleep functionality at the [EnergySTAR website](http://www.energystar.gov/index.cfm?c=power_mgt.pr_power_mgt_users).\r\n\r\nOnce you have changed your settings, please take a screenshot showing the new settings for use in verification:\r\n\r\n  * [How to take a screenshot on Windows](http://www.wikihow.com/Take-a-Screenshot-in-Microsoft-Windows)\r\n  * [How to take a screenshot on Mac OS X](/help/faq/how-screenshot-mac/)"
+        }
+    },
+    {
+        "pk": 20,
+        "model": "smartgrid_design.designeraction",
+        "fields": {
+            "social_bonus": 0,
+            "video_id": "",
+            "name": "Power Hogs",
+            "video_source": null,
+            "pub_date": "2010-07-16",
+            "image": "media/smartgrid/actions/Xbox-label.jpg",
+            "title": "Label power hogs in your room",
+            "unlock_condition_text": "Complete Energy Intuition video activity",
+            "related_resource": "energy",
+            "embedded_widget": "",
+            "point_value": 15,
+            "expire_date": null,
+            "type": "activity",
+            "slug": "power-hogs",
+            "unlock_condition": "submitted_action(\"energy-intuition\")",
+            "description": "<!---\r\nThis is a followup activity to the [energy audit](/activities/activity/audit-room/) activity. If you haven't performed that activity, do it first and keep your notes around for this activity.\r\n--->\r\n\r\nMake a label for each device in your room that shows the number of watts consumed when on and off, and put it close to the power switch for those devices that have them. You'll need a portable energy meter such as a Belkin Conserve Insight to do this.\r\n\r\nOnce you have made the labels, take a photo of the labels of as many devices as you can fit in one picture to be used for verification."
+        }
+    },
+    {
+        "pk": 21,
+        "model": "smartgrid_design.designeraction",
+        "fields": {
+            "social_bonus": 0,
+            "video_id": "sAClKZPhcPI",
+            "name": "Energy Issues",
+            "video_source": "youtube",
+            "pub_date": "2011-09-04",
+            "image": "",
+            "title": "Watch Energy Generation: What's the fuss?",
+            "unlock_condition_text": "Complete Energy Intuition video activity",
+            "related_resource": null,
+            "embedded_widget": null,
+            "point_value": 10,
+            "expire_date": null,
+            "type": "activity",
+            "slug": "energy-gen-1",
+            "unlock_condition": "submitted_action(\"energy-intuition\")",
+            "description": "Watch this video that talks about how we generate our energy in Hawaii, and what the fuss is about.\r\n"
+        }
+    },
+    {
+        "pk": 22,
+        "model": "smartgrid_design.designeraction",
+        "fields": {
+            "social_bonus": 0,
+            "video_id": "c5lgCDtTzyQ",
+            "name": "Energy Now",
+            "video_source": "youtube",
+            "pub_date": "2011-10-24",
+            "image": "",
+            "title": "Watch Energy Generation: Where are we now?",
+            "unlock_condition_text": "Complete Energy Issues video activity",
+            "related_resource": null,
+            "embedded_widget": "",
+            "point_value": 10,
+            "expire_date": null,
+            "type": "activity",
+            "slug": "energy-gen-2",
+            "unlock_condition": "submitted_action(\"energy-gen-1\")",
+            "description": "Watch this video that talks about how we generate our energy in Hawaii right now, and how that differs from the mainland US."
+        }
+    },
+    {
+        "pk": 23,
+        "model": "smartgrid_design.designeraction",
+        "fields": {
+            "social_bonus": 0,
+            "video_id": "QgZ7AEE3ntY",
+            "name": "HCEI",
+            "video_source": "youtube",
+            "pub_date": "2011-09-14",
+            "image": "",
+            "title": "Watch Energy Generation: Hawaii Clean Energy Initiative",
+            "unlock_condition_text": "Complete Energy Now video activity",
+            "related_resource": null,
+            "embedded_widget": "",
+            "point_value": 10,
+            "expire_date": null,
+            "type": "activity",
+            "slug": "energy-gen-3",
+            "unlock_condition": "submitted_action(\"energy-gen-2\")",
+            "description": "Watch this video that talks about the Hawaii Clean Energy Initiative, a plan for increasing clean energy use in Hawaii.\r\n"
+        }
+    },
+    {
+        "pk": 24,
+        "model": "smartgrid_design.designeraction",
+        "fields": {
+            "social_bonus": 5,
+            "video_id": null,
+            "name": "Recycle cans",
+            "video_source": null,
+            "pub_date": "2012-04-21",
+            "image": "media/smartgrid/actions/recycling-can-lid.jpg",
+            "title": "I will recycle all beverage containers",
+            "unlock_condition_text": "Complete Energy Intuition video activity",
+            "related_resource": null,
+            "embedded_widget": null,
+            "point_value": 5,
+            "expire_date": null,
+            "type": "commitment",
+            "slug": "recycle-cans",
+            "unlock_condition": "submitted_action(\"energy-intuition\")",
+            "description": "Commit to recycling all (recyclable) beverage containers at one of the recycling bins on campus or around town. Making things from recycled materials generally costs less and uses less energy than making them from raw materials."
+        }
+    },
+    {
+        "pk": 25,
+        "model": "smartgrid_design.designeraction",
+        "fields": {
+            "social_bonus": 0,
+            "video_id": "6FeXBOyQerA",
+            "name": "Trash video",
+            "video_source": "youtube",
+            "pub_date": "2011-04-17",
+            "image": "",
+            "title": "Watch Trash is Treasure video",
+            "unlock_condition_text": "Complete Energy Intuition video activity",
+            "related_resource": null,
+            "embedded_widget": "",
+            "point_value": 10,
+            "expire_date": null,
+            "type": "activity",
+            "slug": "trash-video",
+            "unlock_condition": "submitted_action(\"energy-intuition\")",
+            "description": "Check out this video called Trash is Treasure and maybe change your thinking about trash."
+        }
+    },
+    {
+        "pk": 26,
+        "model": "smartgrid_design.designeraction",
+        "fields": {
+            "social_bonus": 0,
+            "video_id": "wSquej2rFXM",
+            "name": "Climate change",
+            "video_source": "youtube",
+            "pub_date": "2010-10-18",
+            "image": "",
+            "title": "Watch a video about climate change",
+            "unlock_condition_text": "Complete Energy Intuition video activity",
+            "related_resource": null,
+            "embedded_widget": "",
+            "point_value": 10,
+            "expire_date": null,
+            "type": "activity",
+            "slug": "climate-change",
+            "unlock_condition": "submitted_action(\"energy-intuition\")",
+            "description": "Watch this video talking about climate change and how it will affect Hawaii.\r\n"
+        }
+    },
+    {
+        "pk": 27,
+        "model": "smartgrid_design.designeraction",
+        "fields": {
+            "social_bonus": 0,
+            "video_id": "zK_cz7A7qVw",
+            "name": "Solar Energy",
+            "video_source": "youtube",
+            "pub_date": "2011-10-24",
+            "image": "",
+            "title": "Watch video about solar energy",
+            "unlock_condition_text": "Complete Energy Intuition video activity",
+            "related_resource": null,
+            "embedded_widget": "",
+            "point_value": 10,
+            "expire_date": null,
+            "type": "activity",
+            "slug": "solar-energy",
+            "unlock_condition": "submitted_action(\"energy-intuition\")",
+            "description": "Watch this video that explains how we can get energy directly from the sun.\r\n"
+        }
+    },
+    {
+        "pk": 29,
+        "model": "smartgrid_design.designeraction",
+        "fields": {
+            "social_bonus": 5,
+            "video_id": null,
+            "name": "Pull the plug",
+            "video_source": null,
+            "pub_date": "2012-04-21",
+            "image": "",
+            "title": "I will do something 'unplugged' every day",
+            "unlock_condition_text": "Complete Energy Intuition video activity",
+            "related_resource": "energy",
+            "embedded_widget": null,
+            "point_value": 5,
+            "expire_date": null,
+            "type": "commitment",
+            "slug": "go-unplugged",
+            "unlock_condition": "submitted_action(\"energy-intuition\")",
+            "description": "Commit to turning off your computer/TV/game console and doing something that doesn't require electricity instead every day. There are many things you can do both on and off campus that don't require electricity, go find them!"
+        }
+    },
+    {
+        "pk": 30,
+        "model": "smartgrid_design.designeraction",
+        "fields": {
+            "social_bonus": 5,
+            "video_id": null,
+            "name": "Limit TV",
+            "video_source": null,
+            "pub_date": "2012-04-21",
+            "image": "",
+            "title": "I will limit my TV use to 1 hour a day",
+            "unlock_condition_text": "Complete Go Unplugged",
+            "related_resource": "energy",
+            "embedded_widget": null,
+            "point_value": 5,
+            "expire_date": null,
+            "type": "commitment",
+            "slug": "limit-tv",
+            "unlock_condition": "submitted_action(\"go-unplugged\")",
+            "description": "Commit to using your TV (watching shows, movies, playing games) for less than 1 hour per day. Widescreen TVs use a lot of electricity, so putting a limit on how much you use them will reduce your electricity use."
+        }
+    },
+    {
+        "pk": 31,
+        "model": "smartgrid_design.designeraction",
+        "fields": {
+            "social_bonus": 5,
+            "video_id": null,
+            "name": "Go meatless",
+            "video_source": null,
+            "pub_date": "2012-04-21",
+            "image": "",
+            "title": "I will not eat meat",
+            "unlock_condition_text": "Complete Limit TV",
+            "related_resource": null,
+            "embedded_widget": null,
+            "point_value": 5,
+            "expire_date": null,
+            "type": "commitment",
+            "slug": "no-meat",
+            "unlock_condition": "submitted_action(\"limit-tv\")",
+            "description": "Commit to not eating any meat (beef, pork, chicken, fish, shellfish, etc) during the commitment period. Producing meat (beef in particular) uses a great deal of energy, and produces a great deal of greenhouse gasses. A vegetarian diet uses less energy and emits less greenhouse gas. There are many of vegetarian food options both on campus and around Honolulu, try them out!"
+        }
+    },
+    {
+        "pk": 32,
+        "model": "smartgrid_design.designeraction",
+        "fields": {
+            "social_bonus": 10,
+            "video_id": "",
+            "name": "Letter to Editor",
+            "video_source": null,
+            "pub_date": "2011-09-19",
+            "image": "",
+            "title": "Write a letter to the editor on a Kukui Cup topic",
+            "unlock_condition_text": "Complete Energy Intuition video activity",
+            "related_resource": null,
+            "embedded_widget": "",
+            "point_value": 0,
+            "expire_date": null,
+            "type": "activity",
+            "slug": "letter-editor",
+            "unlock_condition": "submitted_action(\"energy-intuition\")",
+            "description": "This activity is an opportunity to creatively explore one of the topics of the Kukui Cup in more depth. For this activity, you will write a **letter to the editor** of a local publication on the subject of one of the categories from the Smart Grid such as energy, lighting, transportation, etc. Note that this activity will require significantly more effort than normal activities, but it is also worth more points. This activity is worth a variable number of points, so the more effort and the higher quality of your letter, the more points you will receive.\r\n\r\nSome local publications you might write to:\r\n\r\n* [Honolulu Weekly](http://honoluluweekly.com/contact-us/)\r\n* [Star-Advertiser](http://www.staradvertiser.com/info/Star-Advertiser_Letter_to_the_Editor.html)\r\n* [MidWeek](http://www.midweek.com/content/columns/lte_article/letters_to_the_editor1031/) (scroll to bottom for submission info)"
+        }
+    },
+    {
+        "pk": 33,
+        "model": "smartgrid_design.designeraction",
+        "fields": {
+            "social_bonus": 10,
+            "video_id": "",
+            "name": "Write Poem",
+            "video_source": null,
+            "pub_date": "2011-09-19",
+            "image": "",
+            "title": "Write a poem on a Kukui Cup topic",
+            "unlock_condition_text": "Complete Letter to the Editor activity",
+            "related_resource": null,
+            "embedded_widget": "",
+            "point_value": 0,
+            "expire_date": null,
+            "type": "activity",
+            "slug": "write-poem",
+            "unlock_condition": "submitted_action(\"letter-editor\")",
+            "description": "This activity is an opportunity to creatively explore one of the topics of the Kukui Cup in more depth. For this activity, you will write a **poem** (or limerick or haiku) on the subject of one of the categories from the Smart Grid such as energy, lighting, transportation, etc. Note that this activity will require significantly more effort than normal activities, but it is also worth more points. This activity is worth a variable number of points, so the more effort and the higher quality of your poem, the more points you will receive."
+        }
+    },
+    {
+        "pk": 35,
+        "model": "smartgrid_design.designeraction",
+        "fields": {
+            "social_bonus": 5,
+            "video_id": null,
+            "name": "Use stairs",
+            "video_source": null,
+            "pub_date": "2012-04-21",
+            "image": "media/smartgrid/actions/stairwell.jpg",
+            "title": "I will use stairs instead of elevator",
+            "unlock_condition_text": "Complete Energy Intuition video activity",
+            "related_resource": null,
+            "embedded_widget": null,
+            "point_value": 5,
+            "expire_date": null,
+            "type": "commitment",
+            "slug": "use-stairs",
+            "unlock_condition": "submitted_action(\"energy-intuition\")",
+            "description": "Commit to using the stairs instead of elevators during your day, whenever that is feasible. Elevators use electricity, so by using the stairs you will save some energy. Also, using the stairs is good exercise!"
+        }
+    },
+    {
+        "pk": 36,
+        "model": "smartgrid_design.designeraction",
+        "fields": {
+            "social_bonus": 10,
+            "video_id": "",
+            "name": "Impactless Date",
+            "video_source": null,
+            "pub_date": "2011-10-31",
+            "image": "",
+            "title": "Go on a No Impact date",
+            "unlock_condition_text": "Complete Turn Off Water commitment",
+            "related_resource": null,
+            "embedded_widget": "",
+            "point_value": 10,
+            "expire_date": null,
+            "type": "activity",
+            "slug": "no-impact-date",
+            "unlock_condition": "submitted_action(\"turn-off-water\")",
+            "description": "While traditional ideas of a date include significant consumption, here's your chance to do something radical:  have a good time with a friend while using the minimum amount of electrical energy possible! Use this as an opportunity to be creative: how many different things can you do with a friend while using the least possible energy? Consider your transportation: can you walk, ride a bike, or take public transportation? Consider your food: what can you eat together that is delicious but was grown, delivered, and prepared with minimal energy? Consider your entertainment: what can you do together that is interesting, novel, and fun that does not consume resources?"
+        }
+    },
+    {
+        "pk": 37,
+        "model": "smartgrid_design.designeraction",
+        "fields": {
+            "social_bonus": 5,
+            "video_id": null,
+            "name": "Turn off sink",
+            "video_source": null,
+            "pub_date": "2012-04-21",
+            "image": "media/smartgrid/actions/sink.jpg",
+            "title": "I will turn off water when brushing my teeth or shaving",
+            "unlock_condition_text": "Complete Use Stairs commitment",
+            "related_resource": "water",
+            "embedded_widget": null,
+            "point_value": 5,
+            "expire_date": null,
+            "type": "commitment",
+            "slug": "turn-off-water",
+            "unlock_condition": "submitted_action(\"use-stairs\")",
+            "description": "Commit to turning off water at sinks when you aren't actually using the water, such as when brushing your teeth, shaving, applying makeup, etc. Clean water is a valuable resource that shouldn't be wasted. Also pumping water from the ground into a building, heating it, and then treating the used water takes energy, so reducing the amount of water used saves energy."
+        }
+    },
+    {
+        "pk": 38,
+        "model": "smartgrid_design.designeraction",
+        "fields": {
+            "social_bonus": 0,
+            "video_id": "",
+            "name": "Line Graph",
+            "video_source": null,
+            "pub_date": "2011-10-28",
+            "image": "",
+            "title": "Gotta Line On You",
+            "unlock_condition_text": "Complete Energy Intuition video activity",
+            "related_resource": "energy",
+            "embedded_widget": "viz_chart",
+            "point_value": 10,
+            "expire_date": null,
+            "type": "activity",
+            "slug": "line-graph",
+            "unlock_condition": "submitted_action(\"energy-intuition\")",
+            "description": "Check out the Line Graph visualization below, which shows a zoomable chart of energy or power usage for one or more lounges. Come up with answers to the questions below, and submit them:\r\n\r\n1. What interesting differences do you notice in energy use when looking at the 3 different timescales?\r\n2. How different are the graphs of power and energy?\r\n3. Pick 2 lounges and compare their energy use across 2 different time scales.\r\n4. What are your thoughts on this visualization? What are its strengths and weaknesses?"
+        }
+    },
+    {
+        "pk": 39,
+        "model": "smartgrid_design.designeraction",
+        "fields": {
+            "social_bonus": 0,
+            "video_id": "",
+            "name": "Hot Spots",
+            "video_source": null,
+            "pub_date": "2011-09-19",
+            "image": "",
+            "title": "Hitting the Hotspots",
+            "unlock_condition_text": "Complete Gotta Line On You activity",
+            "related_resource": "energy",
+            "embedded_widget": "viz_hotspots",
+            "point_value": 10,
+            "expire_date": null,
+            "type": "activity",
+            "slug": "hot-spots",
+            "unlock_condition": "submitted_action(\"line-graph\")",
+            "description": "Check out the Hot Spot visualization below, which shows hourly energy use over a weeklong period for a particular lounge. Come up with answers to the questions below, and submit them below:\r\n\r\n1. What hours of the day seem to have the highest energy use? How does that compare to your own energy use patterns?\r\n2. What differences in energy use do you notice between lounges?\r\n3. What are your thoughts on this visualization? What are its strengths and weaknesses?"
+        }
+    },
+    {
+        "pk": 40,
+        "model": "smartgrid_design.designeraction",
+        "fields": {
+            "social_bonus": 0,
+            "video_id": "",
+            "name": "Power Meters",
+            "video_source": null,
+            "pub_date": "2011-10-28",
+            "image": "",
+            "title": "How Powerful are the Lounges?",
+            "unlock_condition_text": "Complete Hitting the HotSpots activity",
+            "related_resource": "energy",
+            "embedded_widget": "viz_power_meters",
+            "point_value": 10,
+            "expire_date": null,
+            "type": "activity",
+            "slug": "power-meters",
+            "unlock_condition": "submitted_action(\"hot-spots\")",
+            "description": "Check out the Power Meter visualization below on the Canopy page, which shows the real-time power usage 5 selectable lounges. Come up with answers to the questions below, and submit them:\r\n\r\n1. Compare the 5 lounges in your tower. How does their power usage compare right now?\r\n2. Pick a particular lounge letter and compare that lounge across the 4 towers. How does the power consumption differ?\r\n3. What are your thoughts on this visualization? What are its strengths and weaknesses?"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "smartgrid_design.designeractivity",
+        "fields": {
+            "admin_note": null,
+            "confirm_type": "text",
+            "point_range_start": null,
+            "confirm_prompt": "",
+            "expected_duration": 5,
+            "point_range_end": null
+        }
+    },
+    {
+        "pk": 2,
+        "model": "smartgrid_design.designeractivity",
+        "fields": {
+            "admin_note": null,
+            "confirm_type": "text",
+            "point_range_start": null,
+            "confirm_prompt": "",
+            "expected_duration": 5,
+            "point_range_end": null
+        }
+    },
+    {
+        "pk": 3,
+        "model": "smartgrid_design.designeractivity",
+        "fields": {
+            "admin_note": null,
+            "confirm_type": "text",
+            "point_range_start": null,
+            "confirm_prompt": "",
+            "expected_duration": 5,
+            "point_range_end": null
+        }
+    },
+    {
+        "pk": 4,
+        "model": "smartgrid_design.designeractivity",
+        "fields": {
+            "admin_note": null,
+            "confirm_type": "free",
+            "point_range_start": null,
+            "confirm_prompt": "Please tell us your name on Facebook (usually just your real name) so we can confirm that you Liked the page on Facebook.",
+            "expected_duration": 5,
+            "point_range_end": null
+        }
+    },
+    {
+        "pk": 5,
+        "model": "smartgrid_design.designeractivity",
+        "fields": {
+            "admin_note": null,
+            "confirm_type": "free",
+            "point_range_start": null,
+            "confirm_prompt": "Please tell us your Twitter username so we can check out your tweet.",
+            "expected_duration": 5,
+            "point_range_end": null
+        }
+    },
+    {
+        "pk": 6,
+        "model": "smartgrid_design.designeractivity",
+        "fields": {
+            "admin_note": null,
+            "confirm_type": "image",
+            "point_range_start": 5,
+            "confirm_prompt": "Please upload the picture of your door art.",
+            "expected_duration": 60,
+            "point_range_end": 15
+        }
+    },
+    {
+        "pk": 13,
+        "model": "smartgrid_design.designeractivity",
+        "fields": {
+            "admin_note": null,
+            "confirm_type": "text",
+            "point_range_start": null,
+            "confirm_prompt": "",
+            "expected_duration": 5,
+            "point_range_end": null
+        }
+    },
+    {
+        "pk": 14,
+        "model": "smartgrid_design.designeractivity",
+        "fields": {
+            "admin_note": null,
+            "confirm_type": "text",
+            "point_range_start": null,
+            "confirm_prompt": "",
+            "expected_duration": 5,
+            "point_range_end": null
+        }
+    },
+    {
+        "pk": 15,
+        "model": "smartgrid_design.designeractivity",
+        "fields": {
+            "admin_note": null,
+            "confirm_type": "text",
+            "point_range_start": null,
+            "confirm_prompt": "",
+            "expected_duration": 5,
+            "point_range_end": null
+        }
+    },
+    {
+        "pk": 17,
+        "model": "smartgrid_design.designeractivity",
+        "fields": {
+            "admin_note": null,
+            "confirm_type": "free",
+            "point_range_start": null,
+            "confirm_prompt": "Please report on the following 3 things: is your lounge above or below the energy goal? by how much? name one activity that might help your lounge conserve energy.",
+            "expected_duration": 10,
+            "point_range_end": null
+        }
+    },
+    {
+        "pk": 18,
+        "model": "smartgrid_design.designeractivity",
+        "fields": {
+            "admin_note": null,
+            "confirm_type": "image",
+            "point_range_start": null,
+            "confirm_prompt": "Please upload the screenshot you took of your new, more energy efficient system settings.",
+            "expected_duration": 10,
+            "point_range_end": null
+        }
+    },
+    {
+        "pk": 20,
+        "model": "smartgrid_design.designeractivity",
+        "fields": {
+            "admin_note": null,
+            "confirm_type": "image",
+            "point_range_start": null,
+            "confirm_prompt": "Please upload the photo showing your labels on devices in your room.",
+            "expected_duration": 15,
+            "point_range_end": null
+        }
+    },
+    {
+        "pk": 21,
+        "model": "smartgrid_design.designeractivity",
+        "fields": {
+            "admin_note": null,
+            "confirm_type": "text",
+            "point_range_start": null,
+            "confirm_prompt": "",
+            "expected_duration": 5,
+            "point_range_end": null
+        }
+    },
+    {
+        "pk": 22,
+        "model": "smartgrid_design.designeractivity",
+        "fields": {
+            "admin_note": null,
+            "confirm_type": "text",
+            "point_range_start": null,
+            "confirm_prompt": "",
+            "expected_duration": 5,
+            "point_range_end": null
+        }
+    },
+    {
+        "pk": 23,
+        "model": "smartgrid_design.designeractivity",
+        "fields": {
+            "admin_note": null,
+            "confirm_type": "text",
+            "point_range_start": null,
+            "confirm_prompt": "",
+            "expected_duration": 5,
+            "point_range_end": null
+        }
+    },
+    {
+        "pk": 25,
+        "model": "smartgrid_design.designeractivity",
+        "fields": {
+            "admin_note": null,
+            "confirm_type": "text",
+            "point_range_start": null,
+            "confirm_prompt": "",
+            "expected_duration": 5,
+            "point_range_end": null
+        }
+    },
+    {
+        "pk": 26,
+        "model": "smartgrid_design.designeractivity",
+        "fields": {
+            "admin_note": null,
+            "confirm_type": "text",
+            "point_range_start": null,
+            "confirm_prompt": "",
+            "expected_duration": 5,
+            "point_range_end": null
+        }
+    },
+    {
+        "pk": 27,
+        "model": "smartgrid_design.designeractivity",
+        "fields": {
+            "admin_note": null,
+            "confirm_type": "text",
+            "point_range_start": null,
+            "confirm_prompt": "",
+            "expected_duration": 5,
+            "point_range_end": null
+        }
+    },
+    {
+        "pk": 32,
+        "model": "smartgrid_design.designeractivity",
+        "fields": {
+            "admin_note": null,
+            "confirm_type": "free",
+            "point_range_start": 5,
+            "confirm_prompt": "Please tell us what publication you sent your letter to, and paste the contents of the letter.",
+            "expected_duration": 120,
+            "point_range_end": 50
+        }
+    },
+    {
+        "pk": 33,
+        "model": "smartgrid_design.designeractivity",
+        "fields": {
+            "admin_note": null,
+            "confirm_type": "free",
+            "point_range_start": 5,
+            "confirm_prompt": "Please type or paste your poem below",
+            "expected_duration": 60,
+            "point_range_end": 50
+        }
+    },
+    {
+        "pk": 36,
+        "model": "smartgrid_design.designeractivity",
+        "fields": {
+            "admin_note": null,
+            "confirm_type": "free_image",
+            "point_range_start": null,
+            "confirm_prompt": "Please describe your no impact date and what you did. Upload a photo of you and your friend doing one of the activities together.",
+            "expected_duration": 120,
+            "point_range_end": null
+        }
+    },
+    {
+        "pk": 38,
+        "model": "smartgrid_design.designeractivity",
+        "fields": {
+            "admin_note": null,
+            "confirm_type": "free",
+            "point_range_start": null,
+            "confirm_prompt": "Answer these questions:\r\n\r\n1.  What interesting differences do you notice in energy use when looking at the 3 different timescales?\r\n2.  What how different are the graphs of power and energy?\r\n3.  Pick 2 lounges and compare their energy use across 2 different time scales.\r\n4.  What are your thoughts on this visualization? What are its strengths and weaknesses?",
+            "expected_duration": 15,
+            "point_range_end": null
+        }
+    },
+    {
+        "pk": 39,
+        "model": "smartgrid_design.designeractivity",
+        "fields": {
+            "admin_note": null,
+            "confirm_type": "free",
+            "point_range_start": null,
+            "confirm_prompt": "Answer the following questions:\r\n\r\n1. What hours of the day seem to have the highest energy use? How does that compare to your own energy use patterns?\r\n2. What differences in energy use do you notice between lounges?\r\n3. What are your thoughts on this visualization? What are its strengths and weaknesses?\r\n",
+            "expected_duration": 15,
+            "point_range_end": null
+        }
+    },
+    {
+        "pk": 40,
+        "model": "smartgrid_design.designeractivity",
+        "fields": {
+            "admin_note": null,
+            "confirm_type": "free",
+            "point_range_start": null,
+            "confirm_prompt": "Answer the following questions:\r\n1. Compare the 5 lounges in your tower. How does their power usage compare right now?\r\n2. Pick a particular lounge letter and compare that lounge across the 4 towers. How does the power consumption differ?\r\n3. What are your thoughts on this visualization? What are its strengths and weaknesses?",
+            "expected_duration": 15,
+            "point_range_end": null
+        }
+    },
+    {
+        "pk": 7,
+        "model": "smartgrid_design.designercommitment",
+        "fields": {
+            "commitment_length": 1
+        }
+    },
+    {
+        "pk": 8,
+        "model": "smartgrid_design.designercommitment",
+        "fields": {
+            "commitment_length": 1
+        }
+    },
+    {
+        "pk": 9,
+        "model": "smartgrid_design.designercommitment",
+        "fields": {
+            "commitment_length": 1
+        }
+    },
+    {
+        "pk": 10,
+        "model": "smartgrid_design.designercommitment",
+        "fields": {
+            "commitment_length": 1
+        }
+    },
+    {
+        "pk": 11,
+        "model": "smartgrid_design.designercommitment",
+        "fields": {
+            "commitment_length": 1
+        }
+    },
+    {
+        "pk": 24,
+        "model": "smartgrid_design.designercommitment",
+        "fields": {
+            "commitment_length": 1
+        }
+    },
+    {
+        "pk": 29,
+        "model": "smartgrid_design.designercommitment",
+        "fields": {
+            "commitment_length": 1
+        }
+    },
+    {
+        "pk": 30,
+        "model": "smartgrid_design.designercommitment",
+        "fields": {
+            "commitment_length": 1
+        }
+    },
+    {
+        "pk": 31,
+        "model": "smartgrid_design.designercommitment",
+        "fields": {
+            "commitment_length": 1
+        }
+    },
+    {
+        "pk": 35,
+        "model": "smartgrid_design.designercommitment",
+        "fields": {
+            "commitment_length": 1
+        }
+    },
+    {
+        "pk": 37,
+        "model": "smartgrid_design.designercommitment",
+        "fields": {
+            "commitment_length": 1
+        }
+    },
+    {
+        "pk": 12,
+        "model": "smartgrid_design.designerevent",
+        "fields": {
+            "event_date": "2013-12-24T09:11:53.363",
+            "event_max_seat": 1000,
+            "event_location": "Online",
+            "expected_duration": 1
+        }
+    },
+    {
+        "pk": 1,
+        "model": "smartgrid_design.designercolumngrid",
+        "fields": {
+            "column": 1,
+            "name": 3,
+            "level": 1
+        }
+    },
+    {
+        "pk": 2,
+        "model": "smartgrid_design.designercolumngrid",
+        "fields": {
+            "column": 2,
+            "name": 6,
+            "level": 1
+        }
+    },
+    {
+        "pk": 3,
+        "model": "smartgrid_design.designercolumngrid",
+        "fields": {
+            "column": 3,
+            "name": 9,
+            "level": 1
+        }
+    },
+    {
+        "pk": 4,
+        "model": "smartgrid_design.designercolumngrid",
+        "fields": {
+            "column": 4,
+            "name": 10,
+            "level": 1
+        }
+    },
+    {
+        "pk": 5,
+        "model": "smartgrid_design.designercolumngrid",
+        "fields": {
+            "column": 1,
+            "name": 1,
+            "level": 2
+        }
+    },
+    {
+        "pk": 6,
+        "model": "smartgrid_design.designercolumngrid",
+        "fields": {
+            "column": 2,
+            "name": 5,
+            "level": 2
+        }
+    },
+    {
+        "pk": 7,
+        "model": "smartgrid_design.designercolumngrid",
+        "fields": {
+            "column": 3,
+            "name": 8,
+            "level": 2
+        }
+    },
+    {
+        "pk": 8,
+        "model": "smartgrid_design.designercolumngrid",
+        "fields": {
+            "column": 4,
+            "name": 11,
+            "level": 2
+        }
+    },
+    {
+        "pk": 9,
+        "model": "smartgrid_design.designercolumngrid",
+        "fields": {
+            "column": 1,
+            "name": 2,
+            "level": 3
+        }
+    },
+    {
+        "pk": 10,
+        "model": "smartgrid_design.designercolumngrid",
+        "fields": {
+            "column": 2,
+            "name": 4,
+            "level": 3
+        }
+    },
+    {
+        "pk": 11,
+        "model": "smartgrid_design.designercolumngrid",
+        "fields": {
+            "column": 3,
+            "name": 7,
+            "level": 3
+        }
+    },
+    {
+        "pk": 12,
+        "model": "smartgrid_design.designercolumngrid",
+        "fields": {
+            "column": 4,
+            "name": 12,
+            "level": 3
+        }
+    },
+    {
+        "pk": 1,
+        "model": "smartgrid_design.designergrid",
+        "fields": {
+            "column": 1,
+            "action": 1,
+            "row": 1,
+            "level": 1
+        }
+    },
+    {
+        "pk": 5,
+        "model": "smartgrid_design.designergrid",
+        "fields": {
+            "column": 1,
+            "action": 2,
+            "row": 2,
+            "level": 1
+        }
+    },
+    {
+        "pk": 9,
+        "model": "smartgrid_design.designergrid",
+        "fields": {
+            "column": 1,
+            "action": 3,
+            "row": 3,
+            "level": 1
+        }
+    },
+    {
+        "pk": 2,
+        "model": "smartgrid_design.designergrid",
+        "fields": {
+            "column": 2,
+            "action": 4,
+            "row": 1,
+            "level": 1
+        }
+    },
+    {
+        "pk": 6,
+        "model": "smartgrid_design.designergrid",
+        "fields": {
+            "column": 2,
+            "action": 5,
+            "row": 2,
+            "level": 1
+        }
+    },
+    {
+        "pk": 10,
+        "model": "smartgrid_design.designergrid",
+        "fields": {
+            "column": 2,
+            "action": 6,
+            "row": 3,
+            "level": 1
+        }
+    },
+    {
+        "pk": 3,
+        "model": "smartgrid_design.designergrid",
+        "fields": {
+            "column": 3,
+            "action": 7,
+            "row": 1,
+            "level": 1
+        }
+    },
+    {
+        "pk": 7,
+        "model": "smartgrid_design.designergrid",
+        "fields": {
+            "column": 3,
+            "action": 8,
+            "row": 2,
+            "level": 1
+        }
+    },
+    {
+        "pk": 11,
+        "model": "smartgrid_design.designergrid",
+        "fields": {
+            "column": 3,
+            "action": 9,
+            "row": 3,
+            "level": 1
+        }
+    },
+    {
+        "pk": 4,
+        "model": "smartgrid_design.designergrid",
+        "fields": {
+            "column": 4,
+            "action": 10,
+            "row": 1,
+            "level": 1
+        }
+    },
+    {
+        "pk": 8,
+        "model": "smartgrid_design.designergrid",
+        "fields": {
+            "column": 4,
+            "action": 11,
+            "row": 2,
+            "level": 1
+        }
+    },
+    {
+        "pk": 12,
+        "model": "smartgrid_design.designergrid",
+        "fields": {
+            "column": 4,
+            "action": 12,
+            "row": 3,
+            "level": 1
+        }
+    },
+    {
+        "pk": 13,
+        "model": "smartgrid_design.designergrid",
+        "fields": {
+            "column": 1,
+            "action": 13,
+            "row": 1,
+            "level": 2
+        }
+    },
+    {
+        "pk": 17,
+        "model": "smartgrid_design.designergrid",
+        "fields": {
+            "column": 1,
+            "action": 14,
+            "row": 2,
+            "level": 2
+        }
+    },
+    {
+        "pk": 23,
+        "model": "smartgrid_design.designergrid",
+        "fields": {
+            "column": 1,
+            "action": 15,
+            "row": 3,
+            "level": 2
+        }
+    },
+    {
+        "pk": 14,
+        "model": "smartgrid_design.designergrid",
+        "fields": {
+            "column": 2,
+            "action": 17,
+            "row": 1,
+            "level": 2
+        }
+    },
+    {
+        "pk": 18,
+        "model": "smartgrid_design.designergrid",
+        "fields": {
+            "column": 2,
+            "action": 18,
+            "row": 2,
+            "level": 2
+        }
+    },
+    {
+        "pk": 21,
+        "model": "smartgrid_design.designergrid",
+        "fields": {
+            "column": 2,
+            "action": 20,
+            "row": 4,
+            "level": 2
+        }
+    },
+    {
+        "pk": 15,
+        "model": "smartgrid_design.designergrid",
+        "fields": {
+            "column": 3,
+            "action": 21,
+            "row": 1,
+            "level": 2
+        }
+    },
+    {
+        "pk": 19,
+        "model": "smartgrid_design.designergrid",
+        "fields": {
+            "column": 3,
+            "action": 22,
+            "row": 2,
+            "level": 2
+        }
+    },
+    {
+        "pk": 24,
+        "model": "smartgrid_design.designergrid",
+        "fields": {
+            "column": 3,
+            "action": 23,
+            "row": 3,
+            "level": 2
+        }
+    },
+    {
+        "pk": 22,
+        "model": "smartgrid_design.designergrid",
+        "fields": {
+            "column": 3,
+            "action": 24,
+            "row": 4,
+            "level": 2
+        }
+    },
+    {
+        "pk": 16,
+        "model": "smartgrid_design.designergrid",
+        "fields": {
+            "column": 4,
+            "action": 25,
+            "row": 1,
+            "level": 2
+        }
+    },
+    {
+        "pk": 20,
+        "model": "smartgrid_design.designergrid",
+        "fields": {
+            "column": 4,
+            "action": 26,
+            "row": 2,
+            "level": 2
+        }
+    },
+    {
+        "pk": 25,
+        "model": "smartgrid_design.designergrid",
+        "fields": {
+            "column": 4,
+            "action": 27,
+            "row": 3,
+            "level": 2
+        }
+    },
+    {
+        "pk": 26,
+        "model": "smartgrid_design.designergrid",
+        "fields": {
+            "column": 1,
+            "action": 29,
+            "row": 1,
+            "level": 3
+        }
+    },
+    {
+        "pk": 30,
+        "model": "smartgrid_design.designergrid",
+        "fields": {
+            "column": 1,
+            "action": 30,
+            "row": 2,
+            "level": 3
+        }
+    },
+    {
+        "pk": 33,
+        "model": "smartgrid_design.designergrid",
+        "fields": {
+            "column": 1,
+            "action": 31,
+            "row": 3,
+            "level": 3
+        }
+    },
+    {
+        "pk": 27,
+        "model": "smartgrid_design.designergrid",
+        "fields": {
+            "column": 2,
+            "action": 32,
+            "row": 1,
+            "level": 3
+        }
+    },
+    {
+        "pk": 31,
+        "model": "smartgrid_design.designergrid",
+        "fields": {
+            "column": 2,
+            "action": 33,
+            "row": 2,
+            "level": 3
+        }
+    },
+    {
+        "pk": 28,
+        "model": "smartgrid_design.designergrid",
+        "fields": {
+            "column": 3,
+            "action": 35,
+            "row": 1,
+            "level": 3
+        }
+    },
+    {
+        "pk": 32,
+        "model": "smartgrid_design.designergrid",
+        "fields": {
+            "column": 3,
+            "action": 36,
+            "row": 2,
+            "level": 3
+        }
+    },
+    {
+        "pk": 34,
+        "model": "smartgrid_design.designergrid",
+        "fields": {
+            "column": 3,
+            "action": 37,
+            "row": 3,
+            "level": 3
+        }
+    },
+    {
+        "pk": 29,
+        "model": "smartgrid_design.designergrid",
+        "fields": {
+            "column": 4,
+            "action": 38,
+            "row": 1,
+            "level": 3
+        }
+    },
+    {
+        "pk": 36,
+        "model": "smartgrid_design.designergrid",
+        "fields": {
+            "column": 4,
+            "action": 39,
+            "row": 2,
+            "level": 3
+        }
+    },
+    {
+        "pk": 35,
+        "model": "smartgrid_design.designergrid",
+        "fields": {
+            "column": 4,
+            "action": 40,
+            "row": 3,
+            "level": 3
+        }
+    }
+]

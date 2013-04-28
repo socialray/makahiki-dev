@@ -1,0 +1,34 @@
+[
+    {
+        "pk": 1,
+        "model": "notifications.noticetemplate",
+        "fields": {
+            "notice_type": "raffle-winner", 
+            "template": "Congratulations, you won a raffle prize '{{PRIZE.title}}' for {{PRIZE.round.name}} !  Please come to the upcoming awards party to claim your prize."
+        }
+    }, 
+    {
+        "pk": 2,
+        "model": "notifications.noticetemplate",
+        "fields": {
+            "notice_type": "commitment-ready", 
+            "template": "Your commitment '{{COMMITMENT.title}}' is ready for redemption! Click <a href='{% url activity_task \"commitment\" COMMITMENT.slug %}'>here</a> to get your points."
+        }
+    }, 
+    {
+        "pk": 3,
+        "model": "notifications.noticetemplate",
+        "fields": {
+            "notice_type": "round-transition", 
+            "template": "{{CURRENT_ROUND}} has started!"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "notifications.noticetemplate",
+        "fields": {
+            "notice_type": "prize-winner",
+            "template": "Congratulations, you won a prize '{{PRIZE.title}}' for {{PRIZE.round.name}} !  Please come to the upcoming awards party to claim your prize."
+        }
+    }
+]

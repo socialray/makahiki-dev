@@ -1,0 +1,63 @@
+{% extends "logged_in_base.html" %}
+
+{% load avatar_tags %}
+
+{% block page_title %}
+    Team Members
+{% endblock %}
+
+{% block selected_icon %}selected-news{% endblock %}
+
+{% block extra_head %}
+  {% if not MAKAHIKI_USE_LESS %}
+    <link rel="stylesheet" href="{{STATIC_URL}}css/news.css">
+  {% else %}
+    <link rel="stylesheet/less" type="text/css" href="{{STATIC_URL}}less/news.less">
+  {% endif %}
+{% endblock %}
+
+{% block body %}
+    <div class="content-box">
+        <div class="content-box-title">
+            {{ TEAM_LABEL }} Members
+        </div>
+        <div class="content-box-contents">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th colspan=2>Name</th>
+                        <th>Badges</th>
+                        <th>Role</th>
+                        <th>Ranking</th>
+                        <th>Points</th>
+                        <th>Commitments and RSVPs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for member in team_members.team_members %}
+                    <tr>
+                        {% with member=member.profile %}
+                          {% include "member.html" %}
+                        {% endwith %}
+                    </tr>
+                    {% endfor %}
+
+                    {% for member in team_members.zero_members %}
+                    <tr>
+                          {% include "member.html" %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <center>
+                <a href="{% url news_index %}">
+                    <button class="btn btn-widget" style="cursor:pointer;">
+                        <img src="{{ STATIC_URL}}images/left.png" width="25"
+                             align="top">
+                        Back to the News Page
+                        </button>
+                </a>
+            </center>
+        </div>
+    </div>
+{% endblock %}

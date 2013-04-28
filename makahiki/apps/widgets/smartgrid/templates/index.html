@@ -1,0 +1,246 @@
+{% load cache %}
+{% load sgg_design_tags %}
+{% cache 1800 smartgrid request.user %}
+
+<div class="content-box-centered">
+    <div class="content-box-title">
+        The Smart Grid Game
+        <a href="#" style="float: right">
+            <img src="{{ STATIC_URL}}images/icons/icon-help-sm.png" width="20" align="center"
+                 title="Click to get help about this window"
+                 onclick="toggleHelp(event, 'widget', 'smart-grid-game'); return false;"
+                    /></a>
+    </div>
+    <div class="content-box-contents">
+        <p></p>
+        <!-- Tabs for the levels -->
+        <ul id="sgg-levels-tab" class="nav nav-tabs">
+        {% for level in view_objects.smartgrid.levels %}
+            <li class="">
+                <a
+                  {% if level.is_unlock %}
+                      class="level-unlocked" data-toggle="tab" style="padding-right: 6px; padding-left: 6px;" title="{{ level.name }} Actions"
+                  {% else %}
+                      class="level-locked" style="cursor:no-drop; padding-right: 6px; padding-left: 6px;" title="{{ level.unlock_condition_text }}"
+                      onclick="toggleLocked(event, '{{ level.unlock_condition_text|safe }}'); return false;"
+                  {% endif %}
+                  href="#sgg-level-{{forloop.counter}}" rel="tooltip" >
+                  {% if level.is_complete %}
+                      <img src="{{ STATIC_URL}}images/icons/icon-done.png" width="12" align="left"/>                  
+                  {% endif %}
+                  {% if not level.is_unlock %}
+                      <img src="{{ STATIC_URL}}images/lock24.png" width="14" align="left"/>
+                  {% endif %}
+                    {{ level.name }}
+                </a>
+        {% endfor %}
+        </ul>
+        <!-- Tab contents -->
+        <div class="tab-content">
+        {% for grid_level in view_objects.smartgrid.grid %}
+        	{% with level=grid_level|nth:0 %}
+        	{% with col_list=grid_level|nth:1 %}
+        	{% with act_list=grid_level|nth:2 %}
+        	{% with columns=grid_level|nth:3 %}
+        	{% with max_col=grid_level|nth:4 %}
+        	{% with max_row=grid_level|nth:5 %}
+            <div id="sgg-level-{{forloop.counter}}" class="tab-pane">
+                {% if level.is_unlock %}
+                  {% include "level-table.html" %}
+                {% endif %}
+            </div>
+        	{% endwith %}
+        	{% endwith %}
+        	{% endwith %}
+        	{% endwith %}
+        	{% endwith %}
+        	{% endwith %}
+        {% endfor %}
+        </div>
+    </div>
+</div>
+<div class="modal hide fade" id="unlockModal">
+    <div class="modal-header">
+        <a class="close" data-dismiss="modal">x</a>
+        <h3>Locked Activity</h3>
+    </div>
+    <div class="modal-body" id="modal-body">
+        <p><b>This activity is locked.</b></p>
+        <p> To unlock this activity, please do the following: <br/>
+        <div id="unlock_condition">
+        </div>
+        </p>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn btn-widget" data-dismiss="modal">Close</a>
+    </div>
+</div>
+
+<div class="modal hide fade" id="unlockLevelModal">
+    <div class="modal-header">
+        <a class="close" data-dismiss="modal">x</a>
+        <h3>Locked Level</h3>
+    </div>
+    <div class="modal-body" id="modal-body">
+        <p><b>This level is locked.</b></p>
+        <p> To unlock this level, please do the following: <br/>
+        <div id="unlock_level_condition">
+        </div>
+        </p>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn btn-widget" data-dismiss="modal">Close</a>
+    </div>
+</div>
+
+<div class="modal hide fade" id="fillerModal">
+    <div class="modal-header">
+        <a class="close" data-dismiss="modal">x</a>
+        <h3>Filler Cell</h3>
+    </div>
+    <div class="modal-body" id="modal-body">
+        <p> This cell is here only to fill out the grid. There is no action associated with it.</p>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn btn-widget" data-dismiss="modal">Close</a>
+    </div>
+</div>
+
+<div class="modal hide fade" id="expiredModal">
+    <div class="modal-header">
+        <a class="close" data-dismiss="modal">x</a>
+        <h3>Expired Activity</h3>
+    </div>
+    <div class="modal-body" id="modal-body">
+        <p><b>This activity is expired.</b></p>
+        <div id="expire_msg">
+        </div>
+        </p>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn btn-widget" data-dismiss="modal">Close</a>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+    	var current_level = getCookie("current-level");
+//     	var temp = $('#sgg-levels-tab a:first');
+//         $('#sgg-levels-tab a:first').tab('show');
+    	if (current_level != null)
+    	{
+    		var foo = $('#sgg-levels-tab a:nth('+current_level+')');
+    		if (foo.hasClass('level-unlocked')) {
+//     			console.log("got unlocked class " + foo);
+                $('#sgg-levels-tab a:nth('+current_level+')').tab('show');
+    		}
+    		else 
+    		{
+//     			console.log("showing first tab event though cookie said " + current_level);
+                $('#sgg-levels-tab a:first').tab('show');    			
+    		}
+//             console.log("got level cookie " + current_level)
+//             temp = $('#sgg-levels-tab a:nth('+current_level+')');
+    	}
+    	else
+    	{
+//             console.log("no level cookie");
+            $('#sgg-levels-tab a:first').tab('show');
+    	}
+        var task_unlock_condition = getCookie("task_unlock_condition");
+        if (task_unlock_condition != null)
+        {
+            deleteCookie("task_unlock_condition");
+
+            var modalElement = $('#unlockModal');
+
+            modalElement.modal({
+                backdrop: true,
+                keyboard: true,
+                show: false
+            });
+            modalElement.find('#unlock_condition').html(task_unlock_condition);
+            modalElement.css('margin-top', (modalElement.outerHeight() / 2) * -1);
+            modalElement.modal('show');
+        }
+    });
+
+    function unlock_dialog(event, type, slug, unlock_condition) {
+        var modalElement = $('#unlockModal');
+           
+        modalElement.modal({
+            backdrop: true,
+            keyboard: true,
+            show: false
+        }); 
+        modalElement.find('#unlock_condition').html(unlock_condition);
+        // set up event logging
+        modalElement.on('shown', function() {
+            log_js_action(type, slug, 'view-lock-open');
+        });
+        modalElement.on('hidden', function() {
+            log_js_action(type, slug, 'view-lock-close');
+        });
+        modalElement.css('margin-top', (modalElement.outerHeight() / 2) * -1);
+        modalElement.modal('show');
+    }
+    
+    function expired_dialog(event, type, slug, expire_msg) {
+        var modalElement = $('#expiredModal');
+        
+        modalElement.modal({
+            backdrop: true,
+            keyboard: true,
+            show: false
+        }); 
+        modalElement.find('#expire_msg').html(expire_msg);
+        // set up event logging
+        modalElement.on('shown', function() {
+            log_js_action(type, slug, 'view-expire-open');
+        });
+        modalElement.on('hidden', function() {
+            log_js_action(type, slug, 'view-expire-close');
+        });
+        modalElement.css('margin-top', (modalElement.outerHeight() / 2) * -1);
+        modalElement.modal('show');    	
+    }
+    
+    function toggleLocked(event, unlock_condition) {
+        var modalElement = $('#unlockLevelModal');
+        
+        modalElement.modal({
+            backdrop: true,
+            keyboard: true,
+            show: false
+        }); 
+        modalElement.find('#unlock_level_condition').html(unlock_condition);
+        // set up event logging
+        modalElement.on('shown', function() {
+            log_js_action('level', 'locked', 'view-lock-open');
+        });
+        modalElement.on('hidden', function() {
+            log_js_action('level', 'locked', 'view-lock-close');
+        });
+        modalElement.css('margin-top', (modalElement.outerHeight() / 2) * -1);
+        modalElement.modal('show');    	
+    }
+    
+    function showFillerModal(event) {
+    	var modalElement = $('#fillerModal')
+        modalElement.modal({
+            backdrop: true,
+            keyboard: true,
+            show: false
+        }); 
+        // set up event logging
+        modalElement.on('shown', function() {
+            log_js_action('filler', 'cell', 'modal-open');
+        });
+        modalElement.on('hidden', function() {
+            log_js_action('filler', 'cell', 'modal-close');
+        });
+        modalElement.css('margin-top', (modalElement.outerHeight() / 2) * -1);
+        modalElement.modal('show');     
+    }
+</script>
+{%  endcache %}

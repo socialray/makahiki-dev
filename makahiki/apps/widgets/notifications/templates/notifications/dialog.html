@@ -1,0 +1,63 @@
+{% load notice_tags %}
+
+<div id="notificationModal" class="modal hide fade">
+    <div class="modal-header">
+        <a class="close" data-dismiss="modal">x</a>
+        <h3>Notifications</h3>
+    </div>
+    <div class="modal-body" id="modal-body">
+        <div id="notification-dialog-list">
+            {% for notification in notifications.alerts %}
+                <div class="{{notification.style_class}} notification-item">
+                    <div class="notification-contents">
+                            <i class="{{notification.icon_class}}"></i>
+                        <div class='notice-list-content'>
+                        {{ notification.contents|safe }}
+                        {% if notifications.use_facebook and notification.is_success %}
+                            <a id="notification-share-{{notification.id}}" href="javascript:void(0);">
+                                Click here to share on Facebook</a>
+                        {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    jQuery(document).ready(function ($) {
+                        $("#notification-share-{{notification.id}}").click(function () {
+                            fb_share('{{notification.id}}', '{{ notification.fb_contents }}');
+                        });
+                    });
+                </script>
+                <br/>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn btn-widget" data-dismiss="modal">OK</a>
+    </div>
+
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var modalElement = $('#notificationModal');
+        modalElement.modal({
+            backdrop: true,
+            keyboard: true,
+            show: false
+        }); 
+
+        // set up event logging
+        modalElement.on('shown', function() {
+            log_js_action("notifications", "alert", 'view-lock-open');
+        });
+        modalElement.on('hidden', function() {
+            log_js_action("notifications", "alert", 'view-lock-close');
+        });
+        modalElement.css('margin-top', (modalElement.outerHeight() / 2) * -1);
+        modalElement.modal('show')
+            
+    });
+</script>
+
+{% if not request.session.staff %}
+    {% mark_alerts_displayed request notifications.alerts %}
+{% endif %}

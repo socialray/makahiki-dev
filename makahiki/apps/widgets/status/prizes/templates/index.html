@@ -1,0 +1,42 @@
+{% with unused=view_objects.status__prizes.unused errors=view_objects.status__prizes.errors raffle_prizes=view_objects.status__prizes.raffle_prizes %} 
+
+<!--start test-->  
+  <div class="content-box">
+  <div class="content-box-title">
+    Raffle Prizes
+  </div>
+  <ul id="prize-tab" class="nav nav-tabs">
+  {% for round_name, raffle_prizes in raffle_prizes.items reversed %}
+    <li class="">
+    <a data-toggle="tab" href="#prize{{round_name|cut:" "}}">{{round_name }}</a>
+    </li>
+  {% endfor %}  
+  </ul>
+  <div class="tab-content">
+    {% for round_name, raffle_prizes in raffle_prizes.items reversed %}
+      <div id="prize{{round_name|cut:" "}}" class="tab-pane fade active in">   
+              <div class="content-body">
+                  <table class="table-striped">
+                      <thead>
+                          <tr>
+                              <th class="column-text" width="50%">Prize</th>
+                              <th class="column-number" width="20%">Tickets</th>
+                          </tr>
+                      </thead>
+                      {% for prize in raffle_prizes %}
+                          <tr>
+                              <td class="column-text" width="70%">{{ prize.title }}</td>
+                              <td class="column-number" width="30%">{{ prize.count }}</td>
+                          </tr>
+                      {% endfor %}
+                  </table>
+              </div>
+          </div> 
+      {% endfor %}
+  </div> 
+  </div> 
+<script type="text/javascript">
+$('#prize-tab.nav-tabs a:first').tab('show');
+</script> 
+<!--end test-->  
+{% endwith %}

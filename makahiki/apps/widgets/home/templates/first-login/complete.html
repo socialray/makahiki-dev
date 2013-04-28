@@ -1,0 +1,90 @@
+<div class="modal-header">
+  {% if quest_enabled %}
+        <h2>Start the Quests</h2>
+  {% else %}
+        <h2>Setup Compeleted</h2>
+  {% endif %}
+</div>
+<div id="setup-content" class="modal-body">
+  {% if quest_enabled %}
+      <p>Use the Quest Bar (as shown below) to learn more about the Kukui Cup and earn points and prizes.</p>
+
+      <div style="margin-bottom: 10px; width: 100%; text-align: center">
+            <!--start questbar-->
+            <div class="quest-frame">
+              <div class="quest-box-flogin">
+                  <div class="makahiki-box-title">
+                      <h3 class="makahiki-box-title">Your Quests</h3>
+                  </div>
+                  <div>
+                  <img class="quest-pad" src="{{ STATIC_URL}}images/spacer.png" width="20">
+                      <ul class="quest-list">
+                      <li>
+                                  Watch Intro Video&nbsp; &nbsp;
+                      </li>
+                      <li>
+                                  Get Social &nbsp;&nbsp;
+                      </li>
+                      <li>
+                                   Learn about energy &nbsp;
+                      </li>
+                      </ul>
+                  </div>
+              </div>
+            </div>
+            <!--end questbar-->
+      </div>
+  {% endif %}
+
+  <p>Click "Game On" to go to your home page. </p>
+
+</div>
+<div class="modal-footer"> 
+  <div style="float: left">
+      <button id="back" class="btn btn-primary" >
+          <img src="{{ STATIC_URL}}images/left.png" width="24" align="top">
+          Back
+      </button>
+  </div>
+
+  <div style="float:right">
+      <button id="gohome" class="btn btn-success" >
+           <a class="white" href="{% url home_index %}">
+           <img src="{{ STATIC_URL}}images/right.png" width="24" align="top"/>
+           Game On!
+           </a>
+      </button>
+  </div>
+
+  <div style="clear:both"></div>
+
+  <div id="progressbar-header">
+      <p>Introduction progress, points: {{ user.get_profile.points }}</p>
+  </div>
+  <div id="progressbar" class="progress">
+      <div class="bar" style="width: 0%;">
+      </div>
+  </div>
+  <script type="text/javascript">
+      
+      $(document).ready(function () {
+          fixForms();
+          var s = 7.0/7.0*100 + "%";
+        $(".bar").width(s);
+
+          $("#back").button().click(function () {
+              $(this).button("option", "disabled", true);
+              $.get("{% url setup_question %}?from=complete", function (data) {
+                  $("#ui-dialog-title-setup-dialog").html(data.title);
+                  $("#setup-dialog").html(data.contents);
+              });
+          });
+
+          $("#gohome").button().click(function() {
+              $('#setup-dialog').modal('hide'); 
+              location.reload();
+
+            });
+      });
+  </script>
+</div>

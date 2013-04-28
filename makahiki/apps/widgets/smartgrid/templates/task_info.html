@@ -1,0 +1,96 @@
+{% load cache %}
+
+{% load markup %}
+
+{% load avatar_tags %}
+
+<div class="content-box">
+    <div class="content-box-title">
+        {{ action.type|capfirst }} : {{ action.name }}
+    </div>
+    <div class="content-box-contents">
+        <p/>
+        This {{ action.type }} is worth
+        {% if action.point_value %}
+            <b>{{ action.point_value }}</b>
+        {% else %}
+            from <b>{{ action.activity.point_range_start }}</b> to <b>{{ action.activity.point_range_end }}</b>
+        {% endif %}
+        points.
+        {% if action.type == "commitment" %}
+            It lasts {{ action.commitment_length }} days.
+        {% else %}
+            <p/>
+            {% if action.type == "event" or action.type == "excursion" %}
+                <b>When</b> : {% if action.event.event_date == None %} TBD {% else %} {{ action.event.event_date }} {% endif %} <br/>
+                <b>Where</b> : {{ action.event.event_location }} <br/>
+                <b>Estimated duration</b> : {{ action.expected_duration }} <br/>
+                <b>Space(s) still available</b> : {{ action.available_seat }}
+            {% else %}
+                <b>Estimated time required</b> : {{ action.expected_duration }} minute{% if action.expected_duration > 1 %}s{% endif %} <br/>
+            {% endif %}
+        {% endif %}
+        <p/>
+        {% if action.social_bonus > 0 %}
+            <b>Social Bonus : {{ action.social_bonus }} points. </b>
+            <a href="#">
+                <img src="{{ STATIC_URL}}images/icons/icon-help-sm.png" width="20"
+                     align="center"
+                     title="What is the Social Bonus ?"
+                     onclick="toggleHelp(event, 'widget', 'social-bonus'); return false;"
+                        /></a>
+        {% endif %}
+        <p/>
+        {{ completed_count }}
+        {% if completed_count == 1 %}
+            person in the competition has
+        {% else %}
+            people in the competition have
+        {% endif %}
+        {% if action.type == "event" or action.type == "excursion" %}
+            signed up.
+        {% else %}
+            done this.
+        {% endif %}
+        <p/>
+        {% with team_members|length as team_member_count %}
+            {{ team_member_count }}
+            {% if team_member_count == 1 %}
+                person in your {{ TEAM_LABEL.lower }} has
+            {% else %}
+                people in your {{ TEAM_LABEL.lower }} have
+            {% endif %}
+            {% if action.type == "event" or action.type == "excursion" %}
+                signed up.
+            {% else %}
+                done this.
+            {% endif %}
+            <br/>
+            {% cache 2592000 team_avatar action.id user.get_profile.team_id %}
+                {% for member in team_members %}
+                    <img src="{% avatar_url member.user 40 %}"
+                         title="{{member.user.get_profile.name}}"/>
+                {% endfor %}
+            {% endcache %}
+        {% endwith %}
+
+        {% if action.type == "event" or action.type == "excursion" %}
+            {% include "reminder.html" %}
+        {% endif %}
+
+        <p/>
+
+        <p/>
+        <center>
+        <a href="/learn/">
+            <button class="btn btn-widget" style="cursor:pointer;">
+                <img src="{{ STATIC_URL}}images/left.png" width="25"
+                     align="top">
+                Back to Smart Grid Game
+            </button>
+        </a>
+        </center>
+        <br />
+        <br />
+    </div>
+</div>

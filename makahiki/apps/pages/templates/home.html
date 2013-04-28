@@ -1,0 +1,17 @@
+{% extends "logged_in_base.html" %}
+
+{% block page_title %}
+    Home
+{% endblock %}
+
+{% block selected_icon %}selected-home{% endblock %}
+
+{% block extra_head %} 
+    <script src="{{STATIC_URL}}js/jquery.form.2.43.js" type="text/javascript"></script>
+{% endblock %}
+
+{% block body %} 
+    <div class="homecontent">
+        {% include "widgets/home/templates/index.html" %}
+    </div> 
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "logged_in_base.html" %}
+
+{% block page_title %}
+    News
+{% endblock %}
+
+{% block selected_icon %}selected-news{% endblock %}
+
+{% block extra_head %}
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <!-- left column -->
+            <div class="span6">
+                {% for template in view_objects.left_templates %}
+                    {% include template %}
+                {% endfor %}
+            </div>
+            <!-- right column -->
+            <div class="span6">
+                {% for template in view_objects.right_templates %}
+                    {% include template %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

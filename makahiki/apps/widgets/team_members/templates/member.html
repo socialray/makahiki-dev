@@ -1,0 +1,46 @@
+{% load avatar_tags %}
+
+<td>
+    <img class="member-image" src="{% avatar_url member.user 40 %}"
+         alt="Photo of {{ member.name }}" title="Photo of {{ member.name }}"
+         align="top"/>
+</td>
+<td class="column-text">{{ member.name }}</td>
+<td>
+{% for awarded in member.badgeaward_set.all %}
+    <a href="{% url profile_badges %}"><div class="badge-theme-{{awarded.badge.theme}}"><p>{{awarded.badge.label}}</p></div></a>
+{% endfor %}
+</td>
+<td>
+    {% if member.user.is_superuser or member.user.is_staff %}
+    <!-- Downloaded from http://www.iconarchive.com/show/silk-icons-by-famfamfam/award-star-gold-3-icon.html -->
+<!--         <img src="{{STATIC_URL}}images/award-star-gold-3-icon.png"> -->
+        Admin
+    {% else %}
+        Player
+    {% endif %}
+</td>
+<td>
+         #{{ member.overall_rank }}
+</td>
+<td>
+    {# Check if the user is a participant or an admin without a team #}
+    {% if member.team and member.points > 0 %}
+          {{ member.points }} points
+    {% endif %}
+</td>
+<td>
+    {% with action_members=member.user.actionmember_set.all %}
+    {% if action_members.count > 0 %}
+       <ul class="team-member-commitments">
+       {% for action_member in action_members %}
+          {% if not action_member.award_date and not action_member.action.activity %}
+             <li>
+                 <a href="{% url activity_task action_member.action.type action_member.action.slug %}">{{ action_member.action }}</a>
+             </li>
+          {% endif %}
+       {% endfor %}
+       </ul>
+    {% endif %}
+</td>
+{% endwith %}

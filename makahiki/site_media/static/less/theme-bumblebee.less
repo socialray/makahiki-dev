@@ -1,0 +1,147 @@
+/*
+ * One of the Makahiki2 styles. Based upon the Eldon theme.
+ * 
+ * Copyright 2012 CSDL.
+ * 
+ * Uses Twitter Bootstrap v2.
+ */
+ 
+// makahiki base style
+@import "makahiki.less";
+
+// Bootstrap color palette
+@black:                 #000;
+@grayDarker:            #222;
+@grayDark:              #333;
+@gray:                  #555;
+@grayLight:             #999;
+@grayLighter:           #eee;
+@white:                 #fff;
+@blue:                  #049cdb;
+@blueDark:              #0064cd;
+@green:                 #46a546;
+@red:                   #9d261d;
+@yellow:                #ffc40d;
+@orange:                #f89406;
+@pink:                  #c3325f;
+@purple:                #7a43b6;
+
+
+// The Bumblebee theme requires no special color palette 
+
+// Page Background 
+@use-bkg-image: false;
+//@page-bkg-image: "../images/space-theme-background.jpg";
+
+@page-bkg-color-start: @black; 
+@page-bkg-color-end: @black;
+
+@page-font-color: @white;
+@page-link-color: @blue;
+
+// Questbar
+@questbar-bkg-color-start: @white;
+@questbar-bkg-color-end: @white;
+@questbar-font-color: @white;
+@questbar-transparency: 80%;
+
+// Navbar
+@navbar-bkg-color-start: @white;
+@navbar-bkg-color-end: @white;
+@navbar-font-color: @white;
+@navbar-curr-page-bkg-color: @navbar-bkg-color-end;
+@navbar-curr-path-font-color: @white;
+@navbar-transparency: 80%;
+
+// Infobar
+@infobar-bkg-color-start: @white;
+@infobar-bkg-color-end: @white;
+@infobar-font-color: @white;
+@infobar-feedback-button-bkg-color-start: darken(@infobar-bkg-color-start, 20%); 
+@infobar-feedback-button-bkg-color-end: darken(@infobar-bkg-color-end, 20%); 
+@infobar-feedback-button-font-color: @black;
+@infobar-transparency: 80%;
+
+// Home Page Infobox
+@pageinfobox-bkg-color-start: @white;
+@pageinfobox-bkg-color-end: @white;
+@pageinfobox-font-color: @white;
+@pageinfobox-header-font-color: @yellow;
+@pageinfobox-transparency: 80%;
+
+// Notifications
+@notification-bkg-color-start: @white;
+@notification-bkg-color-end: @white;
+@notification-font-color: @white;
+@notification-transparency: 80%;
+
+// Modal dialog box 
+@modal-title-bkg-color-start: @black;
+@modal-title-bkg-color-end: @black;
+@modal-title-font-color: @yellow;
+@modal-body-bkg-color: @black;
+@modal-body-font-color: @white;
+
+// Widgets
+@widget-title-bkg-color-start: @white;
+@widget-title-bkg-color-end: @white;
+@widget-title-font-color: @yellow;
+@widget-title-transparency: 80%;
+@widget-body-bkg-color: @white;
+@widget-body-font-color: @white;
+@widget-body-transparency: 80%;
+@widget-button-bkg-color-start: @black;
+@widget-button-bkg-color-end: @black;
+@widget-button-font-color: @white;
+@widget-table-row-color-1: lighten(@black, 25%);
+@widget-table-row-color-2: lighten(@black, 50%);
+@widget-subtitle-bkg-color: lighten(@black, 20%);
+@widget-subtitle-font-color: @white;
+
+@widget-text-area-bkg-color: @black;
+@widget-text-area-font-color: @white;
+
+// Smart grid game
+@sgg-header-bkg-color: @black;
+@sgg-header-font-color: @yellow;
+@sgg-entry-font-color: @white;
+@sgg-activity-cell-bkg-color: lighten(@black, 20%);
+@sgg-commitment-cell-bkg-color: lighten(@black, 40%);
+@sgg-event-cell-bkg-color: lighten(@black, 60%);
+@sgg-excursion-cell-bkg-color: lighten(@black, 80%);
+@sgg-filler-cell-bkg-color: @white;
+
+// Raffle game
+@prizes-raffle-table-entry-color: @white;
+@prizes-raffle-ticket-font-color: @black;
+
+// My Info
+@myinfo-textarea-highlight-color: @black;
+
+// Badges
+@badge-theme-1-bkg-color-start: @black;
+@badge-theme-1-bkg-color-end: @black;
+@badge-theme-1-text-color: @yellow;
+
+@badge-theme-2-bkg-color-start: @yellow;
+@badge-theme-2-bkg-color-end: @yellow;
+@badge-theme-2-text-color: @black;
+
+@badge-theme-3-bkg-color-start: @black;
+@badge-theme-3-bkg-color-end: @black;
+@badge-theme-3-text-color: @yellow;
+
+@badge-theme-4-bkg-color-start: @yellow;
+@badge-theme-4-bkg-color-end: @yellow;
+@badge-theme-4-text-color: @black;
+
+@badge-theme-5-bkg-color-start: @black;
+@badge-theme-5-bkg-color-end: @black;
+@badge-theme-5-text-color: @yellow;
+
+@badge-theme-summary-bkg-color-start: @yellow;
+@badge-theme-summary-bkg-color-end: @yellow;
+@badge-theme-summary-text-color: @black;
+
+
+

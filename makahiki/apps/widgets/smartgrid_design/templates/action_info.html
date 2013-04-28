@@ -1,0 +1,55 @@
+{% load cache %}
+
+{% load markup %}
+
+{% load avatar_tags %}
+
+<div class="content-box">
+    <div class="content-box-title">
+        {{ action.type|capfirst }} : {{ action.name }}
+    </div>
+    <div class="content-box-contents">
+        <p/>
+        This {{ action.type }} is worth
+        {% if action.point_value %}
+            <b>{{ action.point_value }}</b>
+        {% else %}
+            from <b>{{ action.activity.point_range_start }}</b> to <b>{{ action.activity.point_range_end }}</b>
+        {% endif %}
+        points.
+        {% if action.type == "commitment" %}
+            It lasts {{ action.commitment_length }} days.
+        {% else %}
+            <p/>
+            {% if action.type == "event" or action.type == "excursion" %}
+                <b>When</b> : {% if action.event.event_date == None %} TBD {% else %} {{ action.event.event_date }} {% endif %} <br/>
+                <b>Where</b> : {{ action.event.event_location }} <br/>
+                <b>Estimated duration</b> : {{ action.expected_duration }} <br/>
+                <b>Space(s) still available</b> : {{ action.available_seat }}
+            {% else %}
+                <b>Estimated time required</b> : {{ action.expected_duration }} <br/>
+            {% endif %}
+        {% endif %}
+        <p/>
+        {% if action.social_bonus > 0 %}
+            <b>Social Bonus : {{ action.social_bonus }} points. </b>
+            <a href="#">
+                <img src="{{ STATIC_URL}}images/icons/icon-help-sm.png" width="20"
+                     align="center"
+                     title="What is the Social Bonus ?"
+                     onclick="toggleHelp(event, 'widget', 'social-bonus'); return false;"
+                        /></a>
+        {% endif %}
+        <p/>
+
+        <center>
+            <button class="btn btn-widget" style="cursor:pointer;" onclick="history.back(); return false;">
+                <img src="{{ STATIC_URL}}images/left.png" width="25"
+                     align="top">
+                Back to Smart Grid Game Designer
+            </button>
+        </center>
+        <br />
+        <br />
+    </div>
+</div>

@@ -1,0 +1,41 @@
+{% load markup %}
+<div id="action-details" class="content-box">
+    <div class="content-box-title">
+        <table>
+            <tr>
+                <td>About the {{ action.type }}</td>
+                <td width="1%">
+                    <a href="#">
+                        <img src="{{ STATIC_URL}}images/icons/icon-help-sm.png"
+                             width="20" align="center"
+                             title="Click to get help about this window"
+                             onclick="toggleHelp(event, 'widget', '{{action.type}}-details'); return false;"
+                            /></a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="content-box-contents activity-task">
+        <p/>
+        <center>
+        <b>{{ action.title }}</b></center>
+        <p/>
+{% if action.image %}
+        <center><img src="{{ action.image.url }}" /> </center>
+{% endif %}
+        <p/>
+{{ action.description|markdown }}
+        <p/>
+{% if action.video_id %}
+    {% include "components/action_video.html" with action=action %}
+{% endif %}
+{% if action.embedded_widget %}
+    {% include view_objects.embedded_widget_template %}
+{% endif %}
+        <p/>
+        <center>
+            <br/> <br/>
+        </center>
+        <p/>
+    </div>
+</div>

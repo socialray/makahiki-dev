@@ -1,0 +1,184 @@
+{% load sgg_design_tags %}
+<table class="activities-grid">
+	<tr><!-- Start header -->
+    {% for i in max_col|get_range %}
+    	<td><div class="column-holder">
+        {% for col in col_list %}
+	       	{% if i|add:"1" == col.column %}
+    	    <div class="activity-column">
+        	    <h5> {{ col.name }}</h5>
+            </div>
+            {% endif %}
+        {% endfor %}
+        </div></td>
+    {% endfor %}
+    </tr><!-- End header -->
+    {% for r in max_row|get_range %}
+    <tr>
+    	{% for c in max_col|get_range %}
+    	<td>
+    		{% for act in act_list %}
+    			{% if r|add:"1" == act.row and c|add:"1" == act.column %}
+    			<div class="{{act.type}}">
+    				{% if act.availablity == -1 %}	{# --- before pub date --- #}
+    				<br/>
+    				<a class="whatever"
+    					href="javascript:void(0);">
+    					<img src="{{ STATIC_URL }}images/lock24.png"
+    						 width="22" align="top"
+    						 title="Click to see how to unlock"
+    						 onclick="unlock_daialog(event, '{{act.type}}', '{{act.slug}}',
+                             {% if act.unlock_condition_text %}
+                             '{{act.unlock_condition_text|escapejs}}'
+                         	 {% else %}
+                             '{{act.unlock_condition|escapejs}}'
+                         	 {% endif %}
+    						 )">
+    				</a>
+    				{% elif act.availablity == 0 %}  {# --- between pub date and expire date --- #}
+	                    {% if act.is_unlock %}
+                    <a href="{% url activity_task act.type act.slug %}"
+                       title="{{act.name}}" onClick="setLevel({{level.priority}})">
+                           {% if act.type != 'commitment' %}
+                               {% if act.completed %}
+                                   {% if act.member.approval_status == "rejected" %}
+        	            <img src="{{ STATIC_URL }}images/icons/icon-exclamation2.png"
+                             width="12"
+                             align="left"/>
+                                   {% else %}
+                                       {% if act.member.approval_status == "pending" %}
+                                           {% if act.event.is_event_completed %}
+                        <img src="{{ STATIC_URL }}images/icons/icon-exclamation2.png"
+                             width="12"
+                             align="left"/>
+                                           {% else %}
+                        <img src="{{ STATIC_URL }}images/icons/icon-submit.png"
+                             width="12"
+                             align="left"/>
+                                           {% endif %}
+                                       {% else %}
+                        <img src="{{ STATIC_URL }}images/icons/icon-done.png"
+                             width="12"
+                             align="left"/>
+                                       {% endif %}
+                                  {% endif %}
+                        <br/>
+                        <B>{{ act.name }}</B>
+                               {% else %}
+                        <br/>
+                                  {% if act.point_value %}
+                        <h3>{{ act.point_value }}</h3>
+                                  {% else %}
+                        <h3>{{ act.activity.point_range_end }}</h3>
+                                  {% endif %}
+                               {% endif %}
+                           {% else %}  {# ------ is commitment #}
+                               {% if act.completed %}
+                                   {% if act.member.days_left != 0 %}
+                        <img src="{{ STATIC_URL }}images/icons/icon-submit.png"
+                             width="12"
+                             align="left"/>                                                                
+                                   {% elif act.member.award_date %}
+                        <img src="{{ STATIC_URL }}images/icons/icon-done.png"
+                             width="12"
+                             align="left">
+                                   {% else %}
+                        <img src="{{ STATIC_URL}}images/icons/icon-exclamation2.png"
+                             width="12"
+                             align="left"/>
+                                   {% endif %}
+                        <br/>
+                        <B>{{ act.name }}</B>
+                               {% else %}
+                        <br/>
+                        <h3>{{ act.point_value }}</h3>
+                               {% endif %} {# end act.completed #}
+                           {% endif %}  {# ------- end act.type #}
+                    </a>
+                        {% elif act.type == 'filler' %}
+                    <br/>
+                    <a href="javascript:void(0);"
+                       onclick="showFillerModal(event); return false;">
+                    	<h3>X</h3>
+                    </a>
+                        {% else %}  {# ------ is lock #}
+                    <br/>
+                    <a class="whatever"
+                       href="javascript:void(0);">
+                    	<img src="{{ STATIC_URL }}images/lock24.png"
+                             width="22" align="top"
+                             title="Click to see how to unlock"
+                             onclick="unlock_dialog(event, '{{act.type}}','{{act.slug}}',
+                        	{% if act.unlock_condition_text %}
+                             '{{act.unlock_condition_text|escapejs}}'
+                            {% else %}
+                             '{{act.unlock_condition|escapejs}}'
+                            {% endif %}
+                             )">
+                    </a>
+                        {% endif %}
+    				{% endif %}
+    			</div>
+    			{% endif %}
+    		{% endfor %}  {# --- for act in act_list --- #}
+    	</td>
+    	{% endfor %}  {# --- for c in 8|get_range --- #}
+    </tr>
+    {% endfor %}  {# --- for r in 8|get_range --- #}
+</table>
+<p/>
+
+<table class="activities-grid-legend">
+	<tr>
+    	<td colspan="10"><b>Legend:</b></td>
+    </tr>
+    <tr>
+        <td>
+    	    <div class="activity-legend"></div>
+        </td>
+        <td width=100>activity</td>
+        <td>
+            <div class="commitment-legend"></div>
+        </td>
+        <td width=100>commitment</td>
+        <td>
+            <div class="event-legend"></div>
+        </td>
+        <td width=100>event</td>
+        <td>
+            <div class="excursion-legend"></div>
+        </td>
+        <td width=100>excursion</td>
+        <td>
+            <div class="filler-legend"></div>
+        </td>
+        <td width=100>filler</td>
+    </tr>
+    <tr>
+        <td>
+    	    <img src="{{ STATIC_URL}}images/icons/icon-submit.png"
+                 width="12"
+                 align="left"/>                
+        </td>
+        <td width=100>Submitted</td>
+        <td>
+            <img src="{{ STATIC_URL}}images/icons/icon-done.png"
+                 width="12"
+                 align="left"/>                
+        </td>
+        <td width=100>Approved</td>                
+        <td>
+            <img src="{{ STATIC_URL}}images/icons/icon-exclamation2.png"
+                 width="12"
+                 align="left"/>                
+        </td>
+        <td width=100>Rejected</td>                
+    </tr>
+</table>
+
+<script type="text/javascript">
+    function setLevel(lvl) {
+//     	console.log("setting current-level cookie to " + lvl);
+        setCookie("current-level", lvl - 1);
+    }
+</script>

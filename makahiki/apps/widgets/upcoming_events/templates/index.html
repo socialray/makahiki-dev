@@ -1,0 +1,92 @@
+<div class="content-box">
+    <div class="content-box-title">
+        Upcoming Events (Next 7 days)
+        <a href="#" style="float: right">
+            <img src="{{ STATIC_URL}}images/icons/icon-help-sm.png" width="20" align="center"
+                 title="Click to get help about this window"
+                 onclick="toggleHelp(event, 'widget', 'upcoming-events'); return false;"
+                    /></a>
+    </div>
+    <div class="content-box-contents activity-events-content">
+        <table>
+            <thead>
+            <tr>
+                <th>Event</th>
+                <th>Date</th>
+                <th>Location</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% if view_objects.upcoming_events.events %}
+                {% for event in view_objects.upcoming_events.events %}
+                    <tr>
+                        <td>
+                            <a href="{% url activity_task event.type event.slug %}">{{ event.title }}</a>
+                        </td>
+                        <td>{{ event.event_date|date:"D m/d, f A" }}</td>
+                        <td>{{ event.event_location }}</td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td>No upcoming events</td>
+                </tr>
+            {% endif %}
+
+
+            </tbody>
+        </table>
+        <p/>
+
+        <form id="event-code-form" action="{% url activity_attend_code %}"
+                                                         method="POST">
+            {% csrf_token %}
+            <div class="event-code">
+                <b>Enter Attendance or Bonus Points Code:</b>
+                {{ view_objects.upcoming_events.event_form.response }}
+
+                <button class="btn btn-widget" id="event-code-submit">
+                    Submit
+                </button>
+
+            </div>
+            <br/>
+
+            <div id="social_email" style="display: None;">
+                Optional Social Bonus
+                Email: {{ view_objects.upcoming_events.event_form.social_email }}
+            </div>
+
+            <div id="event-code-errors" style="color:red; display:None"></div>
+        </form>
+
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var height = 0;
+
+        $("#event-code-submit").click(function () {
+            $.post("{% url activity_attend_code %}", $("#event-code-form").serialize(), function (data) {
+                if (data.message) {
+                    $("#event-code-errors").html(data.message);
+                    $("#event-code-errors").show();
+                    if (data.social_email) {
+                        $("#social_email").show();
+                    }
+                }
+                else {
+                    window.location.replace(data.redirectUrl);
+                }
+            });
+
+            return false;
+        });
+
+        $("#social_email input").click(function () {
+            this.value = "";
+        });
+
+    });
+</script>

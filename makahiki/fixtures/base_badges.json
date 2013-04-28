@@ -1,0 +1,342 @@
+[
+    {
+        "pk": 18,
+        "model": "badges.badge",
+        "fields": {
+            "description": "At least 75% of possible team members have at least 75 points.",
+            "hint": "Encourage team-mates to participate!",
+            "image": "",
+            "points": 10,
+            "label": "MTM",
+            "priority": 180,
+            "theme": "3",
+            "award_trigger": "daily",
+            "award_condition": "team_member_point_percent(75, 75)",
+            "slug": "mega-team",
+            "name": "Mega Team"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "badges.badge",
+        "fields": {
+            "description": "At least 50% of possible team members have at least 50 points.",
+            "hint": "Encourage team-mates to participate!",
+            "image": "",
+            "points": 10,
+            "label": "STM",
+            "priority": 170,
+            "theme": "2",
+            "award_trigger": "daily",
+            "award_condition": "team_member_point_percent(50, 50)",
+            "slug": "super-team",
+            "name": "Super Team"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "badges.badge",
+        "fields": {
+            "description": "Have reported one legitimate bug to administrators.",
+            "hint": "Found a bug?  Let us know!",
+            "image": "",
+            "points": 20,
+            "label": "DBG",
+            "priority": 150,
+            "theme": "1",
+            "award_trigger": "daily",
+            "award_condition": "False",
+            "slug": "white-hat",
+            "name": "White Hat"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "badges.badge",
+        "fields": {
+            "description": " Have referred at least 30 new players to Kukui Cup.",
+            "hint": "Gather more players!",
+            "image": "",
+            "points": 20,
+            "label": "URF",
+            "priority": 140,
+            "theme": "5",
+            "award_trigger": "daily",
+            "award_condition": "referring_count(30)",
+            "slug": "ultra-referrer",
+            "name": "Ultra Referrer"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "badges.badge",
+        "fields": {
+            "description": " Have referred at least 20 new players to Kukui Cup.",
+            "hint": "Gather more players!",
+            "image": "",
+            "points": 20,
+            "label": "MRF",
+            "priority": 130,
+            "theme": "4",
+            "award_trigger": "daily",
+            "award_condition": "referring_count(20)",
+            "slug": "mega-referrer",
+            "name": "Mega Referrer"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "badges.badge",
+        "fields": {
+            "description": " Have referred at least 10 new players to Kukui Cup.",
+            "hint": "Gather more players!",
+            "image": "",
+            "points": 20,
+            "label": "SRF",
+            "priority": 120,
+            "theme": "3",
+            "award_trigger": "daily",
+            "award_condition": "referring_count(10)",
+            "slug": "super-referrer",
+            "name": "Super Referrer"
+        }
+    },
+    {
+        "pk": 19,
+        "model": "badges.badge",
+        "fields": {
+            "description": "At least 90% of possible team members have at least 90 points.",
+            "hint": "Encourage team-mates to participate!",
+            "image": "",
+            "points": 10,
+            "label": "UTM",
+            "priority": 190,
+            "theme": "4",
+            "award_trigger": "daily",
+            "award_condition": "team_member_point_percent(90, 90)",
+            "slug": "ultra-team",
+            "name": "Ultra Team"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "badges.badge",
+        "fields": {
+            "description": "Have received the social bonus five times.",
+            "hint": "Work together!",
+            "image": "",
+            "points": 20,
+            "label": "SSC",
+            "priority": 110,
+            "theme": "2",
+            "award_trigger": "smartgrid",
+            "award_condition": "social_bonus_count(5)",
+            "slug": "super-social",
+            "name": "Super Social"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "badges.badge",
+        "fields": {
+            "description": "Have completed all Level 4 non-event actions.",
+            "hint": "Complete more actions!",
+            "image": "",
+            "points": 20,
+            "label": "LV4",
+            "priority": 100,
+            "theme": "1",
+            "award_trigger": "smartgrid",
+            "award_condition": "completed_level(4)",
+            "slug": "level-4-master",
+            "name": "Level 4 Master"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "badges.badge",
+        "fields": {
+            "description": "Have completed all Level 3 non-event actions.",
+            "hint": "Complete more actions!",
+            "image": "",
+            "points": 20,
+            "label": "LV3",
+            "priority": 90,
+            "theme": "5",
+            "award_trigger": "smartgrid",
+            "award_condition": "completed_level(3)",
+            "slug": "level-3-master",
+            "name": "Level 3 Master"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "badges.badge",
+        "fields": {
+            "description": "Have completed all Level 2 non-event actions.",
+            "hint": "Complete more actions!",
+            "image": "",
+            "points": 20,
+            "label": "LV2",
+            "priority": 80,
+            "theme": "4",
+            "award_trigger": "smartgrid",
+            "award_condition": "completed_level(2)",
+            "slug": "level-2-master",
+            "name": "Level 2 Master"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "badges.badge",
+        "fields": {
+            "description": "Have completed all Level 1 non-event actions.",
+            "hint": "Complete more actions!",
+            "image": "",
+            "points": 20,
+            "label": "LV1",
+            "priority": 70,
+            "theme": "3",
+            "award_trigger": "smartgrid",
+            "award_condition": "completed_level(1)",
+            "slug": "level-1-master",
+            "name": "Level 1 Master"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "badges.badge",
+        "fields": {
+            "description": "Have been committed to all possible commitments.",
+            "hint": "Keep making commitments!",
+            "image": "",
+            "points": 20,
+            "label": "ULC",
+            "priority": 60,
+            "theme": "2",
+            "award_trigger": "smartgrid",
+            "award_condition": "all_of(action_type='commitment')",
+            "slug": "ultra-committed",
+            "name": "Ultra Committed"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "badges.badge",
+        "fields": {
+            "description": "Have committed to five commitments simultaneously.",
+            "hint": "Keep making commitments!",
+            "image": "",
+            "points": 10,
+            "label": "SPC",
+            "priority": 50,
+            "theme": "1",
+            "award_trigger": "smartgrid",
+            "award_condition": "some_of(5, action_type='commitment')",
+            "slug": "super-committed",
+            "name": "Super Committted"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "badges.badge",
+        "fields": {
+            "description": "Have visited the site nine days in a row.",
+            "hint": "Keep coming back!",
+            "image": "",
+            "points": 20,
+            "label": "9PT",
+            "priority": 40,
+            "theme": "4",
+            "award_trigger": "daily",
+            "award_condition": "daily_visit_count(9)",
+            "slug": "nine-peater",
+            "name": "Nine Peater"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "badges.badge",
+        "fields": {
+            "description": "Have visited the site six days in a row.",
+            "hint": "Keep coming back!",
+            "image": "",
+            "points": 20,
+            "label": "6PT",
+            "priority": 30,
+            "theme": "3",
+            "award_trigger": "daily",
+            "award_condition": "daily_visit_count(6)",
+            "slug": "six-peater",
+            "name": "Six Peater"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "badges.badge",
+        "fields": {
+            "description": "Visited the site 3 days in a row.",
+            "hint": "Keep coming back!",
+            "image": "",
+            "points": 10,
+            "label": "3PT",
+            "priority": 20,
+            "theme": "2",
+            "award_trigger": "daily",
+            "award_condition": "daily_visit_count(3)",
+            "slug": "three-peater",
+            "name": "Three Peater"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "badges.badge",
+        "fields": {
+            "description": "Finish any five actions successfully.",
+            "hint": "Keep doing actions!",
+            "image": "",
+            "points": 10,
+            "label": "NOV",
+            "priority": 10,
+            "theme": "1",
+            "award_trigger": "daily",
+            "award_condition": "some_of(5)",
+            "slug": "daily-visitor",
+            "name": "Novice"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "badges.badge",
+        "fields": {
+            "description": "The team has achieved the goal for the Daily Energy Goal game three days in a row.",
+            "hint": "Keep team energy use low!",
+            "image": "",
+            "points": 10,
+            "label": "HTR",
+            "priority": 160,
+            "theme": "5",
+            "award_trigger": "daily",
+            "award_condition": "daily_energy_goal_count(3)",
+            "slug": "energy-hat-trick",
+            "name": "Energy Hat Trick"
+        }
+    },
+    {
+        "pk": 20,
+        "model": "badges.badge",
+        "fields": {
+            "description": "FSP: Awarded to players who complete: 1 of each type of activity.",
+            "hint": "Do more types of activities.",
+            "image": "",
+            "points": 10,
+            "label": "FSP",
+            "priority": 200,
+            "theme": "2",
+            "award_trigger": "smartgrid",
+            "award_condition": "some_full_spectrum()",
+            "slug": "full-spectrum",
+            "name": "Full Spectrum"
+        }
+    }
+]

@@ -1,0 +1,36 @@
+
+{% if user.get_profile.team %}
+    <div id="visualization"></div>
+{% else %}
+    <table >
+    <tr width="300"><td valign="center">
+        <b>Power meter is not available.</b> <br/><br/>
+        You are not in a {{ TEAM_LABEL|lower }} that has <br/>
+        the real-time power meter installed.
+    </td></tr>
+    </table>
+{% endif %}
+
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript" src="{{STATIC_URL}}js/org.wattdepot.makahiki.PowerMeter.js"></script>
+
+<script type="text/javascript">
+    // Wrap this code in an anonymous self-invoking function to avoid polluting global namespace.
+    (function () {
+        var refreshInterval = {{ view_objects.energy_power_meter.interval }};
+        var server_url = "{{ CHALLENGE.wattdepot_server_url }}";
+        var source = "{{user.get_profile.team.name}}";
+        var options = {
+            source: source,
+            width: 300,
+            powerRange: 2000};
+
+        // Load the visualization API and the spreadsheet, then call displayEnergy.
+        new Makahiki_PowerMeter( server_url,
+                        source,
+                        refreshInterval,
+                        'visualization',
+                        options);
+    })();
+
+</script>

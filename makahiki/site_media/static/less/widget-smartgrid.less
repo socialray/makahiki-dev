@@ -1,0 +1,203 @@
+@charset "UTF-8";
+.activities-grid {
+    line-height: 15px;
+    padding-left: 2px;
+    border: 0;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.activities-grid td {
+    padding: 1px;
+    width: 10%;
+    vertical-align: top;
+}
+
+.activities-grid td table {
+    padding: 0;
+    margin: 0;
+    border-spacing: 0;
+}
+
+.activities-grid td table td {
+    padding: 1px;
+    margin: 0;
+    vertical-align: middle;
+}
+
+.activities-grid-legend {
+    padding-left: 8px;
+    border: 2;
+}
+
+.activities-grid-legend td {
+    padding: 2px;
+    width: 8px;
+    text-align: left;
+}
+
+.activity , .commitment , .event , .excursion , .filler {
+    height: 48px;
+    border: 1px solid #000;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+}
+
+// Smart grid game colors
+.activity , .activity-legend , .activity a {
+    background-color: @sgg-activity-cell-bkg-color;
+    color: @sgg-entry-font-color;
+}
+
+.activity div , .commitment div , .event div , .excursion div {
+    font-size: 9pt;
+    padding: 1px;
+}
+
+.activity div a , .commitment div a , .event div a , .excursion div a {
+    color: #000;
+}
+
+.activity-column {
+    background-color: @sgg-header-bkg-color;
+    color: @sgg-header-font-color;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    height: 48px;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #000;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    text-transform: capitalize;
+}
+
+.activity-column h5 {
+    font-size: 9pt;
+    line-height: 13px;
+    margin: 0 auto 0 auto;
+    padding: 2px;
+    position: relative;
+    top: 50%;
+    margin-top: -6px
+}
+
+.empty-column {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    height: 48px;
+    vertical-align: middle;	
+}
+
+.activity-legend {
+    background-color: @sgg-activity-cell-bkg-color;
+}
+
+.activity-legend , .commitment-legend , .event-legend , .excursion-legend , .filler-legend {
+    width: 12px;
+    height: 12px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
+
+.activity-task {
+    position: relative;
+}
+
+.activity-task-details-info {
+    background-color: @modal-body-bkg-color;
+    font-color: @modal-body-font-color;
+    border: 2px solid gray;
+    height: auto;
+    margin: .5em auto 5px auto;
+    padding: 10px 2px 0 2px;
+    float: center;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    text-align: center;
+    line-height: 20px;
+    display: block;
+}
+
+.activity-task-form-content {
+    float: center;
+    text-align: left;
+    padding-left: 30px;
+    font: normal 10pt Arial, Helvetica, sans-serif;
+}
+
+.activity-task-form-content-button {
+    padding-left: 100px;
+}
+
+.commitment , .commitment-legend , .commitment a {
+    background-color: @sgg-commitment-cell-bkg-color;
+    color: @sgg-entry-font-color;
+}
+
+.commitment-legend {
+    background-color: @sgg-commitment-cell-bkg-color;
+}
+
+.event , .event-legend , .event a {
+    background-color: @sgg-event-cell-bkg-color;
+    color: @sgg-entry-font-color;
+}
+
+.event-legend {
+    background-color: @sgg-event-cell-bkg-color;
+}
+
+.excursion , .excursion-legend , .excursion a {
+    background-color: @sgg-excursion-cell-bkg-color;
+    color: @sgg-entry-font-color;
+}
+
+.excursion-legend {
+    background-color: @sgg-excursion-cell-bkg-color;
+}
+
+.expired-activity {
+    color: @sgg-entry-font-color;
+    font-size: 30px;
+    text-align: center;
+}
+
+.filler , .filler-legend , .filler a {
+    background-color: @sgg-filler-cell-bkg-color;
+    color: @sgg-entry-font-color;
+}
+
+.filler-legend {
+    background-color: @sgg-filler-cell-bkg-color;
+}
+
+#action-details ul {
+    list-style: disc;    
+}
+
+#task-reminder-form ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#task-reminder-form li {
+    clear: both;
+    padding-top: 15px;
+}
+
+@media (max-width: 640px) {
+    #sgg-levels-tab > li > a {
+        padding-left: 2px;
+        padding-right: 2px;
+        font-size: 11px;
+    }
+}
+

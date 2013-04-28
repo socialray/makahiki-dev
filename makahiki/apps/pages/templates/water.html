@@ -1,0 +1,36 @@
+{% extends "logged_in_base.html" %}
+
+{% block page_title %}
+    Water
+{% endblock %}
+
+{% block selected_icon %}selected-water{% endblock %}
+
+{% block extra_head %}
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <!-- left column -->
+            <div class="span7">
+                {% for template in view_objects.left_templates %}
+                    {% include template %}
+                {% endfor %}
+            </div>
+            <!-- right column -->
+            <div class="span5">
+                {% for template in view_objects.right_templates %}
+                    {% include template %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <table>
+        <tr><td width="40%" valign="top">
+        </td><td width="60%" valign="top">
+        </td>
+        </tr>
+    </table>
+{% endblock %}

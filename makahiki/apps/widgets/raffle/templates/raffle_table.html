@@ -1,0 +1,24 @@
+<table class="table table-striped table-condensed prizes-raffle-table">
+    <thead>
+        <tr>
+            <th class="raffle-prize">Prize</th>
+            <th>Value</th>
+            <th class="condensed-tickets">Tickets</th>
+            <th class="user-tickets">Your tickets</th>
+            <th class="total-tickets">Total tickets</th>
+            <th>Current odds</th>
+            <th id="prizes-raffle-options-header" class="ticket-add-remove">Change ticket allocation</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% include "raffle_list.html" %}
+    </tbody>
+</table>
+<div class="prizes-raffle-footer">
+    You receive 1 raffle ticket for every {{ raffle.points_per_ticket }} awarded Kukui Cup
+    points.<br/>
+    These tickets are separate from your score and will not affect your rank.<br/>
+    <span class="prizes-raffle-footer-deadline">Deadline for {{ raffle.round_name }} submissions: {{ raffle.deadline}}</span>
+    Winners will be announced at the upcoming awards party and via email. <br/>
+    Raffle tickets not allocated in the current round will be available for use in the next round.
+</div>

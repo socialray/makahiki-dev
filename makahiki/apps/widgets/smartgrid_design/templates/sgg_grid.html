@@ -1,0 +1,83 @@
+{% load sgg_design_tags %}
+
+<div class="sgg_grid">
+	<div class="sgg-dropzone">
+		<div id="column-dropzone" class="sgg-column-dropzone">
+			<table class="designer-table">
+				<tr>
+					{% for i in 8|get_range %}
+					<td><div class="sgg-column-slot" data-column={{i|add:1}}>
+					{% for cat in cat_list %}
+						{% if i|add:"1" == cat.column %}
+						<div id="column-menu-{{cat.name.slug}}" class="sgg-level-popup-menu">
+							<ul>
+								<li><a href="#{{forloop.counter}}" class="sgg-action"
+								rel="tooltip" 
+								title="Delete this column from the level. Moves all the actions in the column to the palette">Delete column {{cat.name}}</a>
+								</li>
+							</ul>
+						</div> 
+					<div id="column-{{cat.name.slug}}" data-slug="{{cat.name.slug}}" class="sgg-column grid-draggable" 
+						 data-priority={{i}} data-pk={{cat.name.pk}} data-level="sgg-level-{{lvl.priority}}">
+						 <br/>
+						 <a class="sgg-column-link" href="/challenge_setting_admin/smartgrid_design/designercolumnname/{{cat.name.pk}}/">
+						 {{cat.name.name}}</a>
+						 <br/>
+					</div>
+<script type="text/javascript">
+	$("#column-{{cat.column.slug}}").bind("contextmenu", function(e) {
+		$('#column-menu-{{cat.name.slug}}').css({
+			top: e.pageY+'px',
+			left: e.pageX+'px'
+		}).show();
+		return false;
+	});
+	$("#column-menu-{{cat.name.slug}}").click(function() {
+		$(this).hide();
+	});
+	$(document).click(function() {
+		$("#column-menu-{{cat.name.slug}}").hide();
+	});
+</script>
+						{% endif %}
+					{% endfor %}
+					</div></td>
+					{% endfor %}
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div class="sgg-dropzone">
+		<div id="action-dropzone" class="sgg-action-dropzone">
+			<table class="designer-table">
+				{% for r in 8|get_range %}
+				<tr>
+					{% for c in 8|get_range %}
+					<td>
+						{# Decide if column is active #}
+						{% if c|add:"1" in columns %}
+                        <div class="sgg-action-slot"						
+						{% else %}
+                        <div class="sgg-action-slot disabled"						
+						{% endif %}
+							data-column="{{ c|add:'1' }}" data-row="{{ r|add:'1' }}">
+						{% for act in act_list %}
+							{% if r|add:"1" == act.row and c|add:"1" == act.column %}
+							<div data-slug="{{act.action.slug}}" class="sgg-action sgg-{{act.action.type}}-cell grid-draggable"
+                   		   		 data-type="{{act.action.type}}" data-row="{{r|add:1}}" data-column="{{c|add:1}}" 
+                   		   		 data-pk={{act.action.pk}} data-unlock="{{act.action.unlock_condition}}">
+                   		   			<br/>
+                   		   			<a href="/challenge_setting_admin/smartgrid_design/designer{{act.action.type}}/{{act.action.pk}}/"
+									   class="sgg-action" ref="tooltip" title="{{act.action.title}}">{{act.action.name}}</a><br/>
+								</div>									
+							{% endif %}
+						{% endfor %}
+						</div>
+					</td>
+					{% endfor %}
+				</tr>
+				{% endfor %}
+			</table>
+		</div>
+	</div>
+</div>

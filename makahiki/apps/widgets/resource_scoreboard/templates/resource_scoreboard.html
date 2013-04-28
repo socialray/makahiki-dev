@@ -1,0 +1,93 @@
+{%if not no_carousel %}
+<div id="outer-box" class="content-box">
+    <div id="score-cycle">
+{% else %}
+<div class="content-box">
+    <div class="widget-content">
+        <div class="content-box-title">
+            {{ TEAM_LABEL.capitalize }}/Group {{ resource.name|capfirst }} Scoreboard
+        </div>
+        <ul id="{{resource.name}}-tab" class="nav nav-tabs">
+            {% for round_name, ranks in round_resource_ranks.items reversed %}
+            <li class="">
+                <a data-toggle="tab" href="#{{resource.name}}-{{round_name|cut:" "}}">{{ TEAM_LABEL.capitalize }} {{round_name }}</a>
+            </li>
+            {% endfor %}
+            {% for round_name, ranks in round_group_resource_ranks.items reversed %}
+                <li class="">
+                    <a data-toggle="tab" href="#group-{{resource.name}}-{{round_name|cut:" "}}">Group {{round_name }}</a>
+                </li>
+            {% endfor %}
+            {% for round_name, ranks in round_resource_goal_ranks.items reversed %}
+                <li class="">
+                    <a data-toggle="tab" href="#{{resource.name}}-{{round_name|cut:" "}}-goal">{{ TEAM_LABEL.capitalize }} Goal {{round_name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+        <div class="tab-content">
+{% endif %}
+
+    {% include "resource_rank.html" %}
+    {% include "group_resource_rank.html" %}
+    {% include "resource_goal_rank.html" %}
+
+</div>
+{% if no_carousel %}
+    </div>
+    </div>
+    <script type="text/javascript">
+    $('#{{resource.name}}-tab.nav-tabs a:first').tab('show');
+    </script>
+{% else %} 
+    <center>
+        <div id="nav" class="nav nav-page-list">
+            {% for i in range  %}
+                <a class="" href="#">{{i}}</a>
+            {% endfor %}
+        </div>
+    </center>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+              // Calculate the height of the items in the scoreboard.
+              // Fix the height of all items to that height.
+              var maxHeight = 45;
+              var height = 0;
+              $("#score-carousel .item").each(function(index, item) {
+                height = $(item).height();
+                // console.log("height of item is " + height);
+                if (height > maxHeight){
+                  maxHeight = height;
+                }
+              });
+              maxHeight += $("#resource-scoreboard-message").height();
+              $("#score-carousel").height(maxHeight);
+
+              var outerWidth = $("#outer-box").width();
+    //        console.log("Outer width is " + outerWidth);
+              $(".set-width-outer-width").each (function(index, item) {
+                  item.style.width = outerWidth + "px";
+              });
+
+    //         $("#score-carousel").carousel();
+              $("#score-cycle").cycle({
+                  fx: "fade",
+                  timeout: 3500,
+                  delay: -1000,
+                  sync: true,
+                pager: '#nav',
+                pause: 1
+              });
+        });
+
+        $(window).resize(function() {
+            var outerWidth = $("#outer-box").width();
+    //         console.log("Outer width is " + outerWidth);
+            $(".set-width-outer-width").each (function(index, item) {
+    //          console.log("Setting " + item + "'s width to " + outerWidth);
+                item.style.width = outerWidth + "px";
+            });
+        });
+
+    </script>
+{% endif %}

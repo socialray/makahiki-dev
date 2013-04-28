@@ -1,0 +1,154 @@
+{% load avatar_tags %}
+<script src="{{STATIC_URL}}js/jquery.form.2.43.js" type="text/javascript"></script>
+ 
+<div class="modal-header">
+  <h2>Customize your Kukui Cup profile</h2>
+</div>
+<div id="setup-content" class="modal-body">
+    <p>Each participant has a profile on the Kukui Cup website. You can personalize yours right now
+        and get <b>5 points</b> immediately!</p>
+
+    <form id="profile-form" class="well" action="{% url setup_profile %}" method="post">
+        {% csrf_token %}
+        <div class="row-fluid">
+            <div class="span12"> 
+                <h3>Choose A Display Name</h3>
+                <div style="color: red; font-style: italic">{{ form.display_name.errors }}
+                </div>
+                <span>
+                {{ form.display_name.label_tag }}</span> {{ form.display_name }}
+                
+                <p class="setup-profile-help-text">{{ form.display_name.help_text }}</p>
+            </div> 
+         </div>
+      
+          <div class="row-fluid">
+              <div class="span12">
+                    <h3>Choose A Profile Picture (optional)</h3>
+              </div>
+          </div>
+          </br></br>
+          <div class="row-fluid">
+              <div class="span12">
+                  <div class="setup-form-photo">
+                      <div class="upload-form" style="">
+                          <input type="radio" name="pic_method" class="radio-input" value="0" onChange="showform()" {% if not av_changed %}checked {% endif %}> Use Default Picture 
+                          <div id="defpic" style="">
+                              {% avatar user size=80 first_login='True' default='True' %}
+                          </div>
+                          {% if MAKAHIKI_FACEBOOK_APP_ID %}
+                          <div id="profile-picture-facebook">
+                             {% include "first-login/profile-facebook.html" %}
+                          </div>
+                          {% endif %}
+                      </div>
+                  <div style="clear: both"></div>
+              </div>
+          </div>
+      </form>
+</div>
+
+<div class="modal-footer">
+  <div style="float: left">
+      <button id="back" class="btn btn-primary" style="text-align: left">
+          <img src="{{ STATIC_URL}}images/left.png" width="24" align="top">
+          Back<br/>
+          {% if referral_enabled %}
+            Referral
+          {% else %}
+            Terms &amp; Conditions
+          {% endif %}
+      </button>
+  </div>
+  <div style="float:right">
+      <button id="profile-submit" class="btn btn-primary" style="text-align: right">Next
+          <img src="{{ STATIC_URL}}images/right.png" width="24" align="top">
+          <br/>Intro video
+      </button>
+  </div>
+  <div style="clear:both"></div> 
+  <div id="progressbar-header">
+      <p>Introduction progress, points: {{ user.get_profile.points }}</p>
+  </div>
+  <div id="progressbar" class="progress">
+      <div class="bar" style="width: 0%;">
+      </div>
+  </div>
+  
+  <script type="text/javascript">
+      $(document).ready(function () {
+          fixForms();
+          //bind 'myForm' and provide a simple callback function
+          $('#profile-form').ajaxForm();
+          $('#id_avatar').change(enableSubmit);
+          var s = 4.0/7.0*100 + "%";
+          $(".bar").width(s);
+
+          $("#back").button().click(function () {
+              $(this).button("option", "disabled", true);
+              {% if referral_enabled %}
+              $.get("{% url setup_referral %}?from=profile", function (data) {
+                  $("#ui-dialog-title-setup-dialog").html(data.title);
+                  $("#setup-dialog").html(data.contents);
+              });
+              {% else %}
+              $.get("{% url setup_terms %}?from=referral", function (data) {
+                  $("#ui-dialog-title-setup-dialog").html(data.title);
+                  $("#setup-dialog").html(data.contents);
+              });
+              {% endif %}
+          });
+
+          $("#profile-submit").button().click(function () {
+              $(this).button("option", "disabled", true);
+              $('#profile-form').ajaxSubmit({
+                  //beforeSubmit: showRequest,
+                  dataType:"json",
+                  success:showResponse,
+                  //error:handleError
+              });
+              $(this).button("option", "disabled", false);
+          });
+
+          function enableSubmit() {
+              if($('#id_avatar').val() != ''){
+                  $('#profile-submit').removeAttr('disabled');
+              }
+          }
+
+          // Useful for debugging.
+          function showRequest(formData, jqForm, options) {
+              // formData is an array; here we use $.param to convert it to a string to display it
+              // but the form plugin does this for you automatically when it submits the data
+              var queryString = $.param(formData);
+
+              // jqForm is a jQuery object encapsulating the form element.  To access the
+              // DOM element for the form do this:
+              // var formElement = jqForm[0];
+
+              alert('About to submit: \n\n' + queryString);
+
+              // here we could return false to prevent the form from being submitted;
+              // returning anything other than false will allow the form submit to continue
+              return true;
+          }
+
+          function handleError(xhr, text, error) {
+              alert("Error" + text);
+              alert(xhr.status);
+              alert(error);
+          }
+
+          function showResponse(data) {
+              $("#ui-dialog-title-setup-dialog").html(data.title);
+              $("#setup-dialog").html(data.contents);
+          }
+      });
+
+      function showform() {
+            document.getElementById("defpic").style.display = 'block';
+            document.getElementById("fbupload").style.display = 'block';
+    }
+  </script>
+</div>
+
